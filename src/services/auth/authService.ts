@@ -6,6 +6,7 @@ import type { OAuth, Profile } from '@/types'
 const {
   VITE_CLIENT_ID,
   VITE_CLIENT_SECRET,
+  VITE_API_BASE_URL,
 } = import.meta.env
 
 export const getProfile = async (): Promise<AxiosResponse<Profile>> => (
@@ -25,7 +26,7 @@ export const login = async (
     client_id: VITE_CLIENT_ID,
     client_secret: VITE_CLIENT_SECRET,
   },
-  baseURL: import.meta.env.VITE_API_BASE_URL as string,
+  baseURL: VITE_API_BASE_URL as string,
 })
 
 export const forgotPassword = async (
