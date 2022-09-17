@@ -1,0 +1,44 @@
+{
+  "core": {
+    "validation": {
+      "required": "Vereist",
+      "url": "Ongeldige url",
+      "email": "Ongeldig emailadres",
+      "min_length": "Min. {min} tekens",
+      "max_length": "Max. {max} tekens",
+      "min": "Minimum {min}",
+      "max": "Maximum {max}",
+      "min_date": "Minimum {min}",
+      "max_date": "Maximum {max}",
+      "file_size": "Bestand is te groot. Max. {maxFileSize}"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Inloggen",
+      "description": "Meld je aan om verder te gaan",
+      "action": "Inloggen",
+      "invalid_email_or_password": "Email of wachtwoord is niet correct"
+    },
+    "forgot_password": {
+      "title": "Wachtwoord vergeten",
+      "description": "Weet je het wachtwoord niet meer? Vul hieronder je e-mailadres in.",
+      "success_message": "Bedankt, binnen enkele minuten ontvang je een e-mail met daarin een persoonlijke link. Via de link kun je een nieuw wachtwoord opgeven.",
+      "return_to_login": "Terug naar inloggen",
+      "action": "Verzenden"
+    },
+    "reset_password": {
+      "title": "Wachtwoord opnieuw instellen",
+      "description": "Vul je nieuw wachtwoord in",
+      "success_message": "Je wachtwoord is opnieuw ingesteld, je kan je nu hiermee aanmelden",
+      "action": "Wachtwoord instellen"
+    }
+  },
+  "general": {
+    "loading": "Aan het laden"
+  },
+  "form": {
+    "email": "Emailadres",
+    "password": "Wachtwoord"
+  }
+}

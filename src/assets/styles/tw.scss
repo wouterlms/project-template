@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import 'reset';
+  
+  * {  
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    @apply box-border m-0 p-0;
+  }
+
+  body {
+    font-family: 'Dm Sans', sans-serif;
+
+    @apply w-full leading-5 bg-primary text-secondary min-h-screen h-[1px];
+  }
+
+  #app {
+    @apply flex w-full h-full;
+  }
+
+  img,
+  video {
+    @apply w-full h-full object-cover;
+  }
+
+  span {
+    @apply leading-none;
+  }
+
+  a {
+    -webkit-appearance: none !important;
+  }
+
+  button[disabled] {
+    cursor: not-allowed;
+  }
+
+  input[type=time]::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+}
