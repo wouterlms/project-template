@@ -9,7 +9,7 @@ interface UseProfileStore {
 const profile: UseProfileStore['profile'] = ref(null)
 
 export default (): UseProfileStore => {
-  const setProfile: UseProfileStore['setProfile'] = (newProfile) => {
+  const setProfile = (newProfile: Nullable<Profile>): void => {
     profile.value = newProfile
 
     if (newProfile !== null) localStorage.setItem('lastLoggedInUser', JSON.stringify(newProfile))

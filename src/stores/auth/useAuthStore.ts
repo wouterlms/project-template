@@ -29,30 +29,31 @@ watch((oAuth), (oAuth) => {
   localStorage.setItem('oAuth', JSON.stringify(oAuth))
 }, { immediate: true })
 
-const hasFetchedProfile: UseAuthStore['hasFetchedProfile'] = ref(false)
-const lastLoginAttemptEmail: UseAuthStore['lastLoginAttemptEmail'] = ref(null)
+const hasFetchedProfile = ref(false)
+const lastLoginAttemptEmail = ref(null)
 
 export default (): UseAuthStore => {
   const { setProfile } = useProfileStore()
 
-  const _getProfile: UseAuthStore['getProfile'] = async () => await new Promise((resolve, reject) => {
-    if (oAuth.value === null) {
-      reject(new Error('oAuth is null'))
-      return
-    }
+  const _getProfile = async (): Promise<AxiosResponse<Profile>> =>
+    await new Promise((resolve, reject) => {
+      if (oAuth.value === null) {
+        reject(new Error('oAuth is null'))
+        return
+      }
 
-    const profileRequest = getProfile()
+      const profileRequest = getProfile()
 
-    void profileRequest
-      .then(({ data }) => {
-        setProfile(data)
-      })
-      .finally(() => {
-        hasFetchedProfile.value = true
-      })
-  })
+      void profileRequest
+        .then(({ data }) => {
+          setProfile(data)
+        })
+        .finally(() => {
+          hasFetchedProfile.value = true
+        })
+    })
 
-  const _login: UseAuthStore['login'] = async (email, password) => {
+  const _login = async (email: string, password: string): Promise<void> => {
     const { data } = await login(email, password)
 
     oAuth.value = data
@@ -61,7 +62,7 @@ export default (): UseAuthStore => {
     await getProfile()
   }
 
-  const logout: UseAuthStore['logout'] = () => {
+  const logout = (): void => {
     oAuth.value = null
     setProfile(null)
   }
