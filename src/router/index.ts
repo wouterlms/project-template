@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
 import { assertIsLoggedIn } from './routeGuards'
 
 import authRoutes from '@/modules/auth/router'

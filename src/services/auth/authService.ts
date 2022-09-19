@@ -1,34 +1,6 @@
 import axios from 'axios'
 import type { AxiosResponse } from 'axios'
 
-import type { OAuth, Profile } from '@/types'
-
-const {
-  VITE_CLIENT_ID,
-  VITE_CLIENT_SECRET,
-  VITE_API_BASE_URL,
-} = import.meta.env
-
-export const getProfile = async (): Promise<AxiosResponse<Profile>> => (
-  await axios.get('/users/me')
-)
-
-export const login = async (
-  email: string,
-  password: string
-): Promise<AxiosResponse<OAuth>> => await axios({
-  url: '/oauth/token',
-  method: 'POST',
-  data: {
-    password,
-    username: email,
-    grant_type: 'password',
-    client_id: VITE_CLIENT_ID,
-    client_secret: VITE_CLIENT_SECRET,
-  },
-  baseURL: VITE_API_BASE_URL as string,
-})
-
 export const forgotPassword = async (
   email: string
 ): Promise<AxiosResponse<Record<string, never>>> => (

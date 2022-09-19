@@ -9,10 +9,11 @@ import {
 
 import { useResetPasswordFormService, useResetPasswordFormState } from '../composables'
 
-import { useResetPasswordStore, useAuthStore } from '@/stores'
+import { useResetPasswordStore } from '@/stores'
+import { useAuth } from '@/composables'
 
 const { t } = useI18n()
-const { login } = useAuthStore()
+const { signIn } = useAuth()
 const { hasResetPassword } = useResetPasswordStore()
 
 const formState = useResetPasswordFormState()
@@ -31,7 +32,7 @@ const { formObject } = formState
 
 const loginWithNewCredentials = async (): Promise<void> => {
   const { email, password } = formState.getData()
-  await login(email, password)
+  await signIn(email, password)
 }
 </script>
 

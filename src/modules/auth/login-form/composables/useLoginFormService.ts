@@ -1,20 +1,23 @@
 import { AxiosError } from 'axios'
 import type { Form } from '@wouterlms/forms'
 
-import { useAuthStore } from '@/stores'
+import { useAuth } from '@/composables'
+import { useForgotPasswordStore } from '@/stores'
 
 import type { FormService, LoginFormState } from '@/types'
 
 const useLoginFormService: FormService<Form<LoginFormState>> = (formState) => {
   const { t } = useI18n()
   const { replace } = useRouter()
-  const { lastLoginAttemptEmail, login } = useAuthStore()
+  const { signIn, getUser } = useAuth()
+  const { lastLoginAttemptEmail } = useForgotPasswordStore()
 
   const handleSubmit = async (): Promise<void> => {
     const { email, password } = formState.getData()
 
     try {
-      await login(email, password)
+      await signIn(email, password)
+      await getUser()
       await replace('/')
     } catch (e) {
       lastLoginAttemptEmail.value = email

@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@appwise/vue-oauth2': ^0.0.3
   '@tailwindcss/line-clamp': ^0.4.2
   '@vitejs/plugin-vue': ^3.1.0
   '@vue/runtime-core': ^3.2.39
@@ -35,6 +36,7 @@ specifiers:
   vue-tsc: ^0.40.4
 
 dependencies:
+  '@appwise/vue-oauth2': 0.0.3
   '@vue/runtime-core': 3.2.39
   '@wouterlms/composables': 0.2.18_93a9fcc5827aa88ed2489bdfcf5795f1
   '@wouterlms/forms': 0.2.19_39ada1250c8926d47357db88ddd0fb40
@@ -83,6 +85,15 @@ packages:
   /@antfu/utils/0.5.2:
     resolution: {integrity: sha512-CQkeV+oJxUazwjlHD0/3ZD08QWKuGQkhnrKo3e6ly5pd48VUpXbb77q0xMU4+vc2CkJnDS02Eq/M9ugyX20XZA==}
     dev: true
+
+  /@appwise/vue-oauth2/0.0.3:
+    resolution: {integrity: sha512-9sliXeAaeFfkQo1AzvPaWraU/14JeitHUEQ74a0pvPKngZhuiqWcgAwZiGwWmF/3H11LYglcfCyidck7MSD34Q==}
+    dependencies:
+      axios: 0.27.2
+      vue: 3.2.39
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /@babel/code-frame/7.18.6:
     resolution: {integrity: sha512-TDCmlK5eOvH+eH7cdAFlNXeVJqWIQ7gW9tY1GJIpUtFb6CmjVyq2VM3u71bOyR8CRihcCgMUYoDNyLXao3+70Q==}

@@ -3,11 +3,7 @@ import type {
   RouteLocationNormalized
 } from 'vue-router'
 
-import {
-  useAuthStore,
-  useProfileStore
-} from '@/stores'
-
+import { useAuth } from '@/composables'
 import { Route } from '@/routes'
 
 export const assertIsLoggedIn = async (
@@ -15,21 +11,12 @@ export const assertIsLoggedIn = async (
   from: RouteLocationNormalized,
   next: NavigationGuardNext
 ): Promise<void> => {
-  const {
-    hasFetchedProfile,
-    getProfile,
-  } = useAuthStore()
-
-  const { profile } = useProfileStore()
+  const { getUser } = useAuth()
 
   try {
-    if (hasFetchedProfile.value && profile.value !== null) next()
-    else {
-      await getProfile()
-
-      next()
-    }
-  } catch (e) {
+    await getUser()
+    next()
+  } catch (_) {
     next({
       name: Route.LOGIN,
     })
@@ -41,20 +28,12 @@ export const assertIsLoggedOut = async (
   from: RouteLocationNormalized,
   next: NavigationGuardNext
 ): Promise<void> => {
-  const {
-    hasFetchedProfile,
-    getProfile,
-  } = useAuthStore()
-
-  const { profile } = useProfileStore()
+  const { getUser } = useAuth()
 
   try {
-    if ((hasFetchedProfile.value && profile.value === null)) next()
-    else {
-      await getProfile()
-      next('/')
-    }
-  } catch (e) {
+    await getUser()
+    next('/')
+  } catch (_) {
     next()
   }
 }

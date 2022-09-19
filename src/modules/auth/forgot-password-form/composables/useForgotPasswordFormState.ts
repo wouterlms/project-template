@@ -2,13 +2,13 @@ import { useValidation, useFormState } from '@wouterlms/forms'
 
 import type { Form } from '@wouterlms/forms'
 
-import { useAuthStore } from '@/stores'
+import { useForgotPasswordStore } from '@/stores'
 
 import type { ForgotPasswordFormState } from '@/types'
 
 export default (): Form<ForgotPasswordFormState> => {
   const { applyRules } = useValidation()
-  const { lastLoginAttemptEmail } = useAuthStore()
+  const { lastLoginAttemptEmail } = useForgotPasswordStore()
 
   const formState = useFormState<ForgotPasswordFormState>(reactive({
     email: {

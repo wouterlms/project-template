@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@appwise/vue-oauth2": "^0.0.3",
     "@vue/runtime-core": "^3.2.39",
     "@wouterlms/composables": "^0.2.18",
     "@wouterlms/forms": "^0.2.19",
