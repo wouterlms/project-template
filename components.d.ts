@@ -29,5 +29,6 @@ declare module '@vue/runtime-core' {
     SuspenseError: typeof import('./src/components/suspense/SuspenseError.vue')['default']
     SuspenseWrapper: typeof import('./src/components/suspense/SuspenseWrapper.vue')['default']
     Test: typeof import('./src/Test.vue')['default']
+    UserForm: typeof import('./src/modules/user/user-form/views/UserForm.vue')['default']
   }
 }

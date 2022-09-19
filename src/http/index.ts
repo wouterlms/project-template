@@ -4,6 +4,8 @@ import type { AxiosResponse } from 'axios'
 
 import { setupCache } from 'axios-cache-adapter'
 
+const { VITE_API_BASE_URL } = import.meta.env
+
 const toCamelCase = (str: string): string => (
   str.replace(/[_.-](\w|$)/g, (_, x) => x.toUpperCase())
 )
@@ -58,30 +60,39 @@ export default (): void => {
   /**
    * Defaults
    */
-  axios.defaults.baseURL = `${import.meta.env.VITE_API_BASE_URL as string}/api`
+  axios.defaults.baseURL = `${VITE_API_BASE_URL as string}/api`
   axios.defaults.headers.common['Accept-Language'] = navigator.language
 
   /**
    * Request interceptor to convert camelCase to snake_case
    */
   axios.interceptors.request.use(
-    (response) => {
-      return {
-        ...response,
-        data: convert(response.data, toSnakeCase),
-      }
-    }
+    (response) => ({
+      ...response,
+      data: convert(response.data, toSnakeCase),
+    })
   )
 
   /**
    * Response interceptor to convert snake_case to camelCase
    */
   axios.interceptors.response.use(
-    (response) => {
-      return {
-        ...response,
-        data: convert(response.data, toCamelCase),
-      }
-    }
+    (response) => ({
+      ...response,
+      data: convert(response.data, toCamelCase),
+    })
   )
+
+  if (import.meta.env.DEV) {
+    const [
+      project,
+      environment
+    ] = VITE_API_BASE_URL.split('.')
+
+    // eslint-disable-next-line no-console
+    console.log(`Api environment: ${project.replace('https://', '') as string}.${environment as string}`)
+
+    // eslint-disable-next-line no-console
+    if (environment === 'production') console.warn('You\'re using the production environment api')
+  }
 }
