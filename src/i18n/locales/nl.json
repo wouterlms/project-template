@@ -35,10 +35,18 @@
     }
   },
   "general": {
-    "loading": "Aan het laden"
+    "loading": "Aan het laden",
+    "something_went_wrong": "Er is iets fout gegaan"
   },
   "form": {
     "email": "Emailadres",
     "password": "Wachtwoord"
+  },
+  "http_error": {
+    "bad_request": "Foute aanvraag",
+    "unauthorized": "Niet geauthorizeed",
+    "forbidden": "Verboden toegang",
+    "not_found": "Niet gevonden",
+    "server_error": "Server fout"
   }
 }
