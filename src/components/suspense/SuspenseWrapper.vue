@@ -1,14 +1,7 @@
 <script setup lang="ts">
-import type { Component } from 'vue'
 import { AppLoader } from '@wouterlms/ui'
 
 import { useSuspense } from '@/composables'
-
-interface Props {
-  component: Component
-}
-
-withDefaults(defineProps<Props>(), {})
 
 const { t } = useI18n()
 const error = useSuspense()
@@ -16,7 +9,7 @@ const error = useSuspense()
 
 <template>
   <Suspense v-if="error === null">
-    <Component :is="component" />
+    <slot />
 
     <template #fallback>
       <CenterContent>
@@ -27,9 +20,10 @@ const error = useSuspense()
     </template>
   </Suspense>
 
-  <SuspenseError
-    v-else
-    :message="error.message"
-    :status="error.status"
-  />
+  <CenterContent v-else>
+    <SuspenseError
+      :message="error.message"
+      :status="error.status"
+    />
+  </CenterContent>
 </template>
