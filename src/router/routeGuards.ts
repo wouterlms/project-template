@@ -1,39 +1,26 @@
-import type {
-  NavigationGuardNext,
-  RouteLocationNormalized
-} from 'vue-router'
+import type { RouteLocationRaw } from 'vue-router'
 
 import { useAuth } from '@/composables'
 import { Route } from '@/routes'
 
-export const assertIsLoggedIn = async (
-  to: RouteLocationNormalized,
-  from: RouteLocationNormalized,
-  next: NavigationGuardNext
-): Promise<void> => {
+export const assertIsLoggedIn = async (): Promise<RouteLocationRaw | undefined> => {
   const { getUser } = useAuth()
 
   try {
     await getUser()
-    next()
   } catch (_) {
-    next({
+    return {
       name: Route.LOGIN,
-    })
+    }
   }
 }
 
-export const assertIsLoggedOut = async (
-  to: RouteLocationNormalized,
-  from: RouteLocationNormalized,
-  next: NavigationGuardNext
-): Promise<void> => {
+export const assertIsLoggedOut = async (): Promise<string | undefined> => {
   const { getUser } = useAuth()
 
   try {
     await getUser()
-    next('/')
+    return '/'
   } catch (_) {
-    next()
   }
 }
