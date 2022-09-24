@@ -22,6 +22,7 @@ declare module '@vue/runtime-core' {
     FormGrid: typeof import('./src/components/form/FormGrid.vue')['default']
     FormSpacer: typeof import('./src/components/form/FormSpacer.vue')['default']
     LoginForm: typeof import('./src/modules/auth/login-form/views/LoginForm.vue')['default']
+    LoginFormTestAccounts: typeof import('./src/modules/auth/login-form/components/LoginFormTestAccounts.vue')['default']
     LoginFormView: typeof import('./src/modules/auth/login-form/views/LoginFormView.vue')['default']
     ResetPasswordFormView: typeof import('./src/modules/auth/reset-password-form/views/ResetPasswordFormView.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

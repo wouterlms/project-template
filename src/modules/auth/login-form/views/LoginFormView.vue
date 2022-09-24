@@ -4,8 +4,7 @@ import { FormInput, FormLabel } from '@wouterlms/ui'
 
 import {
   useLoginFormService,
-  useLoginFormState,
-  useTestAccounts
+  useLoginFormState
 } from '../composables'
 
 const { t } = useI18n()
@@ -17,9 +16,18 @@ const form = useForm(formState, {
   handleSubmit,
 })
 
-useTestAccounts(formState)
-
 const { formObject } = formState
+
+const handleTestAccountLogin = (email: string, password: string): void => {
+  formState.setData({
+    email,
+    password,
+  })
+
+  setTimeout(() => {
+    form.submit()
+  }, 0)
+}
 </script>
 
 <template>
@@ -27,6 +35,11 @@ const { formObject } = formState
     :title="t('auth.login.title')"
     :description="t('auth.login.description')"
   >
+    <LoginFormTestAccounts
+      :form="form"
+      @handle-test-account-login="handleTestAccountLogin"
+    />
+
     <FormElement :form="form">
       <FormSpacer>
         <FormLabel
