@@ -9,7 +9,7 @@ import type { FormService, LoginFormState } from '@/types'
 const useLoginFormService: FormService<Form<LoginFormState>> = (formState) => {
   const { t } = useI18n()
   const { replace } = useRouter()
-  const { signIn, getUser } = useAuth()
+  const { user, signIn, getUser } = useAuth()
   const { lastLoginAttemptEmail } = useForgotPasswordStore()
 
   const handleSubmit = async (): Promise<void> => {
@@ -19,6 +19,8 @@ const useLoginFormService: FormService<Form<LoginFormState>> = (formState) => {
       await signIn(email, password)
       await getUser()
       await replace('/')
+
+      localStorage.setItem('lastLoggedInUser', JSON.stringify(user.value))
     } catch (e) {
       lastLoginAttemptEmail.value = email
 
