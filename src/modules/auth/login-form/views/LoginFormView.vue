@@ -2,7 +2,11 @@
 import { useForm, FormElement } from '@wouterlms/forms'
 import { FormInput, FormLabel } from '@wouterlms/ui'
 
-import { useLoginFormService, useLoginFormState } from '../composables'
+import {
+  useLoginFormService,
+  useLoginFormState,
+  useTestAccounts
+} from '../composables'
 
 const { t } = useI18n()
 
@@ -12,6 +16,8 @@ const { handleSubmit } = useLoginFormService(formState)
 const form = useForm(formState, {
   handleSubmit,
 })
+
+useTestAccounts(formState)
 
 const { formObject } = formState
 </script>
