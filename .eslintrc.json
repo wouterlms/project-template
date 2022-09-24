@@ -73,6 +73,8 @@
       }
     ],
 
+    "camelcase": ["error", { "properties": "always" }],
+
     /**
     * https://eslint.org/docs/latest/rules/arrow-body-style
     */
