@@ -42,8 +42,8 @@ export default (): UseFileService => {
     const { name, type } = file
 
     const { data } = await axios.post<{ id: string, url: string }>('/media', {
-      file_name: name,
-      mime_type: type,
+      fileName: name,
+      mimeType: type,
     })
 
     const blob = new Blob([file])
