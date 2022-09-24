@@ -31,7 +31,7 @@ const testAccounts = testAccountsEnv.reduce((acc, [
 <template>
   <div
     v-if="Object.keys(testAccounts).length > 0"
-    class="bottom-0 fixed p-3 right-0 sm:bottom-auto sm:max-w-sm sm:p-4 sm:top-0 w-full"
+    class="bottom-0 fixed p-3 right-0 sm:!bottom-auto sm:max-w-sm sm:p-4 sm:top-0 w-full"
   >
     <aside
       class="bg-input
