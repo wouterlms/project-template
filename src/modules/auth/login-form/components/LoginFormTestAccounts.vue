@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { AppFocusable, AppIcon } from '@wouterlms/ui'
 import type { useForm } from '@wouterlms/forms'
-import { AppFocusable } from '@wouterlms/ui'
+
 import type { LoginFormState } from '@/types'
+import { Icon } from '@/icons'
 
 interface Props {
   form: ReturnType<typeof useForm<LoginFormState>>
@@ -36,13 +38,14 @@ const testAccounts = testAccountsEnv.reduce((acc, [
     <aside
       class="bg-input
       border
+      border-input
       border-solid
-      border-tertiary
+      overflow-hidden
       rounded-lg
       shadow-card
       w-full"
     >
-      <div class="border-b border-solid border-tertiary p-4">
+      <div class="border-b border-input border-solid p-4">
         <h1 class="font-medium">
           Meld aan met een test account
         </h1>
@@ -52,19 +55,26 @@ const testAccounts = testAccountsEnv.reduce((acc, [
         <li
           v-for="({ email, password }, key) of testAccounts"
           :key="email"
-          class="border-b border-solid border-tertiary last:border-none"
+          class="border-b border-input border-solid last:border-none"
         >
           <AppFocusable
             :disabled="form.isSubmitting"
-            class="hover:bg-secondary p-4 text-left w-full"
+            class="flex gap-x-4 hover:bg-gray-primary overflow-hidden p-4 text-left w-full"
             @click="emit('handleTestAccountLogin', email, password)"
           >
-            <div class="font-medium text-xs tracking-wide uppercase">
-              {{ key }}
-            </div>
+            <AppIcon
+              :icon="Icon.USER"
+              class="-translate-y-1 flex-shrink-0 h-6 w-6"
+            />
 
-            <div class="text-sm">
-              {{ email }}
+            <div>
+              <div class="font-medium text-xs tracking-wide uppercase">
+                {{ key }}
+              </div>
+
+              <div class="text-sm">
+                {{ email }}
+              </div>
             </div>
           </AppFocusable>
         </li>
