@@ -3,8 +3,6 @@ import type { useForm } from '@wouterlms/forms'
 import { AppFocusable } from '@wouterlms/ui'
 import type { LoginFormState } from '@/types'
 
-const { VITE_TEST_ACCOUNTS } = import.meta.env
-
 interface Props {
   form: ReturnType<typeof useForm<LoginFormState>>
 }
@@ -12,6 +10,8 @@ interface Props {
 withDefaults(defineProps<Props>(), {})
 
 const emit = defineEmits<{(event: 'handleTestAccountLogin', email: string, password: string): void }>()
+
+const { VITE_TEST_ACCOUNTS } = import.meta.env
 
 const testAccountsEnv: string[] = JSON.parse(VITE_TEST_ACCOUNTS ?? '[]')
 
