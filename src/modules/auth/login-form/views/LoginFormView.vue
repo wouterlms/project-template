@@ -37,7 +37,7 @@ const handleTestAccountLogin = (email: string, password: string): void => {
   >
     <LoginFormTestAccounts
       :form="form"
-      @handle-test-account-login="handleTestAccountLogin"
+      @login="handleTestAccountLogin"
     />
 
     <FormElement :form="form">

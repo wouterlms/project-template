@@ -11,7 +11,7 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {})
 
-const emit = defineEmits<{(event: 'handleTestAccountLogin', email: string, password: string): void }>()
+const emit = defineEmits<{(event: 'login', email: string, password: string): void }>()
 
 const { VITE_TEST_ACCOUNTS } = import.meta.env
 
@@ -60,7 +60,7 @@ const testAccounts = testAccountsEnv.reduce((acc, [
           <AppFocusable
             :disabled="form.isSubmitting"
             class="flex gap-x-4 hover:bg-gray-primary overflow-hidden p-4 text-left w-full"
-            @click="emit('handleTestAccountLogin', email, password)"
+            @click="emit('login', email, password)"
           >
             <AppIcon
               :icon="Icon.USER"
