@@ -16,6 +16,7 @@
   "auth": {
     "login": {
       "title": "Inloggen",
+      "personalised_title": "Welkom terug, {name}",
       "description": "Meld je aan om verder te gaan",
       "action": "Inloggen",
       "invalid_email_or_password": "Email of wachtwoord is niet correct"

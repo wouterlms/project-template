@@ -7,10 +7,19 @@ import {
   useLoginFormState
 } from '../composables'
 
+import { useLocalStorage } from '@/composables'
+import { LocalStorageKey } from '@/enums'
+
 const { t } = useI18n()
+
+const lastLoggedInUser = useLocalStorage(LocalStorageKey.LAST_LOGGED_IN_USER, null)
 
 const formState = useLoginFormState()
 const { handleSubmit } = useLoginFormService(formState)
+
+const title = lastLoggedInUser.value === null
+  ? t('auth.login.title')
+  : t('auth.login.personalised_title', { name: lastLoggedInUser.value.firstName })
 
 const form = useForm(formState, {
   handleSubmit,
@@ -32,7 +41,7 @@ const handleTestAccountLogin = (email: string, password: string): void => {
 
 <template>
   <AuthPage
-    :title="t('auth.login.title')"
+    :title="title"
     :description="t('auth.login.description')"
   >
     <LoginFormTestAccounts
