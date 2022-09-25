@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useForm, FormElement } from '@wouterlms/forms'
+import { FormElement, useForm } from '@wouterlms/forms'
 import {
   FormInput,
-  FormLabel
+  FormLabel,
 } from '@wouterlms/ui'
 
 import { useForgotPasswordFormService, useForgotPasswordFormState } from '../composables'
@@ -38,7 +38,7 @@ onBeforeUnmount(() => {
       is="RouterLink"
       v-if="hasSentEmail"
       :to="{
-        name: Route.LOGIN
+        name: Route.LOGIN,
       }"
     >
       {{ t('auth.forgot_password.return_to_login') }}

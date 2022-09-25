@@ -13,7 +13,8 @@ export default (): Ref<Nullable<Error>> => {
     if (e instanceof AxiosError) {
       const { response } = e
 
-      if (response == null) return
+      if (response == null)
+        return
 
       const { status, data: { message } } = response
 
@@ -21,7 +22,8 @@ export default (): Ref<Nullable<Error>> => {
         status,
         message: message ?? null,
       }
-    } else throw e
+    }
+    else { throw e }
 
     return false
   })

@@ -9,10 +9,9 @@ import i18n from '@/i18n'
 import '@/assets/styles/tw.scss'
 import '@wouterlms/ui/style.css'
 
-const app =
-  createApp(App)
-    .use(router)
-    .use(i18n)
+const app = createApp(App)
+  .use(router)
+  .use(i18n)
 
 createAxiosInstance()
 

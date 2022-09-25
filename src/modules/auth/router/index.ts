@@ -24,9 +24,9 @@ const routes: RouteRecordRaw[] = [
         path: 'reset-password/:token',
         name: 'reset-password',
         component: async () => await import('../reset-password-form/views/ResetPasswordFormView.vue'),
-      }
+      },
     ],
-  }
+  },
 ]
 
 export default routes

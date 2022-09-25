@@ -2,7 +2,7 @@ import axios from 'axios'
 import type { AxiosResponse } from 'axios'
 
 export const forgotPassword = async (
-  email: string
+  email: string,
 ): Promise<AxiosResponse<Record<string, never>>> => (
   await axios.post('/forgot-password', { email })
 )

@@ -8,7 +8,8 @@ export const assertIsLoggedIn = async (): Promise<RouteLocationRaw | undefined> 
 
   try {
     await getUser()
-  } catch (_) {
+  }
+  catch (_) {
     return {
       name: Route.LOGIN,
     }
@@ -21,6 +22,7 @@ export const assertIsLoggedOut = async (): Promise<string | undefined> => {
   try {
     await getUser()
     return '/'
-  } catch (_) {
+  }
+  catch (_) {
   }
 }

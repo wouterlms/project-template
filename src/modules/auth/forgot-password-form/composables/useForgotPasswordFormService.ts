@@ -5,7 +5,7 @@ import { useAxiosErrorTransformer } from '@wouterlms/composables'
 import { forgotPassword } from '@/services'
 import { useForgotPasswordStore } from '@/stores'
 
-import type { FormService, ForgotPasswordFormState } from '@/types'
+import type { ForgotPasswordFormState, FormService } from '@/types'
 
 const useForgotPasswordFormService: FormService<Form<ForgotPasswordFormState>> = (formState) => {
   const { hasSentEmail } = useForgotPasswordStore()
@@ -16,7 +16,8 @@ const useForgotPasswordFormService: FormService<Form<ForgotPasswordFormState>> =
     try {
       await forgotPassword(email)
       hasSentEmail.value = true
-    } catch (e) {
+    }
+    catch (e) {
       formState.setErrors(useAxiosErrorTransformer()(e as AxiosError))
     }
   }

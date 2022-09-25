@@ -13,10 +13,10 @@ withDefaults(defineProps<Props>(), {
 <template>
   <div
     :class="{
-      'flex-col': direction === 'vertical'
+      'flex-col': direction === 'vertical',
     }"
     :style="{
-      gap: `${gap / 4}rem`
+      gap: `${gap / 4}rem`,
     }"
     class="flex"
   >

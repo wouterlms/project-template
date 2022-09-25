@@ -41,7 +41,7 @@ export default (): UseFileService => {
   const uploadFile = async (file: File, id: string): Promise<AxiosResponse<AwsFile>> => {
     const { name, type } = file
 
-    const { data } = await axios.post<{ id: string, url: string }>('/media', {
+    const { data } = await axios.post<{ id: string; url: string }>('/media', {
       fileName: name,
       mimeType: type,
     })
@@ -60,8 +60,9 @@ export default (): UseFileService => {
       })
 
       xhr.addEventListener('loadend', () => {
-        if (xhr.readyState === 4 && xhr.status === 200) resolve()
-        else reject(new Error())
+        if (xhr.readyState === 4 && xhr.status === 200)
+          resolve()
+        else reject(new Error('Upload failed'))
       })
 
       xhr.open('PUT', data.url, true)
@@ -85,9 +86,10 @@ export default (): UseFileService => {
       preprocess,
       chunkSize,
       replaceFiles,
-    }
+    },
   ): Promise<void> => {
-    if (replaceFiles === true) files.value = []
+    if (replaceFiles === true)
+      files.value = []
 
     isUploading.value = true
 
@@ -95,8 +97,8 @@ export default (): UseFileService => {
 
     const processedFiles = await Promise.all(
       filesToUpload.map(
-        async (file) => (preprocess !== undefined ? await preprocess(file) : file)
-      )
+        async (file) => (preprocess !== undefined ? await preprocess(file) : file),
+      ),
     )
 
     processedFiles.forEach((file) => {
@@ -118,7 +120,6 @@ export default (): UseFileService => {
     })
 
     for (let i = 0; i < promises.length; i += chunkSize ?? Infinity) {
-      // eslint-disable-next-line no-await-in-loop
       await Promise.all(promises.slice(i, i + (chunkSize ?? Infinity)).map(async (promise) => {
         const response = promise()
 

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { useForm, FormElement } from '@wouterlms/forms'
+import { FormElement, useForm } from '@wouterlms/forms'
 
 import {
-  FormLabel,
+  AppButton,
   FormInput,
-  AppButton
+  FormLabel,
 } from '@wouterlms/ui'
 
 import { useResetPasswordFormService, useResetPasswordFormState } from '../composables'

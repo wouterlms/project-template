@@ -24,15 +24,16 @@ const useLoginFormService: FormService<Form<LoginFormState>> = (formState) => {
       lastLoggedInUser.value = user.value
 
       await replace('/')
-    } catch (e) {
+    }
+    catch (e) {
       lastLoginAttemptEmail.value = email
 
       if (
-        e instanceof AxiosError &&
-        e.response !== undefined &&
-        [
+        e instanceof AxiosError
+        && e.response !== undefined
+        && [
           400,
-          401
+          401,
         ].includes(e.response.status)) {
         formState.setErrors({
           email: t('auth.login.invalid_email_or_password'),

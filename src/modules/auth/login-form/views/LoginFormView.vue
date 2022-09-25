@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { useForm, FormElement } from '@wouterlms/forms'
+import { FormElement, useForm } from '@wouterlms/forms'
 import { FormInput, FormLabel } from '@wouterlms/ui'
 
 import {
   useLoginFormService,
-  useLoginFormState
+  useLoginFormState,
 } from '../composables'
 
 import { useLocalStorage } from '@/composables'

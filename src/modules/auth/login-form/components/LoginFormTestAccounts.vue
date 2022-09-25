@@ -11,7 +11,7 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {})
 
-const emit = defineEmits<{(event: 'login', email: string, password: string): void }>()
+const emit = defineEmits<{ (event: 'login', email: string, password: string): void }>()
 
 const { VITE_TEST_ACCOUNTS } = import.meta.env
 
@@ -20,7 +20,7 @@ const testAccountsEnv: string[] = JSON.parse(VITE_TEST_ACCOUNTS ?? '[]')
 const testAccounts = testAccountsEnv.reduce((acc, [
   key,
   email,
-  password
+  password,
 ]) => {
   acc[key] = {
     email,

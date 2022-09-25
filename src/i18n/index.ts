@@ -3,7 +3,7 @@ import { createI18n } from 'vue-i18n'
 import nl from './locales/nl.json'
 
 export enum Locale {
-  NL = 'nl-BE'
+  NL = 'nl-BE',
 }
 
 const messages = {
