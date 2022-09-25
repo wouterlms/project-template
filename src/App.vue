@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { createTheme } from '@wouterlms/ui'
+import {
+  AppToasts,
+  createTheme,
+} from '@wouterlms/ui'
+
 import { icons } from '@/icons'
 
 createTheme({
@@ -11,4 +15,5 @@ createTheme({
 
 <template>
   <RouterView />
+  <AppToasts />
 </template>
