@@ -7,7 +7,6 @@ import AutoImport from 'unplugin-auto-import/vite'
 import svgTransformer from '@wouterlms/svg-transformer'
 import createRouteMap from '@wouterlms/create-route-map'
 
-import eslint from 'vite-plugin-eslint'
 import checker from 'vite-plugin-checker'
 
 // https://vitejs.dev/config/
@@ -24,10 +23,6 @@ export default defineConfig({
         'vue-router',
         'vue-i18n',
       ]
-    }),
-    eslint({
-      cache: true,
-      fix: true,
     }),
     checker({
       typescript: true,  
