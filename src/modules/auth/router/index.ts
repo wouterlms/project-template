@@ -8,7 +8,9 @@ const routes: RouteRecordRaw[] = [
   {
     path: '',
     component: AuthLayout,
-    beforeEnter: assertIsLoggedOut,
+    meta: {
+      middleware: [guest],
+    },
     children: [
       {
         path: 'login',

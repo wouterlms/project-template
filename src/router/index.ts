@@ -1,18 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
-import { assertIsLoggedIn } from './routeGuards'
+import { auth } from '@/middleware'
 
 import authRoutes from '@/modules/auth/router'
 
-import AppLayout from '@/components/layout/AppLayout.vue'
+declare module 'vue-router' {
+  interface RouteMeta {
+    middleware: Array<() => Promise<RouteLocationRaw | undefined>>
+  }
+}
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
       path: '',
-      component: AppLayout,
-      beforeEnter: assertIsLoggedIn,
+      component: import('@/components/layout/AppLayout.vue'),
+      meta: {
+        middleware: [auth],
+      },
       children: [],
     },
     ...authRoutes,
@@ -21,6 +26,19 @@ const router = createRouter({
       redirect: '/',
     },
   ],
+})
+
+router.beforeEach(async (to) => {
+  const middlewares = to.meta.middleware ?? null
+
+  if (middlewares !== null) {
+    for (const middleware of middlewares) {
+      const result = await middleware()
+
+      if (result !== undefined)
+        return result
+    }
+  }
 })
 
 export default router
