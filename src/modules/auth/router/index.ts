@@ -1,8 +1,7 @@
 import type { RouteRecordRaw } from 'vue-router'
 
 import AuthLayout from '../components/AuthLayout.vue'
-
-import { assertIsLoggedOut } from '@/router/routeGuards'
+import { guest } from '@/middleware'
 
 const routes: RouteRecordRaw[] = [
   {
