@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import vueI18n from '@intlify/vite-plugin-vue-i18n'
 
 import svgTransformer from '@wouterlms/svg-transformer'
 import createRouteMap from '@wouterlms/create-route-map'
@@ -23,6 +24,9 @@ export default defineConfig({
         'vue-router',
         'vue-i18n',
       ]
+    }),
+    vueI18n({
+      include: './src/i18n/locales/**'
     }),
     checker({
       typescript: true,  
