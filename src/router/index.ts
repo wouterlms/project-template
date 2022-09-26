@@ -14,7 +14,7 @@ const router = createRouter({
   routes: [
     {
       path: '',
-      component: import('@/components/layout/AppLayout.vue'),
+      component: async () => await import('@/components/layout/AppLayout.vue'),
       meta: {
         middleware: [auth],
       },
