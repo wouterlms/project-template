@@ -13,7 +13,6 @@ import { LocalStorageKey } from '@/enums'
 const { t } = useI18n()
 
 const lastLoggedInUser = useLocalStorage(LocalStorageKey.LAST_LOGGED_IN_USER, null)
-
 const formState = useLoginFormState()
 const { handleSubmit } = useLoginFormService(formState)
 

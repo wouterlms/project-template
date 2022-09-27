@@ -62,7 +62,7 @@ export default (): void => {
   /**
    * Defaults
    */
-  axios.defaults.baseURL = `${VITE_API_BASE_URL as string}/api`
+  axios.defaults.baseURL = `${VITE_API_BASE_URL}/api`
   axios.defaults.headers.common['Accept-Language'] = navigator.language
 
   /**
@@ -92,7 +92,7 @@ export default (): void => {
     ] = VITE_API_BASE_URL.split('.')
 
     // eslint-disable-next-line no-console
-    console.log(`Api environment: ${project.replace('https://', '') as string}.${environment as string}`)
+    console.log(`Api environment: ${project.replace('https://', '')}.${environment}`)
 
     if (environment === 'production')
       console.warn('You\'re using the production environment api')
