@@ -69,9 +69,9 @@ export default (): void => {
    * Request interceptor to convert camelCase to snake_case
    */
   axios.interceptors.request.use(
-    (response) => ({
+    ({ data, ...response }) => ({
       ...response,
-      data: convert(response.data, toSnakeCase),
+      data: convert(data, toSnakeCase),
     }),
   )
 
@@ -79,9 +79,9 @@ export default (): void => {
    * Response interceptor to convert snake_case to camelCase
    */
   axios.interceptors.response.use(
-    (response) => ({
+    ({ data, ...response }) => ({
       ...response,
-      data: convert(response.data, toCamelCase),
+      data: convert(data, toCamelCase),
     }),
   )
 
