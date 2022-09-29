@@ -7,6 +7,7 @@ import vueI18n from '@intlify/vite-plugin-vue-i18n'
 
 import svgTransformer from '@wouterlms/svg-transformer'
 import createRouteMap from '@wouterlms/create-route-map'
+import indexFileGenerator from '@wouterlms/index-file-generator'
 
 import checker from 'vite-plugin-checker'
 
@@ -40,6 +41,7 @@ export default defineConfig({
       basePath: './src',
       outputPath: './src/routes.ts',
     }),
+    indexFileGenerator.default()
   ],
   resolve: {
     alias: [
