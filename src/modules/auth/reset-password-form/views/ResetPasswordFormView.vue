@@ -38,17 +38,17 @@ const loginWithNewCredentials = async (): Promise<void> => {
 
 <template>
   <AuthPage
-    :title="t('auth.reset_password.title')"
+    :title="t('common.reset_password')"
     :description="hasResetPassword
-      ? t('auth.reset_password.success_message')
-      : t('auth.reset_password.description')"
+      ? t('auth.reset_password_form.your_password_has_been_reset')
+      : t('auth.reset_password_form.enter_your_new_password')"
   >
     <div v-if="hasResetPassword">
       <AppButton
         class="w-full"
         @click="loginWithNewCredentials"
       >
-        {{ t('auth.login.action') }}
+        {{ t('common.sign_in') }}
       </AppButton>
     </div>
 
@@ -58,7 +58,7 @@ const loginWithNewCredentials = async (): Promise<void> => {
     >
       <FormSpacer>
         <FormLabel
-          :label="t('form.password')"
+          :label="t('common.password')"
           :error="formObject.password.error ?? formObject.email.error"
         >
           <FormInput
@@ -69,7 +69,7 @@ const loginWithNewCredentials = async (): Promise<void> => {
         </FormLabel>
 
         <FormButton :form="form">
-          {{ t('auth.reset_password.action') }}
+          {{ t('common.reset_password') }}
         </FormButton>
       </FormSpacer>
     </FormElement>

@@ -13,6 +13,8 @@ withDefaults(defineProps<Props>(), {})
 
 const emit = defineEmits<{ (event: 'login', email: string, password: string): void }>()
 
+const { t } = useI18n()
+
 const { VITE_TEST_ACCOUNTS } = import.meta.env
 
 const testAccountsEnv: string[] = JSON.parse(VITE_TEST_ACCOUNTS ?? '[]')
@@ -47,7 +49,7 @@ const testAccounts = testAccountsEnv.reduce((acc, [
     >
       <div class="border-b border-input border-solid p-4">
         <h1 class="font-medium">
-          Meld aan met een test account
+          {{ t('auth.login_form.sign_in_with_a_test_account') }}
         </h1>
       </div>
 

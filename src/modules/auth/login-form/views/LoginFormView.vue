@@ -41,7 +41,7 @@ const handleTestAccountLogin = (email: string, password: string): void => {
 <template>
   <AuthPage
     :title="title"
-    :description="t('auth.login.description')"
+    :description="t('auth.login_form.sign_in_to_continue')"
   >
     <LoginFormTestAccounts
       :form="form"
@@ -51,7 +51,7 @@ const handleTestAccountLogin = (email: string, password: string): void => {
     <FormElement :form="form">
       <FormSpacer>
         <FormLabel
-          :label="t('form.email')"
+          :label="t('common.email')"
           :error="formObject.email.error"
         >
           <FormInput
@@ -62,7 +62,7 @@ const handleTestAccountLogin = (email: string, password: string): void => {
         </FormLabel>
 
         <FormLabel
-          :label="t('form.password')"
+          :label="t('common.password')"
           :error="formObject.password.error"
         >
           <FormInput
@@ -76,7 +76,7 @@ const handleTestAccountLogin = (email: string, password: string): void => {
           :form="form"
           class="w-full"
         >
-          {{ t('auth.login.action') }}
+          {{ t('common.sign_in') }}
         </FormButton>
       </FormSpacer>
     </FormElement>

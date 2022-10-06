@@ -1,53 +1,35 @@
 {
-  "core": {
-    "validation": {
-      "required": "Vereist",
-      "url": "Ongeldige url",
-      "email": "Ongeldig emailadres",
-      "min_length": "Min. {min} tekens",
-      "max_length": "Max. {max} tekens",
-      "min": "Minimum {min}",
-      "max": "Maximum {max}",
-      "min_date": "Minimum {min}",
-      "max_date": "Maximum {max}",
-      "file_size": "Bestand is te groot. Max. {maxFileSize}"
-    }
-  },
-  "auth": {
-    "login": {
-      "title": "Inloggen",
-      "personalised_title": "Welkom terug, {name}",
-      "description": "Meld je aan om verder te gaan",
-      "action": "Inloggen",
-      "invalid_email_or_password": "Email of wachtwoord is niet correct"
-    },
-    "forgot_password": {
-      "title": "Wachtwoord vergeten",
-      "description": "Weet je het wachtwoord niet meer? Vul hieronder je e-mailadres in.",
-      "success_message": "Bedankt, binnen enkele minuten ontvang je een e-mail met daarin een persoonlijke link. Via de link kun je een nieuw wachtwoord opgeven.",
-      "return_to_login": "Terug naar inloggen",
-      "action": "Verzenden"
-    },
-    "reset_password": {
-      "title": "Wachtwoord opnieuw instellen",
-      "description": "Vul je nieuw wachtwoord in",
-      "success_message": "Je wachtwoord is opnieuw ingesteld, je kan je nu hiermee aanmelden",
-      "action": "Wachtwoord instellen"
-    }
-  },
-  "general": {
-    "loading": "Aan het laden",
-    "something_went_wrong": "Er is iets fout gegaan"
-  },
-  "form": {
-    "email": "Emailadres",
-    "password": "Wachtwoord"
-  },
-  "http_error": {
-    "bad_request": "Foute aanvraag",
-    "unauthorized": "Niet geauthorizeed",
-    "forbidden": "Verboden toegang",
-    "not_found": "Niet gevonden",
-    "server_error": "Server fout"
-  }
+  "auth.forgot_password_form.dont_remember_your_password_enter": "Don't remember your password? Enter your email address below.",
+  "auth.forgot_password_form.forgot_password": "Forgot password?",
+  "auth.forgot_password_form.return_to_login": "Return to login",
+  "auth.forgot_password_form.send": "Send",
+  "auth.forgot_password_form.thank_you_within_a_few": "Thank you, within a few minutes you will receive an e-mail containing a personal link. The link will allow you to enter a new password.",
+  "auth.login_form.invalid_email_or_password": "Invalid email or password",
+  "auth.login_form.sign_in_to_continue": "Sign in to continue",
+  "auth.login_form.sign_in_with_a_test_account": "Sign in with a test account",
+  "auth.reset_password_form.enter_your_new_password": "Enter your new password",
+  "auth.reset_password_form.your_password_has_been_reset": "Your password has been reset you can now log in with this",
+
+  "common.email": "Email",
+  "common.password": "Password",
+  "common.reset_password": "Reset password",
+  "common.sign_in": "Sign in",
+
+  "core.validation.email": "Invalid email",
+  "core.validation.file_size": "File is too large. Max. {maxFileSize}",
+  "core.validation.max": "Maximum {max}",
+  "core.validation.max_date": "Maximum {max}",
+  "core.validation.max_length": "max. {max} characters",
+  "core.validation.min": "Minimum {min}",
+  "core.validation.min_date": "Minimum {min}",
+  "core.validation.min_length": "Min. {min} characters",
+  "core.validation.required": "Required",
+  "core.validation.url": "Invalid url",
+
+  "suspense.bad_request": "Bad Request",
+  "suspense.forbidden": "Forbidden",
+  "suspense.not_found": "Not Found",
+  "suspense.server_error": "Server Error",
+  "suspense.something_went_wrong": "Something went wrong",
+  "suspense.unauthorized": "Unauthorized"
 }

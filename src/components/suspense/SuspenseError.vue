@@ -9,11 +9,11 @@ withDefaults(defineProps<Props>(), {})
 const { t } = useI18n()
 
 const httpErrorMap = new Map<string, string>(Object.entries({
-  400: t('http_error.bad_request'),
-  401: t('http_error.unauthorized'),
-  403: t('http_error.forbidden'),
-  404: t('http_error.not_found'),
-  500: t('http_error.server_error'),
+  400: t('suspense.bad_request'),
+  401: t('suspense.unauthorized'),
+  403: t('suspense.forbidden'),
+  404: t('suspense.not_found'),
+  500: t('suspense.server_error'),
 }))
 </script>
 
@@ -26,7 +26,7 @@ const httpErrorMap = new Map<string, string>(Object.entries({
     <div class="px-4 text-tertiary/75 tracking-wider uppercase">
       {{ message
         ?? httpErrorMap.get(`${status}`)
-        ?? t('general.something_went_wrong')
+        ?? t('suspense.something_went_wrong')
       }}
     </div>
   </div>

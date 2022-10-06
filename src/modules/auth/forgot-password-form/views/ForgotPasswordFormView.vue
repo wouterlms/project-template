@@ -26,10 +26,10 @@ onBeforeUnmount(() => {
 
 <template>
   <AuthPage
-    :title="t('auth.forgot_password.title')"
+    :title="t('auth.forgot_password_form.forgot_password')"
     :description="hasSentEmail
-      ? t('auth.forgot_password.success_message')
-      : t('auth.forgot_password.description')"
+      ? t('auth.forgot_password_form.thank_you_within_a_few')
+      : t('auth.forgot_password_form.dont_remember_your_password_enter')"
   >
     <AppLink
       is="RouterLink"
@@ -38,7 +38,7 @@ onBeforeUnmount(() => {
         name: Route.LOGIN,
       }"
     >
-      {{ t('auth.forgot_password.return_to_login') }}
+      {{ t('auth.forgot_password_form.return_to_login') }}
     </AppLink>
 
     <FormElement
@@ -47,7 +47,7 @@ onBeforeUnmount(() => {
     >
       <FormSpacer>
         <FormLabel
-          :label="t('form.email')"
+          :label="t('common.email')"
           :error="formObject.email.error"
         >
           <FormInput
@@ -61,7 +61,7 @@ onBeforeUnmount(() => {
           :form="form"
           class="w-full"
         >
-          {{ t('auth.forgot_password.action') }}
+          {{ t('auth.forgot_password_form.send') }}
         </FormButton>
       </FormSpacer>
     </FormElement>

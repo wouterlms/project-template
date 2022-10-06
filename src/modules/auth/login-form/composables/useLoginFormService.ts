@@ -36,7 +36,7 @@ const useLoginFormService: FormService<Form<LoginFormState>> = (formState) => {
           401,
         ].includes(e.response.status)) {
         formState.setErrors({
-          email: t('auth.login.invalid_email_or_password'),
+          email: t('auth.login_form.invalid_email_or_password'),
           password: true,
         })
       }
