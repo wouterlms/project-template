@@ -17,8 +17,8 @@ const formState = useLoginFormState()
 const { handleSubmit } = useLoginFormService(formState)
 
 const title = lastLoggedInUser.value === null
-  ? t('auth.login.title')
-  : t('auth.login.personalised_title', { name: lastLoggedInUser.value.firstName })
+  ? t('common.sign_in')
+  : t('auth.login_form.welcome_back', { name: lastLoggedInUser.value.firstName })
 
 const form = useForm(formState, {
   handleSubmit,

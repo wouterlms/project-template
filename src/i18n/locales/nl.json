@@ -7,6 +7,7 @@
   "auth.login_form.invalid_email_or_password": "Invalid email or password",
   "auth.login_form.sign_in_to_continue": "Sign in to continue",
   "auth.login_form.sign_in_with_a_test_account": "Sign in with a test account",
+  "auth.login_form.welcome_back": "Welcome back, {name}",
   "auth.reset_password_form.enter_your_new_password": "Enter your new password",
   "auth.reset_password_form.your_password_has_been_reset": "Your password has been reset you can now log in with this",
 
