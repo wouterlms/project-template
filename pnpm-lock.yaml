@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@antfu/eslint-config': ^0.27.0
-  '@appwise/vue-oauth2': ^0.0.13
+  '@appwise/vue-oauth2': ^0.0.16
   '@intlify/vite-plugin-vue-i18n': ^6.0.2
   '@tailwindcss/line-clamp': ^0.4.2
   '@vitejs/plugin-vue': ^3.1.0
@@ -41,7 +41,7 @@ specifiers:
   vue-tsc: ^0.40.4
 
 dependencies:
-  '@appwise/vue-oauth2': registry.npmjs.org/@appwise/vue-oauth2/0.0.13_axios@0.27.2
+  '@appwise/vue-oauth2': registry.npmjs.org/@appwise/vue-oauth2/0.0.16_axios@0.27.2
   '@vue/runtime-core': 3.2.39
   '@wouterlms/composables': 0.2.18_93a9fcc5827aa88ed2489bdfcf5795f1
   '@wouterlms/forms': registry.npmjs.org/@wouterlms/forms/0.2.20_39ada1250c8926d47357db88ddd0fb40
@@ -6402,11 +6402,11 @@ packages:
     resolution: {integrity: sha512-JZxotl7SxAJH0j7dN4pxsTV6ZLXoLdGME+PsjkL/DaBrVryK9kTGq06GfKrwcSOqypP+fdXGoCHE36b99fWVoA==}
     dev: true
 
-  registry.npmjs.org/@appwise/vue-oauth2/0.0.13_axios@0.27.2:
-    resolution: {integrity: sha512-aODSsgaIjw6pKuVxwVYTySFKT9Or1T6qXG3VRValRuViAUh3kLiMdEOBLGhufibai6euq7XFHosXAv8t/V9+Yg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@appwise/vue-oauth2/-/vue-oauth2-0.0.13.tgz}
-    id: registry.npmjs.org/@appwise/vue-oauth2/0.0.13
+  registry.npmjs.org/@appwise/vue-oauth2/0.0.16_axios@0.27.2:
+    resolution: {integrity: sha512-jdOFmugT80oyxuCf26z35Mh6JNIlNqzZIL65DBXO/3RC4ho/eJnE4dZA8ylS+gaRo/+webemx0cXbZYN2YNExQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@appwise/vue-oauth2/-/vue-oauth2-0.0.16.tgz}
+    id: registry.npmjs.org/@appwise/vue-oauth2/0.0.16
     name: '@appwise/vue-oauth2'
-    version: 0.0.13
+    version: 0.0.16
     peerDependencies:
       axios: ^0.27.2
     dependencies:
