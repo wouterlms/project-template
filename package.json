@@ -11,7 +11,7 @@
     "build": "vue-tsc --noEmit && vite build"
   },
   "dependencies": {
-    "@appwise/vue-oauth2": "^0.0.5",
+    "@appwise/vue-oauth2": "^0.0.13",
     "@vue/runtime-core": "^3.2.39",
     "@wouterlms/composables": "^0.2.18",
     "@wouterlms/forms": "^0.2.20",
