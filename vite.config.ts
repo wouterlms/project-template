@@ -32,16 +32,16 @@ export default defineConfig({
     checker({
       typescript: true,  
     }),
-    svgTransformer.default({
+    svgTransformer({
       svgFolderPath: './src/assets/svg',
       outputPath: './src/icons.ts',
       basePath: './src'
     }),
-    createRouteMap.default({
+    createRouteMap({
       basePath: './src',
       outputPath: './src/routes.ts',
     }),
-    indexFileGenerator.default()
+    indexFileGenerator()
   ],
   resolve: {
     alias: [

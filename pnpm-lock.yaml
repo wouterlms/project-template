@@ -8,10 +8,10 @@ specifiers:
   '@vitejs/plugin-vue': ^3.1.0
   '@vue/runtime-core': ^3.2.39
   '@wouterlms/composables': ^0.2.18
-  '@wouterlms/create-route-map': ^1.0.1
+  '@wouterlms/create-route-map': ^1.0.3
   '@wouterlms/forms': ^0.2.20
-  '@wouterlms/index-file-generator': ^0.0.3
-  '@wouterlms/svg-transformer': ^1.0.3
+  '@wouterlms/index-file-generator': ^0.0.6
+  '@wouterlms/svg-transformer': ^1.0.5
   '@wouterlms/ui': ^0.3.67
   autoprefixer: ^10.4.10
   axios: ^0.27.2
@@ -57,9 +57,9 @@ devDependencies:
   '@intlify/vite-plugin-vue-i18n': registry.npmjs.org/@intlify/vite-plugin-vue-i18n/6.0.2_vite@3.1.0+vue-i18n@9.2.2
   '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.1.8
   '@vitejs/plugin-vue': 3.1.0_vite@3.1.0+vue@3.2.39
-  '@wouterlms/create-route-map': 1.0.1
-  '@wouterlms/index-file-generator': registry.npmjs.org/@wouterlms/index-file-generator/0.0.3
-  '@wouterlms/svg-transformer': registry.npmjs.org/@wouterlms/svg-transformer/1.0.3
+  '@wouterlms/create-route-map': registry.npmjs.org/@wouterlms/create-route-map/1.0.3
+  '@wouterlms/index-file-generator': registry.npmjs.org/@wouterlms/index-file-generator/0.0.6
+  '@wouterlms/svg-transformer': registry.npmjs.org/@wouterlms/svg-transformer/1.0.5
   autoprefixer: 10.4.10_postcss@8.4.16
   eslint: 8.23.1
   eslint-config-appwise: 1.0.6
@@ -2279,10 +2279,6 @@ packages:
     transitivePeerDependencies:
       - eslint-plugin-import
     dev: false
-
-  /@wouterlms/create-route-map/1.0.1:
-    resolution: {integrity: sha512-xbdaB3NkfbHxdDVA6UeEbyL4Y4alwnNawktRDUi1sut9DkjaV7T8jkPX51ve1VLaqZ8JaLhWbVLB0CIWl6O36A==}
-    dev: true
 
   /acorn-node/1.8.2:
     resolution: {integrity: sha512-8mt+fslDufLYntIoPAaIMUe/lrbrehIiwmR3t2k9LljIzoigEPF27eLk2hy8zSGzmR/ogr7zbRKINMo1u0yh5A==}
@@ -6703,6 +6699,12 @@ packages:
       - eslint-plugin-import
     dev: false
 
+  registry.npmjs.org/@wouterlms/create-route-map/1.0.3:
+    resolution: {integrity: sha512-u0nVWG+or/n6ev917CX1iUyP4t+n8hd3gw9u6xypWLtXq2h8C8LhuZLYODA3ZsDOIP5vcwPmYA4n7m20Injv7Q==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@wouterlms/create-route-map/-/create-route-map-1.0.3.tgz}
+    name: '@wouterlms/create-route-map'
+    version: 1.0.3
+    dev: true
+
   registry.npmjs.org/@wouterlms/forms/0.2.20_39ada1250c8926d47357db88ddd0fb40:
     resolution: {integrity: sha512-1sKADwUjdUEF4y/TSblWfzf3ggyySqyxLZnbqFT4sLgKebkYJjAlQehPf9jBZdtDixe/ViHJMT0mwCqyP7RhVA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@wouterlms/forms/-/forms-0.2.20.tgz}
     id: registry.npmjs.org/@wouterlms/forms/0.2.20
@@ -6720,16 +6722,16 @@ packages:
       - eslint-plugin-import
     dev: false
 
-  registry.npmjs.org/@wouterlms/index-file-generator/0.0.3:
-    resolution: {integrity: sha512-KY0/e2aMqlzvZpmxZ1UwfnTh+0Kfe+HO6HavpLMYNrjb7JfGpUMl2Xl3CrETbJpXbCVq8pbYuMy2DQ3ebwUqMg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@wouterlms/index-file-generator/-/index-file-generator-0.0.3.tgz}
+  registry.npmjs.org/@wouterlms/index-file-generator/0.0.6:
+    resolution: {integrity: sha512-43CTsaEBajRDhOctLJK2f2Hbfi7SL2LxzgNXpMsKVzbjTM3UjO1HsJGpCu8SsmDXt9a4WZD5pzGkRaJW5CwvKA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@wouterlms/index-file-generator/-/index-file-generator-0.0.6.tgz}
     name: '@wouterlms/index-file-generator'
-    version: 0.0.3
+    version: 0.0.6
     dev: true
 
-  registry.npmjs.org/@wouterlms/svg-transformer/1.0.3:
-    resolution: {integrity: sha512-4dR23ATWhPj62/wMGCf9KRXgQoo95NhMNGOJfTGMC3ogbgjqijHfnDupXusfm2y3o++FEE1MhAsRu91hacp/Cg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@wouterlms/svg-transformer/-/svg-transformer-1.0.3.tgz}
+  registry.npmjs.org/@wouterlms/svg-transformer/1.0.5:
+    resolution: {integrity: sha512-7wiUHaKCgSaWrz3ax63mewaqptfV9Qx11MH1bvgbDid79gb3NWXLkgokmiAC4kfuX+57Y+KXaYVlcCNDce2eQA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@wouterlms/svg-transformer/-/svg-transformer-1.0.5.tgz}
     name: '@wouterlms/svg-transformer'
-    version: 1.0.3
+    version: 1.0.5
     dev: true
 
   registry.npmjs.org/@wouterlms/ui/0.3.67_c11da4043dadded1b340d27ead2d33f9:
