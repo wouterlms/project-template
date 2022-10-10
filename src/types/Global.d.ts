@@ -1,3 +1,3 @@
 type Nullable<T> = T | null
 
-type Optional<T, K> = Omit<T, K> & { [P in K]?: T[K] }
+type Optional<T, K extends keyof T> = Omit<T, K> & { [P in K]?: T[K] }

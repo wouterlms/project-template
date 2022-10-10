@@ -3,12 +3,6 @@ import { auth } from '@/middleware'
 
 import authRoutes from '@/modules/auth/router'
 
-declare module 'vue-router' {
-  interface RouteMeta {
-    middleware: Array<() => Promise<RouteLocationRaw | undefined>>
-  }
-}
-
 const router = createRouter({
   history: createWebHistory(),
   routes: [

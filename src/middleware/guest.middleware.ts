@@ -1,6 +1,7 @@
 import { useAuth } from '@/composables'
+import type { RouteGuard } from '@/types'
 
-export default async (): Promise<string | undefined> => {
+const guest: RouteGuard = async () => {
   const { getUser } = useAuth()
 
   try {
@@ -9,3 +10,5 @@ export default async (): Promise<string | undefined> => {
   }
   catch {}
 }
+
+export default guest

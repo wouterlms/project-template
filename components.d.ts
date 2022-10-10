@@ -8,20 +8,14 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     App: typeof import('./src/App.vue')['default']
-    AppCenter: typeof import('./src/components/ui/AppCenter.vue')['default']
     AppLayout: typeof import('./src/components/layout/AppLayout.vue')['default']
     AppLink: typeof import('./src/components/elements/AppLink.vue')['default']
-    AsyncComponent: typeof import('./src/AsyncComponent.vue')['default']
-    AsyncView: typeof import('./src/AsyncView.vue')['default']
     AuthLayout: typeof import('./src/modules/auth/components/AuthLayout.vue')['default']
     AuthPage: typeof import('./src/modules/auth/components/AuthPage.vue')['default']
     CenterContent: typeof import('./src/components/ui/CenterContent.vue')['default']
-    ErrorMessage: typeof import('./src/components/ui/ErrorMessage.vue')['default']
     ForgotPasswordFormView: typeof import('./src/modules/auth/forgot-password-form/views/ForgotPasswordFormView.vue')['default']
     FormButton: typeof import('./src/components/form/FormButton.vue')['default']
-    FormGrid: typeof import('./src/components/form/FormGrid.vue')['default']
     FormSpacer: typeof import('./src/components/form/FormSpacer.vue')['default']
-    LoginForm: typeof import('./src/modules/auth/login-form/views/LoginForm.vue')['default']
     LoginFormTestAccounts: typeof import('./src/modules/auth/login-form/components/LoginFormTestAccounts.vue')['default']
     LoginFormView: typeof import('./src/modules/auth/login-form/views/LoginFormView.vue')['default']
     ResetPasswordFormView: typeof import('./src/modules/auth/reset-password-form/views/ResetPasswordFormView.vue')['default']
@@ -29,7 +23,5 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     SuspenseError: typeof import('./src/components/suspense/SuspenseError.vue')['default']
     SuspenseWrapper: typeof import('./src/components/suspense/SuspenseWrapper.vue')['default']
-    Test: typeof import('./src/Test.vue')['default']
-    UserForm: typeof import('./src/modules/user/user-form/views/UserForm.vue')['default']
   }
 }
