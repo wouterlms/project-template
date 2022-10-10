@@ -8,7 +8,7 @@ import vueI18n from '@intlify/vite-plugin-vue-i18n'
 import svgTransformer from '@wouterlms/svg-transformer'
 import createRouteMap from '@wouterlms/create-route-map'
 
-import checker from 'vite-plugin-checker'
+import { checker } from 'vite-plugin-checker'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -23,18 +23,18 @@ export default defineConfig({
         'vue',
         'vue-router',
         'vue-i18n',
-      ]
+      ],
     }),
     vueI18n({
-      include: './src/i18n/locales/**'
+      include: './src/i18n/locales/**',
     }),
     checker({
-      typescript: true,  
+      typescript: true,
     }),
     svgTransformer({
       svgFolderPath: './src/assets/svg',
       outputPath: './src/icons.ts',
-      basePath: './src'
+      basePath: './src',
     }),
     createRouteMap({
       basePath: './src',
@@ -46,10 +46,10 @@ export default defineConfig({
       {
         find: '@',
         replacement: '/src',
-      }
+      },
     ],
   },
   server: {
-    port: 3000
-  }
+    port: 3000,
+  },
 })

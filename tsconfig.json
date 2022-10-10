@@ -21,12 +21,12 @@
     },
   },
   "include": [
+    "vite.config.ts",
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.vue",
     "auto-imports.d.ts",
-    "components.d.ts",
-    "src/types/Global.d.ts"
+    "components.d.ts"
   ],
   "references": [
     {
