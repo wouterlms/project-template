@@ -23,5 +23,6 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     SuspenseError: typeof import('./src/components/suspense/SuspenseError.vue')['default']
     SuspenseWrapper: typeof import('./src/components/suspense/SuspenseWrapper.vue')['default']
+    Test: typeof import('./src/modules/Test.vue')['default']
   }
 }

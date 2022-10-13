@@ -24,5 +24,8 @@
     "parser": "@typescript-eslint/parser",
     "project": "./tsconfig.json",
     "extraFileExtensions": [".vue"]
+  },
+  "rules": {
+    "import/no-unresolved": "error"
   }
 }

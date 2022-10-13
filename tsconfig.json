@@ -22,6 +22,7 @@
   },
   "include": [
     "vite.config.ts",
+    "tailwind.config.cjs",
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.vue",
