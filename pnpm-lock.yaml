@@ -25,6 +25,7 @@ specifiers:
   eslint-plugin-putout: ^16.3.0
   eslint-plugin-unused-imports: ^2.0.0
   eslint-plugin-vue: ^9.4.0
+  husky: ^8.0.1
   postcss: ^8.4.16
   putout: ^27.8.0
   tailwindcss: ^3.1.8
@@ -69,6 +70,7 @@ devDependencies:
   eslint-plugin-putout: 16.3.0_lchltt2z7cdvmg5vgzyt2cmf3y
   eslint-plugin-unused-imports: 2.0.0_eslint@8.23.1
   eslint-plugin-vue: 9.5.1_eslint@8.23.1
+  husky: registry.npmjs.org/husky/8.0.1
   postcss: 8.4.16
   putout: 27.13.0
   tailwindcss: 3.1.8_postcss@8.4.16
@@ -7176,6 +7178,14 @@ packages:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/he/-/he-1.2.0.tgz}
     name: he
     version: 1.2.0
+    hasBin: true
+    dev: true
+
+  registry.npmjs.org/husky/8.0.1:
+    resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/husky/-/husky-8.0.1.tgz}
+    name: husky
+    version: 8.0.1
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
