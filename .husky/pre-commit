@@ -1,4 +1,11 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-tsc --noEmit
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ "$branch" = "production" ]; then
+  echo "You can't commit directly to production branch"
+  exit 1
+fi
+
+vue-tsc --noEmit & npm run lint
