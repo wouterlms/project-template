@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { auth } from '@/middleware'
 
 import authRoutes from '@/modules/auth/router'
 
@@ -9,9 +8,9 @@ const router = createRouter({
     {
       path: '',
       component: async () => await import('@/components/layout/AppLayout.vue'),
-      meta: {
-        middleware: [auth],
-      },
+      // meta: {
+      //   // middleware: [auth],
+      // },
       children: [],
     },
     ...authRoutes,
