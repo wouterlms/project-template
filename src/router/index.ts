@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import authRoutes from '@/modules/auth/router'
+import { auth } from '@/middleware'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -8,10 +9,15 @@ const router = createRouter({
     {
       path: '',
       component: async () => await import('@/components/layout/AppLayout.vue'),
-      // meta: {
-      //   // middleware: [auth],
-      // },
-      children: [],
+      meta: {
+        middleware: [auth],
+      },
+      children: [
+        {
+          path: '',
+          component: async () => await import('@/TempView.vue'),
+        },
+      ],
     },
     ...authRoutes,
     {

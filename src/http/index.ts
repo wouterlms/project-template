@@ -62,18 +62,18 @@ export default (): void => {
   /**
    * Defaults
    */
-  axios.defaults.baseURL = `${VITE_API_BASE_URL}/api/v1`
+  axios.defaults.baseURL = `${VITE_API_BASE_URL}/api`
   axios.defaults.headers.common['Accept-Language'] = navigator.language
 
   /**
    * Request interceptor to convert camelCase to snake_case
    */
-  // axios.interceptors.request.use(
-  //   ({ data, ...response }) => ({
-  //     ...response,
-  //     data: convert(data, toSnakeCase),
-  //   }),
-  // )
+  axios.interceptors.request.use(
+    ({ data, ...response }) => ({
+      ...response,
+      data: convert(data, toSnakeCase),
+    }),
+  )
 
   /**
    * Response interceptor to convert snake_case to camelCase
