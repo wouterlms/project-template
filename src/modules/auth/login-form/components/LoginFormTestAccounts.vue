@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { AppFocusable, AppIcon } from '@wouterlms/ui'
 import type { useForm } from '@wouterlms/forms'
+import { Icon } from '@wouterlms/icons'
 
 import type { LoginFormState } from '@/types'
-import { Icon } from '@/icons'
 
 interface Props {
   form: ReturnType<typeof useForm<LoginFormState>>

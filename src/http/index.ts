@@ -1,4 +1,7 @@
-import axios from 'axios'
+import axios,
+{
+  AxiosError,
+} from 'axios'
 
 const { VITE_API_BASE_URL } = import.meta.env
 
@@ -30,12 +33,46 @@ const convert = (obj: unknown, handler: (str: string) => string): unknown => {
   }, {})
 }
 
+const log = ({ request, response }: AxiosError): void => {
+  if (response === undefined)
+    return
+
+  const { status, config: { url, method } } = response
+
+  const timestamp = new Date().toLocaleTimeString()
+
+  if (method === undefined || url === undefined)
+    return
+
+  /* eslint-disable no-console */
+  console.groupCollapsed(
+    `%c[API] ${timestamp} ${method.toUpperCase()} %c${url} %c(${status})`,
+    'font-weight: bold;',
+    'font-weight: bold; color: #5f6367;',
+    'color: #e95f5d; font-weight: bold;',
+  )
+  console.log('Request', request)
+  console.log('Response', response)
+  console.groupEnd()
+  /* eslint-enable no-console */
+}
+
 export default (): void => {
   /**
    * Defaults
    */
   axios.defaults.baseURL = `${VITE_API_BASE_URL}/api`
   axios.defaults.headers.common['Accept-Language'] = navigator.language
+
+  /**
+   * Logger
+   */
+  axios.interceptors.response.use((r) => r, (e) => {
+    if (e instanceof AxiosError)
+      log(e)
+
+    throw e
+  })
 
   /**
    * Request interceptor to convert camelCase to snake_case

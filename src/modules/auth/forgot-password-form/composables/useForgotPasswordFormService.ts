@@ -14,7 +14,7 @@ const useForgotPasswordFormService: FormService<Form<ForgotPasswordFormState>> =
     const { email } = formState.getData()
 
     try {
-      await authService.forgotPassword(email)
+      await authService.forgotPassword({ email })
       hasSentEmail.value = true
     }
     catch (e) {

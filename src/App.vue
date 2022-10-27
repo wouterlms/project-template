@@ -5,7 +5,6 @@ import {
 } from '@wouterlms/ui'
 
 createTheme({
-  icons: {},
   colors: {},
   enableDarkMode: true,
 })

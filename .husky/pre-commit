@@ -8,4 +8,5 @@ if [ "$branch" = "production" ]; then
   exit 1
 fi
 
-vue-tsc --noEmit & npm run lint
+# vue-tsc --noEmit & npm run lint
+npm run validate

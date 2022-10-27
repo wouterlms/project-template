@@ -3,7 +3,7 @@ import { defineProps, withDefaults } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 
 import { AppIcon } from '@wouterlms/ui'
-import { Icon } from '@/icons'
+import { Icon } from '@wouterlms/icons'
 
 interface Props {
   to?: RouteLocationRaw

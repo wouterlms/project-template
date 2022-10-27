@@ -9,13 +9,14 @@ import {
   useToasts,
 } from '@wouterlms/ui'
 
+import { Icon } from '@wouterlms/icons'
+
 import { useResetPasswordFormService, useResetPasswordFormState } from '../composables'
 
 import { useResetPasswordStore } from '@/stores'
 import { useAuth } from '@/composables'
 
 import { Route } from '@/routes'
-import { Icon } from '@/icons'
 
 const { t } = useI18n()
 const { replace } = useRouter()
