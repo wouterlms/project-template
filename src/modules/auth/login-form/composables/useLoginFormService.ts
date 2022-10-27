@@ -40,6 +40,9 @@ const useLoginFormService: FormService<Form<LoginFormState>> = (formState) => {
           password: true,
         })
       }
+      else {
+        throw e
+      }
     }
   }
 

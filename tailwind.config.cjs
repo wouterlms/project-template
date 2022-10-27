@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const themeSwapper = require('tailwindcss-theme-swapper')
 
 module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{vue,ts}",
+    './index.html',
+    './src/**/*.{vue,ts}',
   ],
   theme: {
     extend: {
@@ -18,10 +19,10 @@ module.exports = {
         6: 6,
         7: 7,
         8: 8,
-        9: 9
+        9: 9,
       },
       boxShadow: {
-        card: 'rgb(0 0 0 / 2%) 0px 2px 4px'
+        card: 'rgb(0 0 0 / 2%) 0px 2px 4px',
       },
     },
   },
@@ -46,7 +47,7 @@ module.exports = {
                 secondary: '#e1e2e8',
                 tertiary: '#b8b9be',
                 quaternary: '#9c9c9c',
-              }
+              },
             },
             textColor: {
               primary: '#272c33',
@@ -58,19 +59,19 @@ module.exports = {
               primary: '#ffffff',
               secondary: '#F8F9FD',
               tertiary: '#EFEFF4',
-              input: '#ffffff'
+              input: '#ffffff',
             },
             borderColor: {
               primary: '#dcdfe6',
               secondary: '#e4e7ed',
               tertiary: '#ebeef5',
-              input: '#dcdfe6'
+              input: '#dcdfe6',
             },
           },
         },
         {
           name: 'dark',
-          selectors: ["[data-theme='dark']"],
+          selectors: ['[data-theme=\'dark\']'],
           theme: {
             colors: {
               accent: {
@@ -85,29 +86,29 @@ module.exports = {
                 secondary: '#212225',
                 tertiary: '#26272a',
                 quaternary: '#2b2c2f',
-              }
+              },
             },
             textColor: {
               primary: '#ffffff',
               secondary: '#d6d6d6',
               tertiary: '#969696',
-              input: '#eeeeee'
+              input: '#eeeeee',
             },
             backgroundColor: {
               primary: '#1C1C1E',
               secondary: '#2C2C2E',
               tertiary: '#3A3A3C',
-              input: '#18191c'
+              input: '#18191c',
             },
             borderColor: {
               primary: '#343539',
               secondary: '#2f3034',
               tertiary: '#2A2B2F',
-              input: '#0a0a0a'
+              input: '#0a0a0a',
             },
           },
-        }
-      ]
-    })
+        },
+      ],
+    }),
   ],
 }

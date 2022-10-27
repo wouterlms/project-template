@@ -9,18 +9,22 @@ withDefaults(defineProps<Props>(), {})
 
 <template>
   <div>
-    <h1 class="font-medium text-2xl">
+    <AppTypography
+      variant="display-2"
+      class="font-medium"
+    >
       {{ title }}
-    </h1>
+    </AppTypography>
 
-    <p
+    <AppTypography
       v-if="description"
-      class="mt-2"
+      variant="body-2"
+      class="mt-1"
     >
       {{ description }}
-    </p>
+    </AppTypography>
 
-    <div class="mt-4">
+    <div class="mt-6">
       <slot />
     </div>
   </div>

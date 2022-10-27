@@ -12,12 +12,7 @@ const router = createRouter({
       meta: {
         middleware: [auth],
       },
-      children: [
-        {
-          path: '',
-          component: async () => await import('@/TempView.vue'),
-        },
-      ],
+      children: [],
     },
     ...authRoutes,
     {

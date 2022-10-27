@@ -12,4 +12,5 @@ export default (): UseAuth<Profile> => useAuth<Profile>({
   baseURL: VITE_API_BASE_URL,
   clientId: VITE_CLIENT_ID,
   clientSecret: VITE_CLIENT_SECRET,
+  snakeCase: true,
 })

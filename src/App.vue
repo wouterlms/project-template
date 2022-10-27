@@ -4,10 +4,8 @@ import {
   createTheme,
 } from '@wouterlms/ui'
 
-import { icons } from '@/icons'
-
 createTheme({
-  icons,
+  icons: {},
   colors: {},
   enableDarkMode: true,
 })

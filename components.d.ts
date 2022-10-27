@@ -8,8 +8,15 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     App: typeof import('./src/App.vue')['default']
+    AppBreadcrumbItem: typeof import('./src/components/elements/AppBreadcrumbItem.vue')['default']
+    AppBreadcrumbs: typeof import('./src/components/elements/AppBreadcrumbs.vue')['default']
+    AppContainer: typeof import('./src/components/layout/AppContainer.vue')['default']
+    AppIcon: typeof import('./src/components/elements/AppIcon.vue')['default']
     AppLayout: typeof import('./src/components/layout/AppLayout.vue')['default']
     AppLink: typeof import('./src/components/elements/AppLink.vue')['default']
+    AppPageContent: typeof import('./src/components/layout/AppPageContent.vue')['default']
+    AppPageHeader: typeof import('./src/components/layout/AppPageHeader.vue')['default']
+    AppTypography: typeof import('./src/components/typography/AppTypography.vue')['default']
     AuthLayout: typeof import('./src/modules/auth/components/AuthLayout.vue')['default']
     AuthPage: typeof import('./src/modules/auth/components/AuthPage.vue')['default']
     CenterContent: typeof import('./src/components/ui/CenterContent.vue')['default']
@@ -23,6 +30,5 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     SuspenseError: typeof import('./src/components/suspense/SuspenseError.vue')['default']
     SuspenseWrapper: typeof import('./src/components/suspense/SuspenseWrapper.vue')['default']
-    Test: typeof import('./src/modules/Test.vue')['default']
   }
 }

@@ -11,8 +11,8 @@ withDefaults(defineProps<Props>(), {})
 
 <template>
   <AppFocusable
-    is="RouterLink"
     :to="to"
+    as="RouterLink"
     class="underline"
   >
     <slot />

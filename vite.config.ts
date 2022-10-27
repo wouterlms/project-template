@@ -5,14 +5,16 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import vueI18n from '@intlify/vite-plugin-vue-i18n'
 
-import svgTransformer from '@wouterlms/svg-transformer'
 import createRouteMap from '@wouterlms/create-route-map'
+
+import iconTransformer from '@wouterlms/icons/transformer'
 
 import { checker } from 'vite-plugin-checker'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    iconTransformer(),
     vue(),
     Components({
       dirs: ['./src'],
@@ -30,11 +32,6 @@ export default defineConfig({
     }),
     checker({
       typescript: true,
-    }),
-    svgTransformer({
-      svgFolderPath: './src/assets/svg',
-      outputPath: './src/icons.ts',
-      basePath: './src',
     }),
     createRouteMap({
       basePath: './src',

@@ -1,9 +1,5 @@
 import axios from 'axios'
 
-import type { AxiosResponse } from 'axios'
-
-import { setupCache } from 'axios-cache-adapter'
-
 const { VITE_API_BASE_URL } = import.meta.env
 
 const toCamelCase = (str: string): string => (
@@ -36,30 +32,6 @@ const convert = (obj: unknown, handler: (str: string) => string): unknown => {
 
 export default (): void => {
   /**
-   * Cache setup
-   */
-  const cache = setupCache({
-    store: {
-      getItem: (key: string) => {
-        const item = sessionStorage.getItem(key) ?? null
-
-        if (item !== null)
-          return JSON.parse(item)
-
-        return null
-      },
-      setItem: (key: string, response: AxiosResponse) => {
-        sessionStorage.setItem(key, JSON.stringify(response))
-      },
-      removeItem: (key: string) => {
-        sessionStorage.removeItem(key)
-      },
-    },
-  })
-
-  axios.defaults.adapter = cache.adapter
-
-  /**
    * Defaults
    */
   axios.defaults.baseURL = `${VITE_API_BASE_URL}/api`
@@ -69,20 +41,28 @@ export default (): void => {
    * Request interceptor to convert camelCase to snake_case
    */
   axios.interceptors.request.use(
-    ({ data, ...response }) => ({
-      ...response,
-      data: convert(data, toSnakeCase),
-    }),
+    ({ data, ...request }) => {
+      const isOAuth = request.url?.split('/')[1] === 'oauth' ?? false
+
+      return ({
+        ...request,
+        data: isOAuth ? data : convert(data, toSnakeCase),
+      })
+    },
   )
 
   /**
    * Response interceptor to convert snake_case to camelCase
    */
   axios.interceptors.response.use(
-    ({ data, ...response }) => ({
-      ...response,
-      data: convert(data, toCamelCase),
-    }),
+    ({ data, ...response }) => {
+      const isOAuth = response.config.url?.split('/')[1] === 'oauth' ?? false
+
+      return {
+        ...response,
+        data: isOAuth ? data : convert(data, toCamelCase),
+      }
+    },
   )
 
   if (import.meta.env.DEV && !VITE_API_BASE_URL.includes('localhost')) {

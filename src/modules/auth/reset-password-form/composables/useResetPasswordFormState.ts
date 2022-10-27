@@ -2,14 +2,16 @@ import { useFormState, useValidation } from '@wouterlms/forms'
 
 import type { Form } from '@wouterlms/forms'
 import type { ResetPasswordFormState } from '@/types'
+import { useRouteParams } from '@/composables'
 
 export default (): Form<ResetPasswordFormState> => {
   const { applyRules } = useValidation()
-  const { params, query } = useRoute()
+  const { query } = useRoute()
+  const { token } = useRouteParams()
 
   const formState = useFormState<ResetPasswordFormState>(reactive({
     token: {
-      value: params.token as string,
+      value: token,
     },
     email: {
       value: query.email as string,

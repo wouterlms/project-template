@@ -65,7 +65,7 @@ const testAccounts = testAccountsEnv.reduce((acc, [
             @click="emit('login', email, password)"
           >
             <AppIcon
-              :icon="Icon.USER"
+              :icon="Icon.HUMAN_PERSON_CROP_CIRCLE"
               class="-translate-y-1 flex-shrink-0 h-6 w-6"
             />
 

@@ -6,9 +6,6 @@ import { AppIcon } from '@wouterlms/ui'
 import { Icon } from '@/icons'
 
 interface Props {
-  /**
-   * Route location
-   */
   to?: RouteLocationRaw
 }
 
@@ -29,7 +26,7 @@ withDefaults(defineProps<Props>(), {
 
   <AppIcon
     v-if="to"
-    :icon="Icon.CHEVRON_RIGHT"
+    :icon="Icon.ARROWS_CHEVRON_RIGHT"
     class="h-auto mx-3 text-tertiary w-1"
   />
 </template>

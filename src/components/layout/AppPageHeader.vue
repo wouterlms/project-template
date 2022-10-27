@@ -1,15 +1,24 @@
 <script setup lang="ts">
+import type { RouteLocationRaw } from 'vue-router'
 import { useEventListener } from '@wouterlms/composables'
 
 interface Props {
   title: string
+  breadcrumbs?: {
+    label: string
+    to?: RouteLocationRaw
+  }[]
 }
 
-withDefaults(defineProps<Props>(), {})
+withDefaults(defineProps<Props>(), {
+  breadcrumbs: () => [],
+})
 
 const header = ref<Nullable<HTMLElement>>(null)
 const headerHeight = ref<Nullable<number>>(null)
-const hasScrolledDown = ref(false)
+const hasOffsetTop = ref(false)
+const previousScrollPosition = ref(0)
+const shrink = ref(false)
 
 useEventListener('scroll', () => {
   if (header.value === null)
@@ -17,11 +26,18 @@ useEventListener('scroll', () => {
 
   const { top } = header.value.getBoundingClientRect()
 
-  hasScrolledDown.value = top === 0
+  const hasScrolledDown = (hasOffsetTop.value ? top <= 0 : window.scrollY > 0)
+
+  shrink.value = hasScrolledDown && previousScrollPosition.value < window.scrollY
+
+  previousScrollPosition.value = window.scrollY
 })
 
 onMounted(() => {
-  headerHeight.value = header.value!.scrollHeight
+  const { scrollHeight, offsetTop } = header.value!
+
+  headerHeight.value = scrollHeight
+  hasOffsetTop.value = offsetTop > 0
 })
 </script>
 
@@ -35,8 +51,8 @@ onMounted(() => {
   >
     <div
       :class="[
-        hasScrolledDown
-          ? `bg-secondary/50
+        shrink
+          ? `bg-secondary/75
             backdrop-filter
             backdrop-blur-md
             -translate-y-4
@@ -57,27 +73,34 @@ onMounted(() => {
       <AppContainer class="flex items-center justify-between">
         <div>
           <div
+            v-if="breadcrumbs.length > 0"
             :class="{
-              'opacity-0 -translate-y-5 scale-75': hasScrolledDown,
-            }" class="-translate-y-2 absolute duration-300 origin-left text-sm"
+              'opacity-0 -translate-y-5 scale-75': shrink,
+            }"
+            class="-translate-y-2 absolute duration-300 origin-left text-sm"
           >
             <AppBreadcrumbs>
-              <AppBreadcrumbItem to="/">
-                Apps
-              </AppBreadcrumbItem>
-
-              <AppBreadcrumbItem>
-                HNTR
+              <AppBreadcrumbItem
+                v-for="{ to, label } of breadcrumbs"
+                :key="label"
+                :to="to"
+              >
+                {{ label }}
               </AppBreadcrumbItem>
             </AppBreadcrumbs>
           </div>
 
           <h1
             :class="[
-              hasScrolledDown ? 'scale-75 translate-y-0' : 'translate-y-3',
-            ]" class="duration-300 font-medium origin-left text-2xl text-primary"
+              shrink
+                ? 'scale-75 translate-y-0'
+                : breadcrumbs.length === 0 ? '' : 'translate-y-3',
+            ]"
+            class="duration-300 font-medium origin-left text-2xl text-primary"
           >
-            {{ title }}
+            <slot name="title">
+              {{ title }}
+            </slot>
           </h1>
         </div>
 

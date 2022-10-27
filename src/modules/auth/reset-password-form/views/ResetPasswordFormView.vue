@@ -5,6 +5,8 @@ import {
   AppButton,
   FormInput,
   FormLabel,
+  colors,
+  useToasts,
 } from '@wouterlms/ui'
 
 import { useResetPasswordFormService, useResetPasswordFormState } from '../composables'
@@ -12,8 +14,14 @@ import { useResetPasswordFormService, useResetPasswordFormState } from '../compo
 import { useResetPasswordStore } from '@/stores'
 import { useAuth } from '@/composables'
 
+import { Route } from '@/routes'
+import { Icon } from '@/icons'
+
 const { t } = useI18n()
+const { replace } = useRouter()
+const { query: { token, email } } = useRoute()
 const { signIn } = useAuth()
+const { createToast, removeToast } = useToasts()
 const { hasResetPassword } = useResetPasswordStore()
 
 const formState = useResetPasswordFormState()
@@ -33,6 +41,22 @@ const { formObject } = formState
 const loginWithNewCredentials = async (): Promise<void> => {
   const { email, password } = formState.getData()
   await signIn(email, password)
+}
+
+if (token === undefined || email === undefined) {
+  const toast = createToast({
+    title: t('auth.reset_password_form.invalid_link'),
+    message: t('auth.reset_password_form.this_is_not_a_valid'),
+    icon: Icon.OBJECT_AND_TOOLS_LINK,
+    accentColor: colors.value.accent.error,
+    action: {
+      label: 'Request new link',
+      onClick: async () => {
+        await replace({ name: Route.FORGOT_PASSWORD })
+        removeToast(toast)
+      },
+    },
+  })
 }
 </script>
 
