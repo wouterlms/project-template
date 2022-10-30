@@ -1,17 +1,16 @@
-import axios from 'axios'
-import type { AxiosResponse } from 'axios'
+import { http } from '@/http'
 import type { ForgotPasswordDTO, ResetPasswordDTO } from '@/types'
 
 export const forgotPassword = async (
-  { email }: ForgotPasswordDTO,
-): Promise<AxiosResponse<Record<string, never>>> => (
-  await axios.post('/forgot-password', { email })
+  data: ForgotPasswordDTO,
+): Promise<Record<string, never>> => (
+  await http.post('/forgot-password', data)
 )
 
 export const resetPassword = async (
   data: ResetPasswordDTO,
-): Promise<AxiosResponse<Record<string, never>>> => (
-  await axios.post('/reset-password', {
+): Promise<Record<string, never>> => (
+  await http.post('/reset-password', {
     ...data,
     confirmPassword: data.password,
   })

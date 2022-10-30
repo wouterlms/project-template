@@ -140,7 +140,7 @@ const useWebAuthn: UseWebAuthn = () => {
     if (!isSupported)
       throw new Error('WebAuthn is not supported')
 
-    const { data: registrationOptions } = await authnService.getRegisterDeviceOptions(userId)
+    const registrationOptions = await authnService.getRegisterDeviceOptions(userId)
 
     try {
       const credentials = await registerCredential(registrationOptions)
@@ -152,7 +152,7 @@ const useWebAuthn: UseWebAuthn = () => {
   }
 
   const authenticate = async (): Promise<void> => {
-    const { data } = await authnService.getAuthenticationOptions(userId)
+    const data = await authnService.getAuthenticationOptions(userId)
 
     try {
       const credentials = await authenticateCredential(data)

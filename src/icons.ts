@@ -1,1 +1,1 @@
-export const customIcons = {}
+export const CustomIcon = {}

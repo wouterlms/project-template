@@ -12,7 +12,7 @@ specifiers:
   '@wouterlms/forms': ^0.2.20
   '@wouterlms/icons': ^0.0.3
   '@wouterlms/svg-transformer': ^1.0.6
-  '@wouterlms/ui': ^1.0.3
+  '@wouterlms/ui': ^1.0.5
   autoprefixer: ^10.4.10
   axios: ^1.1.3
   axios-cache-adapter: ^2.7.3
@@ -50,7 +50,7 @@ dependencies:
   '@vue/runtime-core': 3.2.39
   '@wouterlms/composables': 0.2.18_sgthg476u2k6kr6xtb2lx64i4i
   '@wouterlms/forms': registry.npmjs.org/@wouterlms/forms/0.2.20_l52xg4rkyxit5yw6dqvdhjqiam
-  '@wouterlms/ui': registry.npmjs.org/@wouterlms/ui/1.0.3
+  '@wouterlms/ui': registry.npmjs.org/@wouterlms/ui/1.0.5
   axios: registry.npmjs.org/axios/1.1.3
   axios-cache-adapter: 2.7.3_axios@1.1.3
   vue: 3.2.39
@@ -6065,10 +6065,10 @@ packages:
     version: 1.0.6
     dev: true
 
-  registry.npmjs.org/@wouterlms/ui/1.0.3:
-    resolution: {integrity: sha512-vUa48fOc3E6gZPrvqjYTdyL272YZvtYHyKOhdldmBnesfvy1ima2jlqBWKzZ+rvVmL6spbs8AdKuhdkZ3yM5Fg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@wouterlms/ui/-/ui-1.0.3.tgz}
+  registry.npmjs.org/@wouterlms/ui/1.0.5:
+    resolution: {integrity: sha512-R0RwJ3jUnjsHb7rl8IMMGoZHyGo4Ei/V9g6GrUjegpr39xdWBJ/fj1iLqQzX8bZ9Jo51FqvdEQdv58DC+svBIg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@wouterlms/ui/-/ui-1.0.5.tgz}
     name: '@wouterlms/ui'
-    version: 1.0.3
+    version: 1.0.5
     dependencies:
       vue: registry.npmjs.org/vue/3.2.39
       vue-router: registry.npmjs.org/vue-router/4.1.5_vue@3.2.39
