@@ -64,12 +64,14 @@ export default (): void => {
   /**
    * Logger
    */
-  axios.interceptors.response.use((r) => r, (e) => {
-    if (e instanceof AxiosError)
-      log(e)
+  axios.interceptors.response.use(
+    (r) => r,
+    async (e) => {
+      if (e instanceof AxiosError)
+        log(e)
 
-    throw e
-  })
+      return await Promise.reject(e)
+    })
 
   /**
    * Request interceptor to convert camelCase to snake_case

@@ -15,9 +15,8 @@
     "validate": "npm-run-all --parallel lint-staged"
   },
   "lint-staged": {
-    "./src/**/**.+(ts|vue)": [
-      "npm run lint",
-      "vue-tsc --noEmit"
+    "src/**\/*.+(ts|vue)": [
+      "npm run lint"
     ]
   },
   "dependencies": {

@@ -11,7 +11,6 @@ declare module '@vue/runtime-core' {
     AppBreadcrumbItem: typeof import('./src/components/elements/AppBreadcrumbItem.vue')['default']
     AppBreadcrumbs: typeof import('./src/components/elements/AppBreadcrumbs.vue')['default']
     AppContainer: typeof import('./src/components/layout/AppContainer.vue')['default']
-    AppIcon: typeof import('./src/components/elements/AppIcon.vue')['default']
     AppLayout: typeof import('./src/components/layout/AppLayout.vue')['default']
     AppLink: typeof import('./src/components/elements/AppLink.vue')['default']
     AppPageContent: typeof import('./src/components/layout/AppPageContent.vue')['default']

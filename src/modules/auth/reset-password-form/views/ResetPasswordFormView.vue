@@ -51,7 +51,7 @@ if (token === undefined || email === undefined) {
     icon: Icon.OBJECT_AND_TOOLS_LINK,
     accentColor: colors.value.accent.error,
     action: {
-      label: 'Request new link',
+      label: t('auth.reset_password_form.request_new_reset_link'),
       onClick: async () => {
         await replace({ name: Route.FORGOT_PASSWORD })
         removeToast(toast)

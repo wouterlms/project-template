@@ -1,2 +1,16 @@
+import {
+  deleteResource,
+  get,
+  post,
+  put,
+} from './http'
+
 export { default as createAxiosInstance } from './axios'
-export * as http from './http'
+
+export const http = {
+  get,
+  post,
+  put,
+  delete: deleteResource,
+}
+
