@@ -27,6 +27,6 @@ withDefaults(defineProps<Props>(), {
   <AppIcon
     v-if="to"
     :icon="Icon.ARROWS_CHEVRON_RIGHT"
-    class="h-auto mx-3 text-tertiary w-1"
+    class="h-auto mx-3 text-tertiary w-2.5"
   />
 </template>

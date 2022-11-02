@@ -1,6 +1,6 @@
 {
   "auth.forgot_password_form.dont_remember_your_password_enter": "Don't remember your password? Enter your email address below.",
-  "auth.forgot_password_form.forgot_password": "Forgot password?",
+  "auth.forgot_password_form.forgot_password": "Forgot password",
   "auth.forgot_password_form.return_to_login": "Return to login",
   "auth.forgot_password_form.send": "Send",
   "auth.forgot_password_form.thank_you_within_a_few": "Thank you, within a few minutes you will receive an e-mail containing a personal link. The link will allow you to enter a new password.",
@@ -29,6 +29,10 @@
   "core.validation.min_length": "Min. {min} characters",
   "core.validation.required": "Required",
   "core.validation.url": "Invalid url",
+
+  "static.page_title.forgot_password": "Forgot password",
+  "static.page_title.login": "Login",
+  "static.page_title.reset_password": "Reset password",
 
   "suspense.bad_request": "Bad Request",
   "suspense.forbidden": "Forbidden",

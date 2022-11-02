@@ -1,4 +1,4 @@
-export default interface ResetPasswordForm {
+export default interface ResetPasswordFormState {
   token: {
     value: string
     returns: string

@@ -1,16 +1,16 @@
 import { createI18n } from 'vue-i18n'
 
-import nl from './locales/nl.json'
+import en from './locales/en.json'
 
 export enum Locale {
-  NL = 'nl-BE',
+  EN = 'en-US',
 }
 
 const messages = {
-  [Locale.NL]: nl,
+  [Locale.EN]: en,
 }
 
-const defaultLocale = Locale.NL
+const defaultLocale = Locale.EN
 
 export default createI18n({
   messages,

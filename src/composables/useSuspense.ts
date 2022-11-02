@@ -9,9 +9,9 @@ interface Error {
 export default (): Ref<Nullable<Error>> => {
   const error = ref<Nullable<Error>>(null)
 
-  onErrorCaptured((e) => {
-    if (e instanceof AxiosError) {
-      const { response } = e
+  onErrorCaptured((err) => {
+    if (err instanceof AxiosError) {
+      const { response } = err
 
       if (response == null)
         return
@@ -23,7 +23,7 @@ export default (): Ref<Nullable<Error>> => {
         message: message ?? null,
       }
     }
-    else { throw e }
+    else { throw err }
 
     return false
   })

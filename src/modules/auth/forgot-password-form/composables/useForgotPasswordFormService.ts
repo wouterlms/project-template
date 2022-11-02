@@ -17,8 +17,8 @@ const useForgotPasswordFormService: FormService<Form<ForgotPasswordFormState>> =
       await authService.forgotPassword({ email })
       hasSentEmail.value = true
     }
-    catch (e) {
-      formState.setErrors(useAxiosErrorTransformer()(e as AxiosError))
+    catch (err) {
+      formState.setErrors(useAxiosErrorTransformer()(err as AxiosError))
     }
   }
 

@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import authRoutes from '@/modules/auth/router'
+import testRoutes from '@/modules/test/router'
+
 import { auth } from '@/middleware'
 
 const router = createRouter({
@@ -12,7 +14,7 @@ const router = createRouter({
       meta: {
         middleware: [auth],
       },
-      children: [],
+      children: [...testRoutes],
     },
     ...authRoutes,
     {
@@ -23,7 +25,9 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to) => {
-  const middlewares = to.meta.middleware ?? null
+  const { meta } = to
+
+  const middlewares = meta.middleware ?? null
 
   if (middlewares !== null) {
     for (const middleware of middlewares) {

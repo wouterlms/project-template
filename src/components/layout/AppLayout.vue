@@ -1,12 +1,7 @@
 <template>
-  <RouterView v-slot="{ Component: component, route }">
+  <RouterView v-slot="{ Component: component }">
     <KeepAlive :include="[]">
-      <SuspenseWrapper
-        v-if="component"
-        :key="route.fullPath"
-      >
-        <Component :is="component" />
-      </SuspenseWrapper>
+      <Component :is="component" />
     </KeepAlive>
   </RouterView>
 </template>

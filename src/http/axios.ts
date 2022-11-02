@@ -65,12 +65,12 @@ export default (): void => {
    * Logger
    */
   axios.interceptors.response.use(
-    (r) => r,
-    async (e) => {
-      if (e instanceof AxiosError)
-        log(e)
+    (res) => res,
+    async (err) => {
+      if (err instanceof AxiosError)
+        log(err)
 
-      return await Promise.reject(e)
+      return await Promise.reject(err)
     })
 
   /**
@@ -78,7 +78,7 @@ export default (): void => {
    */
   axios.interceptors.request.use(
     ({ data, ...request }) => {
-      const isOAuth = request.url?.split('/')[1] === 'oauth' ?? false
+      const isOAuth = request.url?.split('/')[1] === 'oauth'
 
       return ({
         ...request,
@@ -92,7 +92,7 @@ export default (): void => {
    */
   axios.interceptors.response.use(
     ({ data, ...response }) => {
-      const isOAuth = response.config.url?.split('/')[1] === 'oauth' ?? false
+      const isOAuth = response.config.url?.split('/')[1] === 'oauth'
 
       return {
         ...response,

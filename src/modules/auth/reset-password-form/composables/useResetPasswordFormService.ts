@@ -19,8 +19,8 @@ const useResetPasswordFormService: FormService<Form<ResetPasswordFormState>> = (
 
       hasResetPassword.value = true
     }
-    catch (e) {
-      formState.setErrors(useAxiosErrorTransformer()(e as AxiosError))
+    catch (err) {
+      formState.setErrors(useAxiosErrorTransformer()(err as AxiosError))
     }
   }
 

@@ -1,4 +1,4 @@
-export default interface LoginForm {
+export default interface LoginFormState {
   email: {
     value: Nullable<string>
     returns: string

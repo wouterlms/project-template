@@ -1,6 +1,8 @@
 import { AxiosError } from 'axios'
 import type { Form } from '@wouterlms/forms'
 
+import { useAxiosErrorTransformer } from '@wouterlms/composables'
+
 import { useAuth, useLocalStorage } from '@/composables'
 import { useForgotPasswordStore } from '@/stores'
 
@@ -25,23 +27,25 @@ const useLoginFormService: FormService<Form<LoginFormState>> = (formState) => {
 
       await replace('/')
     }
-    catch (e) {
+    catch (err) {
       lastLoginAttemptEmail.value = email
 
-      if (
-        e instanceof AxiosError
-        && e.response !== undefined
-        && [
-          400,
-          401,
-        ].includes(e.response.status)) {
-        formState.setErrors({
-          email: t('auth.login_form.invalid_email_or_password'),
-          password: true,
-        })
+      if (err instanceof AxiosError) {
+        const { response } = err
+
+        if (response !== undefined && [400, 401].includes(response.status)) {
+          formState.setErrors({
+            email: t('auth.login_form.invalid_email_or_password'),
+            password: true,
+          })
+        }
+        else {
+          formState.setErrors(useAxiosErrorTransformer()(err))
+        }
       }
+
       else {
-        throw e
+        throw err
       }
     }
   }

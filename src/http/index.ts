@@ -13,4 +13,3 @@ export const http = {
   put,
   delete: deleteResource,
 }
-

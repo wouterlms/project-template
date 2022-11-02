@@ -1,0 +1,6 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "indexFileGenerator.exclude": [
+    "/Users/wouter/Documents/projects/project-template/src/http/index.ts"
+  ]
+}
