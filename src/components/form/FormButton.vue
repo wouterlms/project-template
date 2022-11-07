@@ -4,14 +4,17 @@ import type { useForm } from '@wouterlms/forms'
 
 interface Props {
   form: ReturnType<typeof useForm>
+  disableIfNotDirty?: boolean
 }
 
-withDefaults(defineProps<Props>(), {})
+withDefaults(defineProps<Props>(), {
+  disableIfNotDirty: true,
+})
 </script>
 
 <template>
   <AppButton
-    :is-disabled="!form.isDirty"
+    :is-disabled="!form.isDirty && disableIfNotDirty"
     :is-loading="form.isSubmitting"
     type="submit"
   >

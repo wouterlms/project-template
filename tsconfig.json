@@ -21,14 +21,15 @@
     },
   },
   "include": [
-    "vite.config.ts",
-    "tailwind.config.cjs",
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.vue",
+    "vite.config.ts",
+    "tailwind.config.cjs",
     "auto-imports.d.ts",
     "components.d.ts"
   ],
+  "exclude": ["node_modules"],
   "references": [
     {
       "path": "./tsconfig.node.json"

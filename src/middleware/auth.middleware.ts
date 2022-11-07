@@ -3,10 +3,11 @@ import type { RouteGuard } from '@/types'
 import { Route } from '@/routes'
 
 const auth: RouteGuard = async () => {
-  const { getUser } = useAuth()
+  const { getUser, isAuthenticated } = useAuth()
 
   try {
-    await getUser()
+    if (!isAuthenticated.value)
+      await getUser()
   }
   catch {
     return {

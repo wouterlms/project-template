@@ -5,19 +5,24 @@ import { useTitle } from '@wouterlms/composables'
 import { usePageTitle, useServerErrorInterceptor } from '@/composables'
 
 createTheme({
-  colors: {},
+  colors: {
+    accent: {
+      primary: ['#000000', '#ffffff'],
+    },
+  },
   enableDarkMode: true,
 })
 
+const { setTemplate } = useTitle()
+
 useServerErrorInterceptor()
 usePageTitle()
-
-const { setTemplate } = useTitle()
 
 setTemplate('{title} | App')
 </script>
 
 <template>
+  <AppPageLoader />
   <RouterView />
   <AppToasts />
 </template>

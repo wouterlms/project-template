@@ -1,12 +1,12 @@
 import { useTitle } from '@wouterlms/composables'
 
 export default (): void => {
-  const { documentTitle } = useTitle()
-  const { beforeEach } = useRouter()
   const { t } = useI18n()
+  const { documentTitle } = useTitle()
+  const route = useRoute()
 
-  beforeEach(({ name }) => {
+  watch(() => route.name, (name) => {
     if (typeof name === 'string')
       documentTitle.value = t(`static.page_title.${name.replaceAll('-', '_')}`)
-  })
+  }, { immediate: true })
 }

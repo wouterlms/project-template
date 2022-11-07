@@ -36,6 +36,7 @@
 
   "suspense.bad_request": "Bad Request",
   "suspense.forbidden": "Forbidden",
+  "suspense.loading": "Loading",
   "suspense.not_found": "Not Found",
   "suspense.server_error": "Server Error",
   "suspense.something_went_wrong": "Something went wrong",

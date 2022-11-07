@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import authRoutes from '@/modules/auth/router'
-import testRoutes from '@/modules/test/router'
 
 import { auth } from '@/middleware'
 
@@ -14,7 +13,12 @@ const router = createRouter({
       meta: {
         middleware: [auth],
       },
-      children: [...testRoutes],
+      children: [
+        {
+          path: '',
+          component: async () => await import('../Test.vue'),
+        },
+      ],
     },
     ...authRoutes,
     {

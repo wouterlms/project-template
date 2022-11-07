@@ -14,7 +14,7 @@ const error = useSuspense()
     <template #fallback>
       <CenterContent>
         <AppLoader>
-          {{ t('general.loading') }}
+          {{ t('suspense.loading') }}
         </AppLoader>
       </CenterContent>
     </template>

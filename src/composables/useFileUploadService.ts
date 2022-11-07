@@ -50,10 +50,10 @@ export default (): UseFileService => {
     const xhr = new XMLHttpRequest()
 
     await new Promise<void>((resolve, reject) => {
-      xhr.upload.addEventListener('progress', (e) => {
-        if (e.lengthComputable) {
+      xhr.upload.addEventListener('progress', ({ lengthComputable, loaded, total }) => {
+        if (lengthComputable) {
           const fileItem = getFileItem(id)
-          const progress = (e.loaded / e.total) * 100
+          const progress = (loaded / total) * 100
 
           fileItem.progress = progress
         }
