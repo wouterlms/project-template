@@ -8,7 +8,7 @@ import { useForgotPasswordStore } from '@/stores'
 import { Route } from '@/routes'
 
 const { t } = useI18n()
-const { hasSentEmail } = useForgotPasswordStore()
+const forgotPasswordStore = useForgotPasswordStore()
 
 const formState = useForgotPasswordFormState()
 const { handleSubmit } = useForgotPasswordFormService(formState)
@@ -20,8 +20,10 @@ const form = useForm(formState, {
 const { formObject } = formState
 
 onBeforeUnmount(() => {
-  hasSentEmail.value = false
+  forgotPasswordStore.setHasSentEmail(false)
 })
+
+const hasSentEmail = computed(() => forgotPasswordStore.hasSentEmail)
 </script>
 
 <template>

@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 
 import App from '@/App.vue'
 import router from '@/router'
@@ -11,7 +12,10 @@ import { startMockServerOnDev } from '@/http/mock-server'
 import '@/assets/styles/tw.scss'
 import '@wouterlms/ui/style.css'
 
+const pinia = createPinia()
+
 const app = createApp(App)
+  .use(pinia)
   .use(router)
   .use(i18n)
 

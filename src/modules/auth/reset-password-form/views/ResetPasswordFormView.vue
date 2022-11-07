@@ -23,7 +23,7 @@ const { replace } = useRouter()
 const { query: { token, email } } = useRoute()
 const { signIn } = useAuth()
 const { createToast, removeToast } = useToasts()
-const { hasResetPassword } = useResetPasswordStore()
+const resetPasswordStore = useResetPasswordStore()
 
 const formState = useResetPasswordFormState()
 
@@ -59,6 +59,8 @@ if (token === undefined || email === undefined) {
     },
   })
 }
+
+const hasResetPassword = computed(() => resetPasswordStore.hasResetPassword)
 </script>
 
 <template>

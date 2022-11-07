@@ -1,11 +1,14 @@
-import type { Ref } from 'vue'
+import { defineStore } from 'pinia'
 
-interface UseResetPasswordFormStore {
-  hasResetPassword: Ref<boolean>
-}
+export default defineStore('forgotPassword', () => {
+  const hasResetPassword = ref(false)
 
-const hasResetPassword = ref(false)
+  const setHasResetPassword = (value: boolean): void => {
+    hasResetPassword.value = value
+  }
 
-export default (): UseResetPasswordFormStore => ({
-  hasResetPassword,
+  return readonly({
+    hasResetPassword,
+    setHasResetPassword,
+  })
 })

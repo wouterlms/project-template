@@ -8,11 +8,11 @@ import type { ForgotPasswordFormState } from '@/types'
 
 export default (): Form<ForgotPasswordFormState> => {
   const { applyRules } = useValidation()
-  const { lastLoginAttemptEmail } = useForgotPasswordStore()
+  const forgotPasswordStore = useForgotPasswordStore()
 
   const formState = useFormState<ForgotPasswordFormState>(reactive({
     email: {
-      value: lastLoginAttemptEmail.value,
+      value: forgotPasswordStore.lastLoginAttemptEmail,
       validate: async (email) => await applyRules(email, {
         required: true,
         email: true,

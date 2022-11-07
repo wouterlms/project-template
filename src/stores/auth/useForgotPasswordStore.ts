@@ -1,14 +1,21 @@
-import type { Ref } from 'vue'
+import { defineStore } from 'pinia'
 
-interface UseForgotPasswordFormStore {
-  lastLoginAttemptEmail: Ref<Nullable<string>>
-  hasSentEmail: Ref<boolean>
-}
+export default defineStore('forgotPassword', () => {
+  const lastLoginAttemptEmail = ref<Nullable<string>>(null)
+  const hasSentEmail = ref(false)
 
-const lastLoginAttemptEmail = ref<Nullable<string>>(null)
-const hasSentEmail = ref(false)
+  const setLastLoginAttemptEmail = (email: string): void => {
+    lastLoginAttemptEmail.value = email
+  }
 
-export default (): UseForgotPasswordFormStore => ({
-  lastLoginAttemptEmail,
-  hasSentEmail,
+  const setHasSentEmail = (value: boolean): void => {
+    hasSentEmail.value = value
+  }
+
+  return readonly({
+    lastLoginAttemptEmail,
+    hasSentEmail,
+    setLastLoginAttemptEmail,
+    setHasSentEmail,
+  })
 })

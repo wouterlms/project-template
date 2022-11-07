@@ -13,7 +13,7 @@ const useLoginFormService: FormService<Form<LoginFormState>> = (formState) => {
   const { t } = useI18n()
   const { replace } = useRouter()
   const { user, signIn, getUser } = useAuth()
-  const { lastLoginAttemptEmail } = useForgotPasswordStore()
+  const forgotPasswordStore = useForgotPasswordStore()
   const lastLoggedInUser = useLocalStorage(LocalStorageKey.LAST_LOGGED_IN_USER)
 
   const handleSubmit = async (): Promise<void> => {
@@ -28,7 +28,7 @@ const useLoginFormService: FormService<Form<LoginFormState>> = (formState) => {
       await replace('/')
     }
     catch (err) {
-      lastLoginAttemptEmail.value = email
+      forgotPasswordStore.setLastLoginAttemptEmail(email)
 
       if (err instanceof AxiosError) {
         const { response } = err
