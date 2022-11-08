@@ -12,7 +12,6 @@
   "auth.reset_password_form.invalid_link": "Invalid link",
   "auth.reset_password_form.request_new_reset_link": "Request new reset link",
   "auth.reset_password_form.this_is_not_a_valid": "This is not a valid link to reset your password. Please request a new one.",
-  "auth.reset_password_form.your_password_has_been_reset": "Your password has been reset you can now log in with this",
 
   "common.email": "Email",
   "common.password": "Password",

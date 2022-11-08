@@ -1,18 +1,17 @@
 import { AxiosError } from 'axios'
-import type { Form } from '@wouterlms/forms'
-
-import { useAxiosErrorTransformer } from '@wouterlms/composables'
+import type { FormState } from '@wouterlms/forms2'
 
 import { useAuth, useLocalStorage } from '@/composables'
 import { useForgotPasswordStore } from '@/stores'
 
 import type { FormService, LoginFormState } from '@/types'
+import { handleApiError } from '@/utils'
 import { LocalStorageKey } from '@/enums'
 
-const useLoginFormService: FormService<Form<LoginFormState>> = (formState) => {
+const useLoginFormService: FormService<FormState<LoginFormState>> = (formState) => {
   const { t } = useI18n()
-  const { replace } = useRouter()
-  const { user, signIn, getUser } = useAuth()
+  const auth = useAuth()
+  const router = useRouter()
   const forgotPasswordStore = useForgotPasswordStore()
   const lastLoggedInUser = useLocalStorage(LocalStorageKey.LAST_LOGGED_IN_USER)
 
@@ -20,12 +19,12 @@ const useLoginFormService: FormService<Form<LoginFormState>> = (formState) => {
     const { email, password } = formState.getData()
 
     try {
-      await signIn(email, password)
-      await getUser()
+      await auth.signIn(email, password)
+      await auth.getUser()
 
-      lastLoggedInUser.value = user.value
+      lastLoggedInUser.value = auth.user.value
 
-      await replace('/')
+      await router.replace('/')
     }
     catch (err) {
       forgotPasswordStore.setLastLoginAttemptEmail(email)
@@ -40,13 +39,10 @@ const useLoginFormService: FormService<Form<LoginFormState>> = (formState) => {
           })
         }
         else {
-          formState.setErrors(useAxiosErrorTransformer()(err))
+          handleApiError(err)
         }
       }
-
-      else {
-        throw err
-      }
+      else { throw err }
     }
   }
 

@@ -7,7 +7,7 @@ type UsePageLoader = () => {
 }
 
 const usePageLoader: UsePageLoader = () => {
-  const { beforeEach, afterEach } = useRouter()
+  const router = useRouter()
 
   const showProgressBar = ref(false)
   const progress = ref(0)
@@ -51,8 +51,8 @@ const usePageLoader: UsePageLoader = () => {
     progress.value = 100
   }
 
-  beforeEach(startLoading)
-  afterEach(finishLoading)
+  router.beforeEach(startLoading)
+  router.afterEach(finishLoading)
 
   return {
     showProgressBar,

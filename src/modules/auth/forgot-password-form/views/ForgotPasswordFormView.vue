@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FormElement, useForm } from '@wouterlms/forms'
+import { FormElement, useForm } from '@wouterlms/forms2'
 import { FormInput, FormLabel } from '@wouterlms/ui'
 
 import { useForgotPasswordFormService, useForgotPasswordFormState } from '../composables'
@@ -9,7 +9,6 @@ import { Route } from '@/routes'
 
 const { t } = useI18n()
 const forgotPasswordStore = useForgotPasswordStore()
-
 const formState = useForgotPasswordFormState()
 const { handleSubmit } = useForgotPasswordFormService(formState)
 
@@ -17,7 +16,7 @@ const form = useForm(formState, {
   handleSubmit,
 })
 
-const { formObject } = formState
+const { state } = formState
 
 onBeforeUnmount(() => {
   forgotPasswordStore.setHasSentEmail(false)
@@ -50,11 +49,11 @@ const hasSentEmail = computed(() => forgotPasswordStore.hasSentEmail)
       <FormSpacer>
         <FormLabel
           :label="t('common.email')"
-          :error="formObject.email.error"
+          :error="state.email.error"
         >
           <FormInput
-            v-model="formObject.email.value"
-            :error="!!formObject.email.error"
+            v-model="state.email.value"
+            :error="!!state.email.error"
             type="email"
           />
         </FormLabel>

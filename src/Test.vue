@@ -5,16 +5,16 @@ import { http } from './http'
 import { useAuth } from '@/composables'
 import { Route } from '@/routes'
 
-const { replace } = useRouter()
-const { signOut } = useAuth()
+const router = useRouter()
+const auth = useAuth()
 
 const isSigningOut = ref(false)
 
-const doSignOut = async (): Promise<void> => {
+const signOut = async (): Promise<void> => {
   isSigningOut.value = true
 
-  signOut()
-  await replace({ name: Route.LOGIN })
+  auth.signOut()
+  router.replace({ name: Route.LOGIN })
 }
 
 http.get('/example/mock')
@@ -40,7 +40,7 @@ http.get('/example/mock')
         :is-loading="isSigningOut"
         :icon-right="Icon.ARROWS_CHEVRON_RIGHT"
         class="!px-6 !text-xs"
-        @click="doSignOut"
+        @click="signOut"
       >
         Sign out
       </AppButton>

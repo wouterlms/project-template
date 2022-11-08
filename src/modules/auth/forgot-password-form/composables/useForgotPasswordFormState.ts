@@ -1,12 +1,11 @@
-import { useFormState, useValidation } from '@wouterlms/forms'
-
-import type { Form } from '@wouterlms/forms'
+import type { FormState } from '@wouterlms/forms2'
+import { useFormState, useValidation } from '@wouterlms/forms2'
 
 import { useForgotPasswordStore } from '@/stores'
 
 import type { ForgotPasswordFormState } from '@/types'
 
-export default (): Form<ForgotPasswordFormState> => {
+export default (): FormState<ForgotPasswordFormState> => {
   const { applyRules } = useValidation()
   const forgotPasswordStore = useForgotPasswordStore()
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FormElement, useForm } from '@wouterlms/forms'
+import { FormElement, useForm } from '@wouterlms/forms2'
 import { FormInput, FormLabel } from '@wouterlms/ui'
 
 import {
@@ -24,7 +24,7 @@ const form = useForm(formState, {
   handleSubmit,
 })
 
-const { formObject } = formState
+const { state } = formState
 
 const handleTestAccountLogin = (email: string, password: string): void => {
   formState.setData({
@@ -52,22 +52,22 @@ const handleTestAccountLogin = (email: string, password: string): void => {
       <FormSpacer>
         <FormLabel
           :label="t('common.email')"
-          :error="formObject.email.error"
+          :error="state.email.error"
         >
           <FormInput
-            v-model="formObject.email.value"
-            :error="!!formObject.email.error"
+            v-model="state.email.value"
+            :error="!!state.email.error"
             type="email"
           />
         </FormLabel>
 
         <FormLabel
           :label="t('common.password')"
-          :error="formObject.password.error"
+          :error="state.password.error"
         >
           <FormInput
-            v-model="formObject.password.value"
-            :error="!!formObject.password.error"
+            v-model="state.password.value"
+            :error="!!state.password.error"
             type="password"
           />
         </FormLabel>

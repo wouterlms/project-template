@@ -1,10 +1,10 @@
-import { useFormState, useValidation } from '@wouterlms/forms'
+import type { FormState } from '@wouterlms/forms2'
+import { useFormState, useValidation } from '@wouterlms/forms2'
 
-import type { Form } from '@wouterlms/forms'
 import type { ResetPasswordFormState } from '@/types'
 import { useRouteParams } from '@/composables'
 
-export default (): Form<ResetPasswordFormState> => {
+export default (): FormState<ResetPasswordFormState> => {
   const { applyRules } = useValidation()
   const { query } = useRoute()
   const { token } = useRouteParams()

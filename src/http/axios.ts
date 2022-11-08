@@ -71,7 +71,8 @@ export default (): void => {
         log(err)
 
       return await Promise.reject(err)
-    })
+    },
+  )
 
   /**
    * Request interceptor to convert camelCase to snake_case

@@ -12,10 +12,10 @@ export default defineStore('forgotPassword', () => {
     hasSentEmail.value = value
   }
 
-  return readonly({
+  return {
     lastLoginAttemptEmail,
     hasSentEmail,
     setLastLoginAttemptEmail,
     setHasSentEmail,
-  })
+  }
 })
