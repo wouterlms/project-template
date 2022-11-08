@@ -1,5 +1,5 @@
-import type { FormState } from '@wouterlms/forms2'
 import { useFormState, useValidation } from '@wouterlms/forms2'
+import type { FormState } from '@wouterlms/forms2'
 
 import { useForgotPasswordStore } from '@/stores'
 

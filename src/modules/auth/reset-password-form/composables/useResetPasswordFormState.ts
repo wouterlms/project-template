@@ -1,20 +1,22 @@
-import type { FormState } from '@wouterlms/forms2'
 import { useFormState, useValidation } from '@wouterlms/forms2'
+import type { FormState } from '@wouterlms/forms2'
 
-import type { ResetPasswordFormState } from '@/types'
 import { useRouteParams } from '@/composables'
+import type { ResetPasswordFormState } from '@/types'
 
 export default (): FormState<ResetPasswordFormState> => {
   const { applyRules } = useValidation()
-  const { query } = useRoute()
   const { token } = useRouteParams()
+  const route = useRoute()
+
+  const { email } = route.query
 
   const formState = useFormState<ResetPasswordFormState>(reactive({
     token: {
       value: token,
     },
     email: {
-      value: query.email as string,
+      value: email as string,
       validate: async (email) => await applyRules(email, {
         required: true,
         email: true,

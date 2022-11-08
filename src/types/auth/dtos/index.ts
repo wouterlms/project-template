@@ -1,2 +1,2 @@
-export type { default as ForgotPasswordDTO } from './ForgotPasswordDTO'
-export type { default as ResetPasswordDTO } from './ResetPasswordDTO'
+export type { default as ForgotPasswordDto } from './ForgotPasswordDto'
+export type { default as ResetPasswordDto } from './ResetPasswordDto'

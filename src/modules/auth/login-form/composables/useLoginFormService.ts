@@ -3,9 +3,9 @@ import type { FormState } from '@wouterlms/forms2'
 
 import { useAuth, useLocalStorage } from '@/composables'
 import { useForgotPasswordStore } from '@/stores'
+import { handleApiError } from '@/utils'
 
 import type { FormService, LoginFormState } from '@/types'
-import { handleApiError } from '@/utils'
 import { LocalStorageKey } from '@/enums'
 
 const useLoginFormService: FormService<FormState<LoginFormState>> = (formState) => {

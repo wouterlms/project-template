@@ -15,9 +15,11 @@ import { useResetPasswordFormService, useResetPasswordFormState } from '../compo
 import { Route } from '@/routes'
 
 const { t } = useI18n()
-const router = useRouter()
-const { query: { token, email } } = useRoute()
 const { createToast, removeToast } = useToasts()
+const route = useRoute()
+const router = useRouter()
+
+const { token, email } = route.query
 
 const formState = useResetPasswordFormState()
 

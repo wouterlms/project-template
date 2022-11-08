@@ -1,14 +1,14 @@
 import { http } from '@/http'
-import type { ForgotPasswordDTO, ResetPasswordDTO } from '@/types'
+import type { ForgotPasswordDto, ResetPasswordDto } from '@/types'
 
 export const forgotPassword = async (
-  data: ForgotPasswordDTO,
+  data: ForgotPasswordDto,
 ): Promise<Record<string, never>> => (
   await http.post('/forgot-password', data)
 )
 
 export const resetPassword = async (
-  data: ResetPasswordDTO,
+  data: ResetPasswordDto,
 ): Promise<Record<string, never>> => (
   await http.post('/reset-password', {
     ...data,

@@ -1,8 +1,8 @@
 import type { FormState } from '@wouterlms/forms2'
 
-import { handleApiError } from '@/utils'
 import { authService } from '@/services'
 import { useForgotPasswordStore } from '@/stores'
+import { handleApiError } from '@/utils'
 
 import type { ForgotPasswordFormState, FormService } from '@/types'
 
