@@ -1,5 +1,4 @@
 export * from './auth'
 export * from './aws'
-export * from './forms'
+export * from './core'
 export * from './local-storage'
-export * from './router'

@@ -1,4 +1,4 @@
-import { http } from '@/http'
+import { http } from '@/plugins'
 import type { ForgotPasswordDto, ResetPasswordDto } from '@/types'
 
 export const forgotPassword = async (

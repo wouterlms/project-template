@@ -2,7 +2,7 @@ import { createI18n } from 'vue-i18n'
 
 import en from './locales/en.json'
 
-export enum Locale {
+enum Locale {
   EN = 'en-US',
 }
 

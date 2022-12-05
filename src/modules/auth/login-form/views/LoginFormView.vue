@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FormElement, useForm } from '@wouterlms/forms2'
+import { FormElement, useForm } from '@wouterlms/forms'
 import { FormInput, FormLabel } from '@wouterlms/ui'
 
 import {
@@ -14,6 +14,7 @@ const { t } = useI18n()
 
 const lastLoggedInUser = useLocalStorage(LocalStorageKey.LAST_LOGGED_IN_USER, null)
 const formState = useLoginFormState()
+
 const { handleSubmit } = useLoginFormService(formState)
 
 const title = lastLoggedInUser.value === null
@@ -63,7 +64,7 @@ const handleTestAccountLogin = (email: string, password: string): void => {
 
         <FormLabel
           :label="t('common.password')"
-          :error="state.password.error"
+          :error="!!state.password.error"
         >
           <FormInput
             v-model="state.password.value"

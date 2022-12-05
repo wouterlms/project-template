@@ -1,14 +1,16 @@
-import type { FormState } from '@wouterlms/forms2'
+import type { FormState } from '@wouterlms/forms'
 
 import { authService } from '@/services'
 import { useForgotPasswordStore } from '@/stores'
-import { handleApiError } from '@/utils'
+import { transformApiErrors } from '@/utils'
 
-import type { ForgotPasswordFormState, FormService } from '@/types'
+import type { ForgotPasswordFormState } from '@/types'
 
-const useForgotPasswordFormService: FormService<FormState<ForgotPasswordFormState>> = (
-  formState,
-) => {
+type UseForgotPasswordFormService = (formState: FormState<ForgotPasswordFormState>) => {
+  handleSubmit: () => Promise<void>
+}
+
+const useForgotPasswordFormService: UseForgotPasswordFormService = (formState) => {
   const forgotPasswordStore = useForgotPasswordStore()
 
   const handleSubmit = async (): Promise<void> => {
@@ -19,7 +21,7 @@ const useForgotPasswordFormService: FormService<FormState<ForgotPasswordFormStat
       forgotPasswordStore.setHasSentEmail(true)
     }
     catch (err) {
-      handleApiError(err)
+      formState.setErrors(transformApiErrors(err))
     }
   }
 

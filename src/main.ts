@@ -1,18 +1,17 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
 
 import App from '@/App.vue'
 import router from '@/router'
-import i18n from '@/i18n'
 
-import { createAxiosInstance } from '@/http'
-import { startMockServerOnDev } from '@/http/mock-server'
-// import initSentry from '@/sentry'
+import {
+  createAxiosInstance,
+  createMockServer,
+  i18n,
+  pinia,
+} from '@/plugins'
 
-import '@/assets/styles/tw.scss'
+import '@/assets/styles/style.scss'
 import '@wouterlms/ui/style.css'
-
-const pinia = createPinia()
 
 const app = createApp(App)
   .use(pinia)
@@ -22,6 +21,6 @@ const app = createApp(App)
 // initSentry(app, router)
 
 createAxiosInstance()
-await startMockServerOnDev()
+await createMockServer()
 
 app.mount('#app')

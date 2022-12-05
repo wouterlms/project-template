@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FormElement, useForm } from '@wouterlms/forms2'
+import { FormElement, useForm } from '@wouterlms/forms'
 
 import {
   FormInput,
@@ -8,7 +8,7 @@ import {
   useToasts,
 } from '@wouterlms/ui'
 
-import { Icon } from '@wouterlms/icons'
+import { OBJECT_AND_TOOLS_LINK } from '@wouterlms/icons'
 
 import { useResetPasswordFormService, useResetPasswordFormState } from '../composables'
 
@@ -23,13 +23,9 @@ const { token, email } = route.query
 
 const formState = useResetPasswordFormState()
 
-const {
-  handlePrepare,
-  handleSubmit,
-} = useResetPasswordFormService(formState)
+const { handleSubmit } = useResetPasswordFormService(formState)
 
 const form = useForm(formState, {
-  handlePrepare,
   handleSubmit,
 })
 
@@ -39,7 +35,7 @@ if (token === undefined || email === undefined) {
   const toast = createToast({
     title: t('auth.reset_password_form.invalid_link'),
     message: t('auth.reset_password_form.this_is_not_a_valid'),
-    icon: Icon.OBJECT_AND_TOOLS_LINK,
+    icon: OBJECT_AND_TOOLS_LINK,
     accentColor: colors.value.accent.error,
     action: {
       label: t('auth.reset_password_form.request_new_reset_link'),

@@ -1,14 +1,17 @@
 import { AxiosError } from 'axios'
-import type { FormState } from '@wouterlms/forms2'
+import type { FormState } from '@wouterlms/forms'
 
 import { useAuth, useLocalStorage } from '@/composables'
 import { useForgotPasswordStore } from '@/stores'
-import { handleApiError } from '@/utils'
 
-import type { FormService, LoginFormState } from '@/types'
+import type { LoginFormState } from '@/types'
 import { LocalStorageKey } from '@/enums'
 
-const useLoginFormService: FormService<FormState<LoginFormState>> = (formState) => {
+type UseLoginFormService = (formState: FormState<LoginFormState>) => {
+  handleSubmit: () => Promise<void>
+}
+
+const useLoginFormService: UseLoginFormService = (formState) => {
   const { t } = useI18n()
   const auth = useAuth()
   const router = useRouter()
@@ -35,11 +38,11 @@ const useLoginFormService: FormService<FormState<LoginFormState>> = (formState) 
         if (response !== undefined && [400, 401].includes(response.status)) {
           formState.setErrors({
             email: t('auth.login_form.invalid_email_or_password'),
-            password: true,
+            password: t('auth.login_form.invalid_email_or_password'),
           })
         }
         else {
-          handleApiError(err)
+          throw err
         }
       }
       else { throw err }

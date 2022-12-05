@@ -1,6 +1,7 @@
 import { useAuth } from '@/composables'
-import type { RouteGuard } from '@/types'
+
 import { Route } from '@/routes'
+import type { RouteGuard } from '@/types'
 
 const auth: RouteGuard = async () => {
   const { getUser, isAuthenticated } = useAuth()

@@ -1,13 +1,17 @@
-import type { FormState } from '@wouterlms/forms2'
+import type { FormState } from '@wouterlms/forms'
 
-import { handleApiError } from '@/utils'
+import { transformApiErrors } from '@/utils'
 import { useAuth, useLocalStorage } from '@/composables'
 import { authService } from '@/services'
 
-import type { FormService, ResetPasswordFormState } from '@/types'
+import type { ResetPasswordFormState } from '@/types'
 import { LocalStorageKey } from '@/enums'
 
-const useResetPasswordFormService: FormService<FormState<ResetPasswordFormState>> = (formState) => {
+type UseResetPasswordFormService = (formState: FormState<ResetPasswordFormState>) => {
+  handleSubmit: () => Promise<void>
+}
+
+const useResetPasswordFormService: UseResetPasswordFormService = (formState) => {
   const auth = useAuth()
   const router = useRouter()
   const lastLoggedInUser = useLocalStorage(LocalStorageKey.LAST_LOGGED_IN_USER)
@@ -31,7 +35,7 @@ const useResetPasswordFormService: FormService<FormState<ResetPasswordFormState>
       await signInWithNewCredentials()
     }
     catch (err) {
-      handleApiError(err)
+      formState.setErrors(transformApiErrors(err))
     }
   }
 

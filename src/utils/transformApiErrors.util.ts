@@ -1,0 +1,26 @@
+import { AxiosError } from 'axios'
+
+interface AxiosErrorData {
+  message: string
+  errors: Record<string, string[]>
+}
+
+export default (error: unknown): Record<string, string> => {
+  if (!(error instanceof AxiosError))
+    throw error
+
+  const { response } = error
+
+  if (response === undefined)
+    return {}
+
+  const { data } = response
+  const { errors } = data as AxiosErrorData
+
+  const mappedErrors: Record<string, string> = {}
+
+  for (const key in errors)
+    [mappedErrors[key]] = errors[key]
+
+  return mappedErrors
+}

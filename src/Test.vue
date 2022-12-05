@@ -1,7 +1,13 @@
 <script setup lang="ts">
-import { AppButton } from '@wouterlms/ui'
-import { Icon } from '@wouterlms/icons'
-import { http } from './http'
+import {
+  AppButton,
+  AppIcon,
+  AppMenu,
+  AppMenuItem,
+  FormInput,
+} from '@wouterlms/ui'
+import { ARROWS_CHEVRON_RIGHT, COMMERCE_GUARANISIGN_SQUARE } from '@wouterlms/icons'
+import { http } from '@/plugins'
 import { useAuth } from '@/composables'
 import { Route } from '@/routes'
 
@@ -18,6 +24,10 @@ const signOut = async (): Promise<void> => {
 }
 
 http.get('/example/mock')
+
+http.post('/business-pages', {
+  userId: 2,
+})
 </script>
 
 <template>
@@ -38,7 +48,7 @@ http.get('/example/mock')
     <template #right>
       <AppButton
         :is-loading="isSigningOut"
-        :icon-right="Icon.ARROWS_CHEVRON_RIGHT"
+        :icon-right="ARROWS_CHEVRON_RIGHT"
         class="!px-6 !text-xs"
         @click="signOut"
       >
@@ -48,6 +58,27 @@ http.get('/example/mock')
   </AppPageHeader>
 
   <AppPageContent>
-    <div class="h-[200vh]" />
+    <div class="h-[200vh]">
+      <FormInput :model-value="null">
+        <template #left>
+          <AppMenu class="ml-2 outline-none">
+            <AppIcon
+              :icon="COMMERCE_GUARANISIGN_SQUARE"
+              class="w-5"
+            />
+
+            <template #menu>
+              <AppMenuItem>
+                Item A
+              </AppMenuItem>
+
+              <AppMenuItem>
+                Item 2
+              </AppMenuItem>
+            </template>
+          </AppMenu>
+        </template>
+      </FormInput>
+    </div>
   </AppPageContent>
 </template>

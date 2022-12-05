@@ -1,6 +1,6 @@
 const { DEV } = import.meta.env
 
-export const startMockServerOnDev = async (): Promise<void> => {
+export default async (): Promise<void> => {
   if (DEV) {
     const { worker } = await import('./worker')
 

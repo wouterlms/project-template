@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { AppFocusable, AppIcon } from '@wouterlms/ui'
-import { Icon } from '@wouterlms/icons'
+import { HUMAN_PERSON_CROP_CIRCLE } from '@wouterlms/icons'
 import type { useForm } from '@wouterlms/forms'
 
 import type { LoginFormState } from '@/types'
@@ -65,7 +65,7 @@ const testAccounts = testAccountsEnv.reduce((acc, [
             @click="emit('login', email, password)"
           >
             <AppIcon
-              :icon="Icon.HUMAN_PERSON_CROP_CIRCLE"
+              :icon="HUMAN_PERSON_CROP_CIRCLE"
               class="-translate-y-1 flex-shrink-0 h-6 w-6"
             />
 

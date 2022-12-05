@@ -5,7 +5,7 @@ import {
   useToasts,
 } from '@wouterlms/ui'
 
-import { Icon } from '@wouterlms/icons'
+import { INDICES_EXCLAMATIONMARK_CIRCLE } from '@wouterlms/icons'
 
 export default (): void => {
   const { createToast } = useToasts()
@@ -22,7 +22,7 @@ export default (): void => {
             title: 'Server error',
             message: data.message ?? 'Something went wrong',
             accentColor: colors.value.accent.error,
-            icon: Icon.INDICES_EXCLAMATIONMARK_CIRCLE,
+            icon: INDICES_EXCLAMATIONMARK_CIRCLE,
           })
         }
       }

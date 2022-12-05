@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FormElement, useForm } from '@wouterlms/forms2'
+import { FormElement, useForm } from '@wouterlms/forms'
 import { FormInput, FormLabel } from '@wouterlms/ui'
 
 import { useForgotPasswordFormService, useForgotPasswordFormState } from '../composables'
@@ -8,8 +8,10 @@ import { useForgotPasswordStore } from '@/stores'
 import { Route } from '@/routes'
 
 const { t } = useI18n()
+
 const forgotPasswordStore = useForgotPasswordStore()
 const formState = useForgotPasswordFormState()
+
 const { handleSubmit } = useForgotPasswordFormService(formState)
 
 const form = useForm(formState, {

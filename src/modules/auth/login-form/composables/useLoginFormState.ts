@@ -1,5 +1,6 @@
-import { useFormState, useValidation } from '@wouterlms/forms2'
-import type { FormState } from '@wouterlms/forms2'
+import { useFormState } from '@wouterlms/forms'
+import { applyRules } from '@wouterlms/validation'
+import type { FormState } from '@wouterlms/forms'
 
 import { useLocalStorage } from '@/composables'
 
@@ -7,8 +8,6 @@ import type { LoginFormState } from '@/types'
 import { LocalStorageKey } from '@/enums'
 
 export default (): FormState<LoginFormState> => {
-  const { applyRules } = useValidation()
-
   const lastLoggedInUser = useLocalStorage(LocalStorageKey.LAST_LOGGED_IN_USER)
 
   const formState = useFormState<LoginFormState>(reactive({

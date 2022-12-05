@@ -3,6 +3,7 @@ import { AppToasts, createTheme } from '@wouterlms/ui'
 import { useTitle } from '@wouterlms/composables'
 
 import { usePageTitle, useServerErrorInterceptor } from '@/composables'
+import { setDefaultValidationMessages } from '@/validation'
 
 createTheme({
   colors: {
@@ -17,6 +18,7 @@ const { setTemplate } = useTitle()
 
 useServerErrorInterceptor()
 usePageTitle()
+setDefaultValidationMessages()
 
 setTemplate('{title} | App')
 </script>

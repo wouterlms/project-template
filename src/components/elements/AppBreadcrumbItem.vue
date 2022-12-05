@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { defineProps, withDefaults } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 
 import { AppIcon } from '@wouterlms/ui'
-import { Icon } from '@wouterlms/icons'
+import { ARROWS_CHEVRON_RIGHT } from '@wouterlms/icons'
 
 interface Props {
   to?: RouteLocationRaw
@@ -26,7 +25,7 @@ withDefaults(defineProps<Props>(), {
 
   <AppIcon
     v-if="to"
-    :icon="Icon.ARROWS_CHEVRON_RIGHT"
+    :icon="ARROWS_CHEVRON_RIGHT"
     class="h-auto mx-3 text-tertiary w-2.5"
   />
 </template>
