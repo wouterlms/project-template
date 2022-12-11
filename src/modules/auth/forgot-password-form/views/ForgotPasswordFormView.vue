@@ -15,6 +15,7 @@ const formState = useForgotPasswordFormState()
 const { handleSubmit } = useForgotPasswordFormService(formState)
 
 const form = useForm(formState, {
+  allowPristineSubmit: true,
   handleSubmit,
 })
 
@@ -62,6 +63,7 @@ const hasSentEmail = computed(() => forgotPasswordStore.hasSentEmail)
 
         <FormButton
           :form="form"
+          :disable-if-not-dirty="false"
           class="w-full"
         >
           {{ t('auth.forgot_password_form.send') }}

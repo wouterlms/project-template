@@ -35,9 +35,9 @@ module.exports = {
               accent: {
                 primary: '#000000',
                 secondary: '#E83C54',
-                green: '#43b581',
-                orange: '#e6a23c',
-                red: '#f56c6c',
+                success: '#43b581',
+                danger: '#e6a23c',
+                error: '#f56c6c',
               },
               gray: {
                 'primary': '#f5f6fc',
@@ -87,9 +87,9 @@ module.exports = {
               accent: {
                 primary: '#ffffff',
                 secondary: '#E83C54',
-                green: '#43b581',
-                orange: '#e6a23c',
-                red: '#f56c6c',
+                success: '#43b581',
+                danger: '#e6a23c',
+                error: '#f56c6c',
               },
               gray: {
                 'primary': '#1c1d20',

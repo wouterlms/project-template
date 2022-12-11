@@ -22,7 +22,7 @@ specifiers:
   eslint: ^8.27.0
   eslint-config-appwise: ^1.0.6
   eslint-config-standard-with-typescript: ^23.0.0
-  eslint-config-wouter: ^0.0.7
+  eslint-config-wouter: ^0.0.91
   eslint-plugin-import: ^2.26.0
   eslint-plugin-node: ^11.1.0
   eslint-plugin-promise: ^6.0.1
@@ -78,7 +78,7 @@ devDependencies:
   eslint: registry.npmjs.org/eslint/8.27.0
   eslint-config-appwise: 1.0.6
   eslint-config-standard-with-typescript: 23.0.0_pnvxqjhrx5lk6imfkjw4d5nkzy
-  eslint-config-wouter: registry.npmjs.org/eslint-config-wouter/0.0.7_eslint@8.27.0
+  eslint-config-wouter: registry.npmjs.org/eslint-config-wouter/0.0.91_eslint@8.27.0
   eslint-plugin-import: 2.26.0_eslint@8.27.0
   eslint-plugin-node: 11.1.0_eslint@8.27.0
   eslint-plugin-promise: 6.0.1_eslint@8.27.0
@@ -6658,11 +6658,11 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  registry.npmjs.org/eslint-config-wouter/0.0.7_eslint@8.27.0:
-    resolution: {integrity: sha512-rKMJih3gqvI2TiyZlmbDa//wstPsOp3kDLpfKEFEWnVMgrNVmKH3w07rZq6T6dpCI6sTcTrZgiMQ3eE5P4ZGsA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/eslint-config-wouter/-/eslint-config-wouter-0.0.7.tgz}
-    id: registry.npmjs.org/eslint-config-wouter/0.0.7
+  registry.npmjs.org/eslint-config-wouter/0.0.91_eslint@8.27.0:
+    resolution: {integrity: sha512-KSUZtlxTpTlijL8gqXDbvF4AvMAVC7+ysJpgQHBryzE18k+iq0qluWznLRaF3Ad9kxsdPNGVyGUDhV39ohI3Xg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/eslint-config-wouter/-/eslint-config-wouter-0.0.91.tgz}
+    id: registry.npmjs.org/eslint-config-wouter/0.0.91
     name: eslint-config-wouter
-    version: 0.0.7
+    version: 0.0.91
     peerDependencies:
       eslint: '>= 8'
     dependencies:

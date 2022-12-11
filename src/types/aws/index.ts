@@ -1,1 +1,1 @@
-export type { default as AwsFile } from './AwsFile'
+export { default as AwsFile } from './AwsFile.type'

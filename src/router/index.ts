@@ -13,12 +13,7 @@ const router = createRouter({
       meta: {
         middleware: [auth],
       },
-      children: [
-        {
-          path: '',
-          component: async () => await import('../Test.vue'),
-        },
-      ],
+      children: [/* TODO: add routes */],
     },
     ...authRoutes,
     {
@@ -29,9 +24,12 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to) => {
-  const { meta } = to
+  const { matched } = to
 
-  const middlewares = meta.middleware ?? null
+  const middlewares = matched
+    .filter(({ meta }) => meta.middleware != null)
+    .map(({ meta }) => meta.middleware!)
+    .flat()
 
   if (middlewares !== null) {
     for (const middleware of middlewares) {

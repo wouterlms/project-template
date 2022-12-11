@@ -7,14 +7,11 @@ import vueI18n from '@intlify/vite-plugin-vue-i18n'
 
 import createRouteMap from '@wouterlms/create-route-map'
 
-import iconTransformer from '@wouterlms/icons/transformer'
-
 import { checker } from 'vite-plugin-checker'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    iconTransformer(),
     vue(),
     Components({
       dirs: ['./src'],

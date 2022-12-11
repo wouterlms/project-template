@@ -18,6 +18,18 @@
   "common.reset_password": "Reset password",
   "common.sign_in": "Sign in",
 
+  "static.page_title.forgot_password": "Forgot password",
+  "static.page_title.login": "Login",
+  "static.page_title.reset_password": "Reset password",
+
+  "suspense.bad_request": "Bad Request",
+  "suspense.forbidden": "Forbidden",
+  "suspense.loading": "Loading",
+  "suspense.not_found": "Not Found",
+  "suspense.server_error": "Server Error",
+  "suspense.something_went_wrong": "Something went wrong",
+  "suspense.unauthorized": "Unauthorized",
+
   "validation.email": "Invalid email",
   "validation.max": "Maximum {max}",
   "validation.max_array_length": "Select maximum {maxLength}",
@@ -29,17 +41,5 @@
   "validation.min_date": "Minimum {min}",
   "validation.min_length": "Min. {minLength} characters",
   "validation.required": "Required",
-  "validation.url": "Invalid url",
-
-  "static.page_title.forgot_password": "Forgot password",
-  "static.page_title.login": "Login",
-  "static.page_title.reset_password": "Reset password",
-
-  "suspense.bad_request": "Bad Request",
-  "suspense.forbidden": "Forbidden",
-  "suspense.loading": "Loading",
-  "suspense.not_found": "Not Found",
-  "suspense.server_error": "Server Error",
-  "suspense.something_went_wrong": "Something went wrong",
-  "suspense.unauthorized": "Unauthorized"
+  "validation.url": "Invalid url"
 }

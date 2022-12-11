@@ -19,7 +19,8 @@ const { createToast, removeToast } = useToasts()
 const route = useRoute()
 const router = useRouter()
 
-const { token, email } = route.query
+const { token } = route.params
+const { email } = route.query
 
 const formState = useResetPasswordFormState()
 

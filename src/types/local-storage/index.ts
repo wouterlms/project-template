@@ -1,1 +1,2 @@
-export type { default as LastLoggedInUser } from './LastLoggedInUser'export type { default as LocalStorageValue } from './LocalStorageValue'
+export { default as LastLoggedInUser } from './LastLoggedInUser.type'
+export { default as LocalStorageValue } from './LocalStorageValue.type'

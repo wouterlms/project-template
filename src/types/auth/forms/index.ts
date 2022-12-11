@@ -1,3 +1,3 @@
-export type { default as ForgotPasswordFormState } from './ForgotPasswordFormState'
-export type { default as LoginFormState } from './LoginFormState'
-export type { default as ResetPasswordFormState } from './ResetPasswordFormState'
+export { default as ForgotPasswordFormState } from './ForgotPasswordFormState.type'
+export { default as LoginFormState } from './LoginFormState.type'
+export { default as ResetPasswordFormState } from './ResetPasswordFormState.type'
