@@ -8,4 +8,4 @@ if [ "$branch" = "production" ]; then
   exit 1
 fi
 
-#npm run validate
+npm run validate
