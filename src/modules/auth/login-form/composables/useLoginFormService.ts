@@ -13,7 +13,7 @@ type UseLoginFormService = (formState: FormState<LoginFormState>) => {
 const useLoginFormService: UseLoginFormService = (formState) => {
   const { t } = useI18n()
   const auth = useAuth()
-  const router = useRouter()
+  const router = useExtendedRouter()
 
   const forgotPasswordStore = useForgotPasswordStore()
   const loginStore = useLoginStore()
@@ -23,10 +23,10 @@ const useLoginFormService: UseLoginFormService = (formState) => {
 
     try {
       await auth.signIn(email, password)
-      await auth.getUser()
+      const user = await auth.getUser()
 
       forgotPasswordStore.setLastLoginAttemptEmail(null)
-      loginStore.setLastLoggedInUser(auth.user.value)
+      loginStore.setLastLoggedInUser(user)
 
       await router.replace('/')
     }

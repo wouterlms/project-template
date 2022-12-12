@@ -6,7 +6,7 @@ import type { LocalStorageKey } from '@/enums'
 import type { LocalStorageValue } from '@/types'
 
 export default <T extends LocalStorageKey>(
-  key: T, defaultValue?: Nullable<T>,
+  key: T, defaultValue: Nullable<T> = null,
 ): Ref<Nullable<LocalStorageValue[T]>> => (
   useLocalStorage(key, defaultValue) as Ref<LocalStorageValue[T]>
 )

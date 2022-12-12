@@ -1,6 +1,6 @@
 import { useAuth } from '@/composables'
 
-import { Route } from '@/routes'
+import { Route } from '@/enums'
 import type { RouteGuard } from '@/types'
 
 const auth: RouteGuard = async () => {

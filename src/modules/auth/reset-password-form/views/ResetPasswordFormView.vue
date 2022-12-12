@@ -12,12 +12,12 @@ import { OBJECT_AND_TOOLS_LINK } from '@wouterlms/icons'
 
 import { useResetPasswordFormService, useResetPasswordFormState } from '../composables'
 
-import { Route } from '@/routes'
+import { Route } from '@/enums'
 
 const { t } = useI18n()
 const { createToast, removeToast } = useToasts()
 const route = useRoute()
-const router = useRouter()
+const router = useExtendedRouter()
 
 const { token } = route.params
 const { email } = route.query

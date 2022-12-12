@@ -1,4 +1,5 @@
 export { default as useAuth } from './useAuth'
+export { default as useExtendedRouter } from './useExtendedRouter'
 export { default as useInject } from './useInject'
 export { default as useLocalStorage } from './useLocalStorage'
 export { default as usePageLoader } from './usePageLoader'

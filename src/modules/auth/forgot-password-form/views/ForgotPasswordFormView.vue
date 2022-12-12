@@ -5,7 +5,7 @@ import { FormInput, FormLabel } from '@wouterlms/ui'
 import { useForgotPasswordFormService, useForgotPasswordFormState } from '../composables'
 import { useForgotPasswordStore } from '@/stores'
 
-import { Route } from '@/routes'
+import { Route } from '@/enums'
 
 const { t } = useI18n()
 

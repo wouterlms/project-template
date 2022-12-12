@@ -13,7 +13,7 @@ type UseResetPasswordFormService = (formState: FormState<ResetPasswordFormState>
 
 const useResetPasswordFormService: UseResetPasswordFormService = (formState) => {
   const auth = useAuth()
-  const router = useRouter()
+  const router = useExtendedRouter()
 
   const loginStore = useLoginStore()
 
@@ -21,9 +21,9 @@ const useResetPasswordFormService: UseResetPasswordFormService = (formState) => 
     const { email, password } = formState.getData()
 
     await auth.signIn(email, password)
-    await auth.getUser()
+    const user = await auth.getUser()
 
-    loginStore.setLastLoggedInUser(auth.user.value)
+    loginStore.setLastLoggedInUser(user)
 
     await router.replace('/')
   }
