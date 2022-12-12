@@ -16,7 +16,7 @@ export default (): FormState<ResetPasswordFormState> => {
       value: token,
     },
     email: {
-      value: email as string,
+      value: email as string ?? null,
       validate: async (email) => await applyRules(email, {
         required: true,
         email: true,

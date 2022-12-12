@@ -1,5 +1,4 @@
 export { default as useAuth } from './useAuth'
-export { default as useFileUploadService } from './useFileUploadService'
 export { default as useInject } from './useInject'
 export { default as useLocalStorage } from './useLocalStorage'
 export { default as usePageLoader } from './usePageLoader'

@@ -35,7 +35,7 @@ const hasSentEmail = computed(() => forgotPasswordStore.hasSentEmail)
       ? t('auth.forgot_password_form.thank_you_within_a_few')
       : t('auth.forgot_password_form.dont_remember_your_password_enter')"
   >
-    <AppLink
+    <RouterLink
       is="RouterLink"
       v-if="hasSentEmail"
       :to="{
@@ -43,7 +43,7 @@ const hasSentEmail = computed(() => forgotPasswordStore.hasSentEmail)
       }"
     >
       {{ t('auth.forgot_password_form.return_to_login') }}
-    </AppLink>
+    </RouterLink>
 
     <FormElement
       v-else
@@ -60,15 +60,15 @@ const hasSentEmail = computed(() => forgotPasswordStore.hasSentEmail)
             type="email"
           />
         </FormLabel>
-
-        <FormButton
-          :form="form"
-          :disable-if-not-dirty="false"
-          class="w-full"
-        >
-          {{ t('auth.forgot_password_form.send') }}
-        </FormButton>
       </FormSpacer>
+
+      <FormButton
+        :form="form"
+        :disable-if-not-dirty="false"
+        class="mt-6 w-full"
+      >
+        {{ t('auth.forgot_password_form.send') }}
+      </FormButton>
     </FormElement>
   </AuthPage>
 </template>

@@ -66,11 +66,14 @@ if (token === undefined || email === undefined) {
             type="password"
           />
         </FormLabel>
-
-        <FormButton :form="form">
-          {{ t('common.reset_password') }}
-        </FormButton>
       </FormSpacer>
+
+      <FormButton
+        :form="form"
+        class="mt-6"
+      >
+        {{ t('common.reset_password') }}
+      </FormButton>
     </FormElement>
   </AuthPage>
 </template>

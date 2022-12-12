@@ -1,11 +1,10 @@
 import { AxiosError } from 'axios'
 import type { FormState } from '@wouterlms/forms'
 
-import { useAuth, useLocalStorage } from '@/composables'
-import { useForgotPasswordStore } from '@/stores'
+import { useAuth } from '@/composables'
+import { useForgotPasswordStore, useLoginStore } from '@/stores'
 
 import type { LoginFormState } from '@/types'
-import { LocalStorageKey } from '@/enums'
 
 type UseLoginFormService = (formState: FormState<LoginFormState>) => {
   handleSubmit: () => Promise<void>
@@ -15,8 +14,9 @@ const useLoginFormService: UseLoginFormService = (formState) => {
   const { t } = useI18n()
   const auth = useAuth()
   const router = useRouter()
+
   const forgotPasswordStore = useForgotPasswordStore()
-  const lastLoggedInUser = useLocalStorage(LocalStorageKey.LAST_LOGGED_IN_USER)
+  const loginStore = useLoginStore()
 
   const handleSubmit = async (): Promise<void> => {
     const { email, password } = formState.getData()
@@ -25,7 +25,8 @@ const useLoginFormService: UseLoginFormService = (formState) => {
       await auth.signIn(email, password)
       await auth.getUser()
 
-      lastLoggedInUser.value = auth.user.value
+      forgotPasswordStore.setLastLoginAttemptEmail(null)
+      loginStore.setLastLoggedInUser(auth.user.value)
 
       await router.replace('/')
     }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AppLoader } from '@wouterlms/ui'
+import { AppLoader, colors } from '@wouterlms/ui'
 import { useEventListener } from '@wouterlms/composables'
 import type { useForm } from '@wouterlms/forms'
 
@@ -18,7 +18,8 @@ const isScrolledDown = ref(false)
 
 const showControls = computed(
   () => props.enableControls && (props.form.isDirty || (props.form.isDirty && isScrolledDown)
-  ))
+  ),
+)
 
 useEventListener('scroll', () => {
   isScrolledDown.value = window.scrollY > 0
@@ -30,7 +31,7 @@ useEventListener('scroll', () => {
     :class="{
       'pb-12': !showControls,
     }"
-    class="flex flex-col gap-y-8 h-full lg:gap-y-12 w-full"
+    class="flex flex-1 flex-col gap-y-8 lg:gap-y-12 w-full"
   >
     <slot v-if="form.isReady" />
 
@@ -55,6 +56,7 @@ useEventListener('scroll', () => {
       >
         <FormButton
           :form="form"
+          :accent-color="colors.text.primary"
           class="text-xs"
         >
           <slot name="submit-button">

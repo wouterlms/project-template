@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import type { RouteLocationRaw } from 'vue-router'
+import type { Breadcrumb } from '@/types'
 
 interface Props {
   title: string
-  breadcrumbs?: {
-    label: string
-    to?: RouteLocationRaw
-  }[]
+  breadcrumbs?: Breadcrumb[]
 }
 
 withDefaults(defineProps<Props>(), {
@@ -15,7 +12,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <header class="border-b border-primary border-solid mb-12 py-6">
+  <header class="border-b border-primary border-solid flex items-center mb-12 min-h-[8rem] py-6">
     <AppContainer class="flex items-center justify-between">
       <div>
         <AppBreadcrumbs
@@ -31,12 +28,16 @@ withDefaults(defineProps<Props>(), {
           </AppBreadcrumbItem>
         </AppBreadcrumbs>
 
-        <AppTypography
-          variant="display-2"
-          class="font-medium"
-        >
-          {{ title }}
-        </AppTypography>
+        <div class="flex items-center">
+          <AppText
+            variant="display-2"
+            class="font-medium"
+          >
+            {{ title }}
+          </AppText>
+
+          <slot name="title" />
+        </div>
       </div>
 
       <slot name="right" />

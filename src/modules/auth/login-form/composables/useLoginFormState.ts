@@ -2,17 +2,18 @@ import { useFormState } from '@wouterlms/forms'
 import { applyRules } from '@wouterlms/validation'
 import type { FormState } from '@wouterlms/forms'
 
-import { useLocalStorage } from '@/composables'
+import { useLoginStore } from '@/stores'
 
 import type { LoginFormState } from '@/types'
-import { LocalStorageKey } from '@/enums'
 
 export default (): FormState<LoginFormState> => {
-  const lastLoggedInUser = useLocalStorage(LocalStorageKey.LAST_LOGGED_IN_USER)
+  const loginStore = useLoginStore()
+
+  const { lastLoggedInUser } = loginStore
 
   const formState = useFormState<LoginFormState>(reactive({
     email: {
-      value: lastLoggedInUser.value?.email ?? null,
+      value: lastLoggedInUser?.email ?? null,
       validate: async (email) => await applyRules(email, {
         required: true,
         email: true,

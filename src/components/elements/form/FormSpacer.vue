@@ -1,12 +1,12 @@
 <script setup lang="ts">
 interface Props {
   direction?: 'horizontal' | 'vertical'
-  gap?: number
+  spacing?: number
 }
 
 withDefaults(defineProps<Props>(), {
   direction: 'vertical',
-  gap: 4,
+  spacing: 4,
 })
 </script>
 
@@ -16,7 +16,7 @@ withDefaults(defineProps<Props>(), {
       'flex-col': direction === 'vertical',
     }"
     :style="{
-      gap: `${gap / 4}rem`,
+      gap: `${spacing / 4}rem`,
     }"
     class="flex"
   >

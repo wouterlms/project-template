@@ -4,7 +4,7 @@ export default defineStore('forgotPassword', () => {
   const lastLoginAttemptEmail = ref<Nullable<string>>(null)
   const hasSentEmail = ref(false)
 
-  const setLastLoginAttemptEmail = (email: string): void => {
+  const setLastLoginAttemptEmail = (email: Nullable<string>): void => {
     lastLoginAttemptEmail.value = email
   }
 

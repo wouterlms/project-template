@@ -1,11 +1,11 @@
 import type { FormState } from '@wouterlms/forms'
 
 import { transformApiErrors } from '@/utils'
-import { useAuth, useLocalStorage } from '@/composables'
+import { useAuth } from '@/composables'
 import { authService } from '@/services'
+import { useLoginStore } from '@/stores'
 
 import type { ResetPasswordFormState } from '@/types'
-import { LocalStorageKey } from '@/enums'
 
 type UseResetPasswordFormService = (formState: FormState<ResetPasswordFormState>) => {
   handleSubmit: () => Promise<void>
@@ -14,7 +14,8 @@ type UseResetPasswordFormService = (formState: FormState<ResetPasswordFormState>
 const useResetPasswordFormService: UseResetPasswordFormService = (formState) => {
   const auth = useAuth()
   const router = useRouter()
-  const lastLoggedInUser = useLocalStorage(LocalStorageKey.LAST_LOGGED_IN_USER)
+
+  const loginStore = useLoginStore()
 
   const signInWithNewCredentials = async (): Promise<void> => {
     const { email, password } = formState.getData()
@@ -22,7 +23,7 @@ const useResetPasswordFormService: UseResetPasswordFormService = (formState) => 
     await auth.signIn(email, password)
     await auth.getUser()
 
-    lastLoggedInUser.value = auth.user.value
+    loginStore.setLastLoggedInUser(auth.user.value)
 
     await router.replace('/')
   }

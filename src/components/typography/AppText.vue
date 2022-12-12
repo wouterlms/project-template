@@ -18,19 +18,19 @@ const classes = computed(() => {
 
   switch (variant) {
     case 'display-4':
-      classes.push('text-5xl text-primary')
+      classes.push('text-4xl md:text-5xl text-primary')
       break
     case 'display-3':
-      classes.push('text-4xl text-primary')
+      classes.push('text-3xl md:text-4xl text-primary')
       break
     case 'display-2':
-      classes.push('text-3xl text-primary')
+      classes.push('text-2xl md:text-3xl text-primary')
       break
     case 'display-1':
-      classes.push('text-2xl text-primary')
+      classes.push('text-xl: md:text-2xl text-primary')
       break
     case 'headline':
-      classes.push('text-xl text-primary')
+      classes.push('text-lg md:text-xl text-primary')
       break
     case 'title':
       classes.push('text-lg')

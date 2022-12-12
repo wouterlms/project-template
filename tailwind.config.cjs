@@ -40,7 +40,7 @@ module.exports = {
                 error: '#f56c6c',
               },
               gray: {
-                'primary': '#f5f6fc',
+                'primary': '#fafafa',
                 'primary-inverted': '#1c1d20',
                 'secondary': '#e1e2e8',
                 'secondary-inverted': '#212225',
@@ -69,7 +69,7 @@ module.exports = {
               'input': '#ffffff',
             },
             borderColor: {
-              'primary': '#dcdfe6',
+              'primary': '#eaeaea',
               'primary-inverted': '#343539',
               'secondary': '#e4e7ed',
               'secondary-inverted': '#2f3034',

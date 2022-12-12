@@ -4,7 +4,7 @@ export default interface ResetPasswordFormState {
     returns: string
   }
   email: {
-    value: string
+    value: Nullable<string>
     returns: string
   }
   password: {

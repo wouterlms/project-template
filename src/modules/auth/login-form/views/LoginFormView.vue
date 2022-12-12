@@ -7,19 +7,20 @@ import {
   useLoginFormState,
 } from '../composables'
 
-import { useLocalStorage } from '@/composables'
-import { LocalStorageKey } from '@/enums'
+import { useLoginStore } from '@/stores'
 
 const { t } = useI18n()
 
-const lastLoggedInUser = useLocalStorage(LocalStorageKey.LAST_LOGGED_IN_USER, null)
+const loginStore = useLoginStore()
 const formState = useLoginFormState()
+
+const { lastLoggedInUser } = loginStore
 
 const { handleSubmit } = useLoginFormService(formState)
 
-const title = lastLoggedInUser.value === null
+const title = lastLoggedInUser === null
   ? t('common.sign_in')
-  : t('auth.login_form.welcome_back', { name: lastLoggedInUser.value.firstName })
+  : t('auth.login_form.welcome_back', { name: lastLoggedInUser.firstName })
 
 const form = useForm(formState, {
   handleSubmit,
@@ -72,14 +73,14 @@ const handleTestAccountLogin = (email: string, password: string): void => {
             type="password"
           />
         </FormLabel>
-
-        <FormButton
-          :form="form"
-          class="w-full"
-        >
-          {{ t('common.sign_in') }}
-        </FormButton>
       </FormSpacer>
+
+      <FormButton
+        :form="form"
+        class="mt-6 w-full"
+      >
+        {{ t('common.sign_in') }}
+      </FormButton>
     </FormElement>
   </AuthPage>
 </template>

@@ -21,19 +21,20 @@ withDefaults(defineProps<Props>(), {
     class="lg:gap-x-12 lg:grid"
   >
     <div>
-      <AppTypography
+      <AppText
         variant="headline"
         class="font-medium"
       >
         {{ title }}
-      </AppTypography>
+      </AppText>
 
-      <AppTypography
+      <!-- eslint-disable vue/no-v-text-v-html-on-component -->
+      <AppText
         variant="body-1"
         class="max-w-md mt-1 text-tertiary"
-      >
-        {{ description }}
-      </AppTypography>
+        v-html="description"
+      />
+      <!-- eslint-enable vue/no-v-text-v-html-on-component -->
     </div>
 
     <div class="lg:mt-2 mt-6">
