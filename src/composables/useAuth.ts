@@ -1,6 +1,11 @@
 import { useAuth } from '@appwise/vue-oauth2'
 import type { UseAuth } from '@appwise/vue-oauth2'
+
+import router from '@/router'
+
 import { useAuthStore } from '@/stores'
+
+import { Route } from '@/enums'
 import type { Profile } from '@/types'
 
 const {
@@ -23,7 +28,14 @@ export default (): Omit<UseAuth<Profile>, 'user'> => {
     baseURL: VITE_API_BASE_URL,
     clientId: VITE_CLIENT_ID,
     clientSecret: VITE_CLIENT_SECRET,
-    snakeCase: true,
+    autoRefreshAccessToken: true,
+    endpoints: {
+      userInfo: '/api/users/me',
+      revoke: '',
+    },
+    onRefreshTokenFailed: () => {
+      void router.push({ name: Route.LOGIN })
+    },
   })
 
   const getUser = async (): Promise<Profile> => {

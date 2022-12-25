@@ -5,7 +5,6 @@ import router from '@/router'
 
 import {
   createAxiosInstance,
-  createMockServer,
   i18n,
   pinia,
 } from '@/plugins'
@@ -21,6 +20,6 @@ const app = createApp(App)
 // initSentry(app, router)
 
 createAxiosInstance()
-await createMockServer()
+// await createMockServer()
 
 app.mount('#app')

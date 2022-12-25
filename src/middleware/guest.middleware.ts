@@ -1,8 +1,8 @@
 import { useAuth } from '@/composables'
 
-import type { RouteGuard } from '@/types'
+import type { RouteMiddleware } from '@/types'
 
-const guest: RouteGuard = async () => {
+const guest: RouteMiddleware = async () => {
   const { getUser, isAuthenticated } = useAuth()
 
   try {
@@ -13,7 +13,7 @@ const guest: RouteGuard = async () => {
 
     return '/'
   }
-  catch {}
+  catch { }
 }
 
 export default guest

@@ -1,4 +1,4 @@
-export default interface AwsFile {
+export default interface FileObject {
   id: string
   name: string
   fileName: string

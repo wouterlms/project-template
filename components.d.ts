@@ -13,8 +13,12 @@ declare module '@vue/runtime-core' {
     AppContainer: typeof import('./src/components/layout/page/AppContainer.vue')['default']
     AppFormLayout: typeof import('./src/components/layout/form/AppFormLayout.vue')['default']
     AppFormLayoutSection: typeof import('./src/components/layout/form/AppFormLayoutSection.vue')['default']
+    AppGridTransition: typeof import('./src/components/transitions/AppGridTransition.vue')['default']
+    AppHeightTransition: typeof import('./src/components/transitions/AppHeightTransition.vue')['default']
     AppLayout: typeof import('./src/components/layout/AppLayout.vue')['default']
     AppLink: typeof import('./src/components/elements/AppLink.vue')['default']
+    AppListAnimation: typeof import('./src/components/transitions/AppListAnimation.vue')['default']
+    AppListTransition: typeof import('./src/components/transitions/AppListTransition.vue')['default']
     AppPageContent: typeof import('./src/components/layout/page/AppPageContent.vue')['default']
     AppPageHeader: typeof import('./src/components/layout/page/AppPageHeader.vue')['default']
     AppPageLoader: typeof import('./src/components/layout/AppPageLoader.vue')['default']
@@ -28,6 +32,7 @@ declare module '@vue/runtime-core' {
     ExtendedRouterLink: typeof import('./src/components/elements/router/ExtendedRouterLink.vue')['default']
     ForgotPasswordFormView: typeof import('./src/modules/auth/forgot-password-form/views/ForgotPasswordFormView.vue')['default']
     FormButton: typeof import('./src/components/elements/form/FormButton.vue')['default']
+    FormLabel: typeof import('./src/components/elements/form/FormLabel.vue')['default']
     FormSpacer: typeof import('./src/components/elements/form/FormSpacer.vue')['default']
     LoginFormTestAccounts: typeof import('./src/modules/auth/login-form/components/LoginFormTestAccounts.vue')['default']
     LoginFormView: typeof import('./src/modules/auth/login-form/views/LoginFormView.vue')['default']
@@ -46,5 +51,6 @@ declare module '@vue/runtime-core' {
     TestA: typeof import('./src/modules/test/TestA.vue')['default']
     TestB: typeof import('./src/modules/test/TestB.vue')['default']
     TestWrapper: typeof import('./src/modules/test/TestWrapper.vue')['default']
+    TypedRouterLink: typeof import('./src/components/elements/router/TypedRouterLink.vue')['default']
   }
 }

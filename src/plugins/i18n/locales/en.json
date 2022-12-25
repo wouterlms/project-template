@@ -4,6 +4,7 @@
   "auth.forgot_password_form.return_to_login": "Return to login",
   "auth.forgot_password_form.send": "Send",
   "auth.forgot_password_form.thank_you_within_a_few": "Thank you, within a few minutes you will receive an e-mail containing a personal link. The link will allow you to enter a new password.",
+  "auth.login_form.forgot_password": "Forgot password?",
   "auth.login_form.invalid_email_or_password": "Invalid email or password",
   "auth.login_form.sign_in_to_continue": "Sign in to continue",
   "auth.login_form.sign_in_with_a_test_account": "Sign in with a test account",

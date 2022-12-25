@@ -1,9 +1,9 @@
-import type { RouteGuard } from './RouteGuard.type'
+import type RouteMiddleware from './RouteMiddleware.type'
 
 export { }
 
 declare module 'vue-router' {
   interface RouteMeta {
-    middleware?: RouteGuard[]
+    middleware?: RouteMiddleware[]
   }
 }

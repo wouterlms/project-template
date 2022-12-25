@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { FormElement, useForm } from '@wouterlms/forms'
-import { FormInput, FormLabel } from '@wouterlms/ui'
+import { FormInput } from '@wouterlms/ui'
 
 import {
   useLoginFormService,
@@ -8,6 +8,8 @@ import {
 } from '../composables'
 
 import { useLoginStore } from '@/stores'
+
+import { Route } from '@/enums'
 
 const { t } = useI18n()
 
@@ -65,7 +67,7 @@ const handleTestAccountLogin = (email: string, password: string): void => {
 
         <FormLabel
           :label="t('common.password')"
-          :error="!!state.password.error"
+          :error="state.password.error"
         >
           <FormInput
             v-model="state.password.value"
@@ -74,6 +76,15 @@ const handleTestAccountLogin = (email: string, password: string): void => {
           />
         </FormLabel>
       </FormSpacer>
+
+      <RouterLink
+        :to="{ name: Route.FORGOT_PASSWORD }"
+        class="hover:underline mt-1.5 self-start"
+      >
+        <AppText variant="body-1">
+          {{ t('auth.login_form.forgot_password') }}
+        </AppText>
+      </RouterLink>
 
       <FormButton
         :form="form"

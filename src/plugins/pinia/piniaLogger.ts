@@ -6,13 +6,13 @@ interface Options {
   isEnabled: boolean
 }
 
-const { DEV } = import.meta.env
+const { VITE_IS_LOCAL } = import.meta.env
 
 export default (
   { isEnabled }: Options = { isEnabled: true },
 ) => (ctx: PiniaPluginContext): void => {
   ctx.store.$onAction((action) => {
-    if (!isEnabled || !DEV)
+    if (!isEnabled || !VITE_IS_LOCAL)
       return
 
     const { name, args, store } = action

@@ -3,9 +3,8 @@ import { FormElement, useForm } from '@wouterlms/forms'
 
 import {
   FormInput,
-  FormLabel,
   colors,
-  useToasts,
+  useNotifications,
 } from '@wouterlms/ui'
 
 import { OBJECT_AND_TOOLS_LINK } from '@wouterlms/icons'
@@ -15,9 +14,9 @@ import { useResetPasswordFormService, useResetPasswordFormState } from '../compo
 import { Route } from '@/enums'
 
 const { t } = useI18n()
-const { createToast, removeToast } = useToasts()
+const { createNotification, removeNotification } = useNotifications()
 const route = useRoute()
-const router = useExtendedRouter()
+const router = useRouter()
 
 const { token } = route.params
 const { email } = route.query
@@ -33,7 +32,7 @@ const form = useForm(formState, {
 const { state } = formState
 
 if (token === undefined || email === undefined) {
-  const toast = createToast({
+  const toast = createNotification({
     title: t('auth.reset_password_form.invalid_link'),
     message: t('auth.reset_password_form.this_is_not_a_valid'),
     icon: OBJECT_AND_TOOLS_LINK,
@@ -42,7 +41,7 @@ if (token === undefined || email === undefined) {
       label: t('auth.reset_password_form.request_new_reset_link'),
       onClick: async () => {
         await router.replace({ name: Route.FORGOT_PASSWORD })
-        removeToast(toast)
+        removeNotification(toast)
       },
     },
   })

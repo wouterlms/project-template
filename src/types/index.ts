@@ -1,4 +1,4 @@
 export * from './auth'
-export * from './aws'
 export * from './core'
+export * from './files'
 export * from './local-storage'

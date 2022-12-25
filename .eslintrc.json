@@ -11,12 +11,11 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".ts", ".d.ts", ".json", ".vue"]
+        "extensions": [".js", ".ts", ".json", ".vue"]
       },
-
       "alias": {
         "map": [["@", "./src", "~", "./"]],
-        "extensions": [".js", ".vue", ".ts", ".d.ts"]
+        "extensions": [".js", ".vue", ".ts"]
       }
     }
   },

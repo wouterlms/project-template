@@ -7,7 +7,7 @@ type UsePageLoader = () => {
 }
 
 const usePageLoader: UsePageLoader = () => {
-  const router = useExtendedRouter()
+  const router = useRouter()
 
   const showProgressBar = ref(false)
   const progress = ref(0)

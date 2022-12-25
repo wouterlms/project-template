@@ -13,7 +13,7 @@ type UseResetPasswordFormService = (formState: FormState<ResetPasswordFormState>
 
 const useResetPasswordFormService: UseResetPasswordFormService = (formState) => {
   const auth = useAuth()
-  const router = useExtendedRouter()
+  const router = useRouter()
 
   const loginStore = useLoginStore()
 

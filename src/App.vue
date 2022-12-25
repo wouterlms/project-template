@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { AppToasts, createTheme } from '@wouterlms/ui'
+import {
+  AppNotifications,
+  AppToasts,
+  createTheme,
+} from '@wouterlms/ui'
+
 import { useTitle } from '@wouterlms/composables'
 
 import {
@@ -9,15 +14,6 @@ import {
 
 import { setDefaultValidationMessages } from '@/validation'
 
-createTheme({
-  colors: {
-    accent: {
-      primary: ['#000000', '#ffffff'],
-    },
-  },
-  enableDarkMode: true,
-})
-
 const { setTemplate } = useTitle()
 
 useServerErrorInterceptor()
@@ -25,10 +21,24 @@ usePageTitle()
 setDefaultValidationMessages()
 
 setTemplate('{title} | App')
+
+createTheme({
+  colors: {
+    accent: {
+      primary: ['#000000', '#ffffff'],
+    },
+    background: {
+      input: ['#ffffff', '#141414'],
+      inputDisabled: ['#f7fafc', '#141414'],
+    },
+  },
+  enableDarkMode: true,
+})
 </script>
 
 <template>
   <AppPageLoader />
   <RouterView />
   <AppToasts />
+  <AppNotifications />
 </template>

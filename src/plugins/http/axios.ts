@@ -1,7 +1,7 @@
 import axios, { AxiosError } from 'axios'
 
 export default (): void => {
-  const { VITE_API_BASE_URL, DEV } = import.meta.env
+  const { VITE_API_BASE_URL, VITE_IS_LOCAL } = import.meta.env
 
   const toCamelCase = (str: string): string => (
     str.replace(/[_.-](\w|$)/g, (_, x) => x.toUpperCase())
@@ -14,9 +14,9 @@ export default (): void => {
   const convert = (obj: unknown, handler: (str: string) => string): unknown => {
     if (
       obj === null
-    || typeof obj !== 'object'
-    || obj instanceof Date
-    || obj instanceof RegExp
+      || typeof obj !== 'object'
+      || obj instanceof Date
+      || obj instanceof RegExp
     ) return obj
 
     if (Array.isArray(obj))
@@ -54,7 +54,7 @@ export default (): void => {
     console.groupEnd()
     /* eslint-enable no-console */
 
-    if (DEV) {
+    if (VITE_IS_LOCAL) {
       const environment = response.config.baseURL?.match(/development|staging|production/)?.[0] ?? 'unknown'
 
       try {
@@ -71,7 +71,7 @@ ${method === 'post' || method === 'put' ? `*Payload*\n\`\`\`${JSON.stringify(JSO
 
         void navigator.clipboard.writeText(readableError)
       }
-      catch {}
+      catch { }
     }
   }
 

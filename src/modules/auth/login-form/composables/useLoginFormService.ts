@@ -13,7 +13,7 @@ type UseLoginFormService = (formState: FormState<LoginFormState>) => {
 const useLoginFormService: UseLoginFormService = (formState) => {
   const { t } = useI18n()
   const auth = useAuth()
-  const router = useExtendedRouter()
+  const router = useRouter()
 
   const forgotPasswordStore = useForgotPasswordStore()
   const loginStore = useLoginStore()

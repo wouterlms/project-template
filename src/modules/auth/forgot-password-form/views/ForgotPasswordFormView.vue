@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { FormElement, useForm } from '@wouterlms/forms'
-import { FormInput, FormLabel } from '@wouterlms/ui'
+import { FormInput } from '@wouterlms/ui'
 
 import { useForgotPasswordFormService, useForgotPasswordFormState } from '../composables'
 import { useForgotPasswordStore } from '@/stores'

@@ -1,9 +1,9 @@
 import { useAuth } from '@/composables'
 
 import { Route } from '@/enums'
-import type { RouteGuard } from '@/types'
+import type { RouteMiddleware } from '@/types'
 
-const auth: RouteGuard = async () => {
+const auth: RouteMiddleware = async () => {
   const { getUser, isAuthenticated } = useAuth()
 
   try {

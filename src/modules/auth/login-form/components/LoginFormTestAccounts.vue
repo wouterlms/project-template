@@ -40,14 +40,14 @@ const testAccounts = testAccountsEnv.reduce((acc, [
     <aside
       class="bg-input
       border
-      border-input
+      border-neutral-200
       border-solid
       overflow-hidden
       rounded-lg
       shadow-card
       w-full"
     >
-      <div class="border-b border-input border-solid p-4">
+      <div class="border-b border-neutral-200 border-solid p-4">
         <h1 class="font-medium">
           {{ t('auth.login_form.sign_in_with_a_test_account') }}
         </h1>
@@ -61,7 +61,7 @@ const testAccounts = testAccountsEnv.reduce((acc, [
         >
           <AppFocusable
             :disabled="form.isSubmitting"
-            class="flex gap-x-4 hover:bg-gray-primary overflow-hidden p-4 text-left w-full"
+            class="flex gap-x-4 hover:bg-neutral-50 overflow-hidden p-4 text-left w-full"
             @click="emit('login', email, password)"
           >
             <AppIcon

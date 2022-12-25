@@ -3,7 +3,7 @@ import { AppTableTr as AppTableTrComponent } from '@wouterlms/ui'
 </script>
 
 <template>
-  <div class="even:bg-gray-primary">
+  <div class="even:bg-neutral-50">
     <AppContainer>
       <AppTableTrComponent>
         <slot />

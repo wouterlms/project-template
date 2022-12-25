@@ -2,13 +2,13 @@ import axios, { AxiosError } from 'axios'
 
 import {
   colors,
-  useToasts,
+  useNotifications,
 } from '@wouterlms/ui'
 
 import { INDICES_EXCLAMATIONMARK_CIRCLE } from '@wouterlms/icons'
 
 export default (): void => {
-  const { createToast } = useToasts()
+  const { createNotification } = useNotifications()
 
   axios.interceptors.response.use(
     (res) => res,
@@ -18,7 +18,7 @@ export default (): void => {
         const { status, data } = response ?? {}
 
         if (status !== undefined && status >= 500) {
-          createToast({
+          createNotification({
             title: 'Server error',
             message: data.message ?? 'Something went wrong',
             accentColor: colors.value.accent.error,

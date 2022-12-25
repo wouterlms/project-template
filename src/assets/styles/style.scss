@@ -14,12 +14,10 @@
 
   body {
     font-family: 'Dm Sans', sans-serif;
-
-    @apply w-full leading-5 bg-primary text-secondary min-h-screen h-[1px];
   }
 
   #app {
-    @apply flex flex-col w-full h-full;
+    @apply flex flex-col w-full h-full flex-1 min-h-screen;
   }
 
   img,

@@ -17,10 +17,10 @@ export default (error: unknown): Record<string, string> => {
   const { data } = response
   const { errors } = data as AxiosErrorData
 
-  const mappedErrors: Record<string, string> = {}
-
-  for (const key in errors)
-    [mappedErrors[key]] = errors[key]
+  const mappedErrors = Object.entries(errors).reduce((acc, [key]) => ({
+    ...acc,
+    [key]: errors[key][0],
+  }), {})
 
   return mappedErrors
 }

@@ -22,9 +22,6 @@ export default defineConfig({
         'vue',
         'vue-router',
         'vue-i18n',
-        {
-          '@/composables': ['useExtendedRouter'],
-        },
       ],
       vueTemplate: true,
     }),
@@ -36,8 +33,7 @@ export default defineConfig({
     }),
     createRouteMap({
       basePath: './src',
-      enumOutput: './enums/Route.enum.ts',
-      interfaceOutput: './types/core/router/NamedRoute.type.ts',
+      outputPath: './enums/Route.enum.ts',
     }),
   ],
   resolve: {
