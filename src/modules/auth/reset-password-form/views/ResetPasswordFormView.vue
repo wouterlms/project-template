@@ -1,22 +1,13 @@
 <script setup lang="ts">
 import { FormElement, useForm } from '@wouterlms/forms'
 
-import {
-  FormInput,
-  colors,
-  useNotifications,
-} from '@wouterlms/ui'
-
-import { OBJECT_AND_TOOLS_LINK } from '@wouterlms/icons'
-
 import { useResetPasswordFormService, useResetPasswordFormState } from '../composables'
 
-import { Route } from '@/enums'
+import { useToasts } from '@/composables/ui'
 
 const { t } = useI18n()
-const { createNotification, removeNotification } = useNotifications()
+const { showToastMessage } = useToasts()
 const route = useRoute()
-const router = useRouter()
 
 const { token } = route.params
 const { email } = route.query
@@ -31,21 +22,8 @@ const form = useForm(formState, {
 
 const { state } = formState
 
-if (token === undefined || email === undefined) {
-  const toast = createNotification({
-    title: t('auth.reset_password_form.invalid_link'),
-    message: t('auth.reset_password_form.this_is_not_a_valid'),
-    icon: OBJECT_AND_TOOLS_LINK,
-    accentColor: colors.value.accent.error,
-    action: {
-      label: t('auth.reset_password_form.request_new_reset_link'),
-      onClick: async () => {
-        await router.replace({ name: Route.FORGOT_PASSWORD })
-        removeNotification(toast)
-      },
-    },
-  })
-}
+if (token === undefined || email === undefined)
+  showToastMessage(t('auth.reset_password_form.this_is_not_a_valid'))
 </script>
 
 <template>
@@ -61,7 +39,7 @@ if (token === undefined || email === undefined) {
         >
           <FormInput
             v-model="state.password.value"
-            :error="!!state.password.error || !!state.email.error"
+            :has-error="!!state.password.error || !!state.email.error"
             type="password"
           />
         </FormLabel>

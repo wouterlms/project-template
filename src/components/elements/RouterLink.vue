@@ -15,8 +15,6 @@ withDefaults(defineProps<Props>(), {})
     :to="to"
     class="outline-inherit"
   >
-    <slot
-      v-bind="slotProps"
-    />
+    <slot v-bind="slotProps" />
   </RouterLinkComponent>
 </template>

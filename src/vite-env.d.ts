@@ -13,7 +13,6 @@ interface ImportMetaEnv {
   readonly VITE_CLIENT_SECRET: string
   readonly VITE_SENTRY_DSN: string
   readonly VITE_SENTRY_TRACING_ORIGIN: string
-  readonly VITE_TEST_ACCOUNTS?: string
 }
 
 interface ImportMeta {

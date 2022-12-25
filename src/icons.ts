@@ -1,5 +1,6 @@
 enum Icon {
-  TEST = 'TEST',
+  EYE = 'EYE',
+  EYE_SLASH = 'EYE_SLASH',
 }
 
 const svgs = import.meta.glob('./assets/svg/*.svg', {
@@ -8,7 +9,7 @@ const svgs = import.meta.glob('./assets/svg/*.svg', {
 })
 
 const mappedSvgs = Object.entries(svgs).reduce<Record<string, string>>((acc, [key, value]) => {
-  const name = key.split('/').pop()!.split('.').shift()!.toUpperCase()
+  const name = key.split('/').pop()!.split('.').shift()!.toUpperCase().replaceAll('-', '_')
 
   return {
     ...acc,

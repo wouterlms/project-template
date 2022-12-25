@@ -10,7 +10,6 @@ import {
 } from '@/plugins'
 
 import '@/assets/styles/style.scss'
-import '@wouterlms/ui/style.css'
 
 const app = createApp(App)
   .use(pinia)

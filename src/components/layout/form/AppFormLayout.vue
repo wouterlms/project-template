@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { AppLoader, colors } from '@wouterlms/ui'
 import { useEventListener } from '@wouterlms/composables'
 import type { useForm } from '@wouterlms/forms'
+
+import { colors } from '@/theme'
 
 interface Props {
   form: ReturnType<typeof useForm>

@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@antfu/eslint-config': ^0.27.0
   '@appwise/vue-oauth2': file:/Users/wouter/Documents/projects/vue-oauth2/appwise-vue-oauth2-0.0.24.tgz
+  '@floating-ui/dom': ^1.0.12
   '@intlify/vite-plugin-vue-i18n': ^6.0.2
   '@sentry/tracing': ^7.17.4
   '@sentry/vue': ^7.17.4
@@ -14,7 +15,6 @@ specifiers:
   '@wouterlms/forms': ^1.0.2
   '@wouterlms/icons': ^0.0.4
   '@wouterlms/svg-transformer': ^1.0.6
-  '@wouterlms/ui': ^1.1.8
   '@wouterlms/validation': file:/Users/wouter/Documents/projects/validation/pkg-name-0.0.0.tgz
   autoprefixer: ^10.4.10
   axios: ^1.1.3
@@ -30,6 +30,8 @@ specifiers:
   eslint-plugin-putout: ^16.3.0
   eslint-plugin-unused-imports: ^2.0.0
   eslint-plugin-vue: ^9.4.0
+  focus-trap: ^7.2.0
+  focus-trap-vue: ^4.0.1
   husky: ^8.0.1
   msw: ^0.47.4
   npm-run-all: ^4.1.5
@@ -52,15 +54,17 @@ specifiers:
 
 dependencies:
   '@appwise/vue-oauth2': file:../vue-oauth2/appwise-vue-oauth2-0.0.24.tgz_axios@1.1.3
+  '@floating-ui/dom': registry.npmjs.org/@floating-ui/dom/1.0.12
   '@sentry/tracing': registry.npmjs.org/@sentry/tracing/7.17.4
   '@sentry/vue': registry.npmjs.org/@sentry/vue/7.17.4_vue@3.2.45
   '@vue/runtime-core': 3.2.39
   '@wouterlms/composables': registry.npmjs.org/@wouterlms/composables/1.0.0_axios@1.1.3+vue@3.2.45
   '@wouterlms/forms': registry.npmjs.org/@wouterlms/forms/1.0.2_vue-i18n@9.2.2+vue@3.2.45
-  '@wouterlms/ui': registry.npmjs.org/@wouterlms/ui/1.1.8_xsxatmlnmmg5bcuv3xdnj6fj7y
   '@wouterlms/validation': file:../validation/pkg-name-0.0.0.tgz
   axios: registry.npmjs.org/axios/1.1.3
   axios-cache-adapter: 2.7.3_axios@1.1.3
+  focus-trap: registry.npmjs.org/focus-trap/7.2.0
+  focus-trap-vue: registry.npmjs.org/focus-trap-vue/4.0.1_nn2zg2o47bujavotzgw5cgkzcu
   pinia: registry.npmjs.org/pinia/2.0.23_prq2uz4lho2pwp6irk4cfkrxwu
   vue: registry.npmjs.org/vue/3.2.45
   vue-i18n: 9.2.2_vue@3.2.45
@@ -5035,6 +5039,20 @@ packages:
       - supports-color
     dev: true
 
+  registry.npmjs.org/@floating-ui/core/1.0.4:
+    resolution: {integrity: sha512-FPFLbg2b06MIw1dqk2SOEMAMX3xlrreGjcui5OTxfBDtaKTmh0kioOVjT8gcfl58juawL/yF+S+gnq8aUYQx/Q==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@floating-ui/core/-/core-1.0.4.tgz}
+    name: '@floating-ui/core'
+    version: 1.0.4
+    dev: false
+
+  registry.npmjs.org/@floating-ui/dom/1.0.12:
+    resolution: {integrity: sha512-HeG/wHoa2laUHlDX3xkzqlUqliAfa+zqV04LaKIwNCmCNaW2p0fQi4/Kd0LB4GdFoJ2UllLFq5gWnXAd67lg7w==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@floating-ui/dom/-/dom-1.0.12.tgz}
+    name: '@floating-ui/dom'
+    version: 1.0.12
+    dependencies:
+      '@floating-ui/core': registry.npmjs.org/@floating-ui/core/1.0.4
+    dev: false
+
   registry.npmjs.org/@humanwhocodes/config-array/0.11.7:
     resolution: {integrity: sha512-kBbPWzN8oVMLb0hOUYXhmxggL/1cJE6ydvjDIGi9EnAGUyA7cLVKQg+d/Dsm+KZwx2czGHrCmMVLiyg8s5JPKw==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.7.tgz}
     name: '@humanwhocodes/config-array'
@@ -5076,8 +5094,8 @@ packages:
       vue-i18n:
         optional: true
     dependencies:
-      '@intlify/message-compiler': registry.npmjs.org/@intlify/message-compiler/9.3.0-beta.10
-      '@intlify/shared': registry.npmjs.org/@intlify/shared/9.3.0-beta.10
+      '@intlify/message-compiler': registry.npmjs.org/@intlify/message-compiler/9.3.0-beta.11
+      '@intlify/shared': registry.npmjs.org/@intlify/shared/9.3.0-beta.11
       jsonc-eslint-parser: registry.npmjs.org/jsonc-eslint-parser/1.4.1
       source-map: registry.npmjs.org/source-map/0.6.1
       vue-i18n: 9.2.2_vue@3.2.45
@@ -5093,13 +5111,13 @@ packages:
       '@intlify/shared': registry.npmjs.org/@intlify/shared/9.2.2
       source-map: registry.npmjs.org/source-map/0.6.1
 
-  registry.npmjs.org/@intlify/message-compiler/9.3.0-beta.10:
-    resolution: {integrity: sha512-RoOC6yceOykLRhN0NlbkNOBUx1el6iphx3W8NfOx3jHVNtfT1FYokx14/5sU3F1F0uxeG4sp6q+ppKvaF8o+ww==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@intlify/message-compiler/-/message-compiler-9.3.0-beta.10.tgz}
+  registry.npmjs.org/@intlify/message-compiler/9.3.0-beta.11:
+    resolution: {integrity: sha512-gGGfBGzM7JBXp1Q9gbDAy5jELz9ho3ILqnpxp2yp64+gkqohrqc2YXIvCdwZoc6AtKIh/Zmv4sWVqxkvMsBWtQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@intlify/message-compiler/-/message-compiler-9.3.0-beta.11.tgz}
     name: '@intlify/message-compiler'
-    version: 9.3.0-beta.10
+    version: 9.3.0-beta.11
     engines: {node: '>= 14'}
     dependencies:
-      '@intlify/shared': registry.npmjs.org/@intlify/shared/9.3.0-beta.10
+      '@intlify/shared': registry.npmjs.org/@intlify/shared/9.3.0-beta.11
       source-map: registry.npmjs.org/source-map/0.6.1
     dev: true
 
@@ -5109,10 +5127,10 @@ packages:
     version: 9.2.2
     engines: {node: '>= 14'}
 
-  registry.npmjs.org/@intlify/shared/9.3.0-beta.10:
-    resolution: {integrity: sha512-h93uAanbAt/XgjDHclrVB7xix6r7Uz11wx0iGNOCdHP7aA2LCJjUT3uNbekJjjbo+Fl5jzTSJZdm2SexzoqhRA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@intlify/shared/-/shared-9.3.0-beta.10.tgz}
+  registry.npmjs.org/@intlify/shared/9.3.0-beta.11:
+    resolution: {integrity: sha512-CtbotesxTRiC3bRyXyv1NG39fkqJ790f8z8xFaeIXSZpOdiyxoh5BIyypCzSFQZDGLwz0Q9gyWbW1XpxQJm68Q==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@intlify/shared/-/shared-9.3.0-beta.11.tgz}
     name: '@intlify/shared'
-    version: 9.3.0-beta.10
+    version: 9.3.0-beta.11
     engines: {node: '>= 14'}
     dev: true
 
@@ -5135,7 +5153,7 @@ packages:
         optional: true
     dependencies:
       '@intlify/bundle-utils': registry.npmjs.org/@intlify/bundle-utils/3.4.0_vue-i18n@9.2.2
-      '@intlify/shared': registry.npmjs.org/@intlify/shared/9.3.0-beta.10
+      '@intlify/shared': registry.npmjs.org/@intlify/shared/9.3.0-beta.11
       '@rollup/pluginutils': registry.npmjs.org/@rollup/pluginutils/4.2.1
       debug: registry.npmjs.org/debug/4.3.4
       fast-glob: registry.npmjs.org/fast-glob/3.2.12
@@ -5525,19 +5543,6 @@ packages:
     name: '@wouterlms/svg-transformer'
     version: 1.0.6
     dev: true
-
-  registry.npmjs.org/@wouterlms/ui/1.1.8_xsxatmlnmmg5bcuv3xdnj6fj7y:
-    resolution: {integrity: sha512-hAmQfb4SUrJESsYBcsMAttX6EZyzV+l+54+dP5ImN0MZan+mVvoPhIB4GVPDuDJnVihhqT4aJ/QEcfWR3W5SYQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@wouterlms/ui/-/ui-1.1.8.tgz}
-    id: registry.npmjs.org/@wouterlms/ui/1.1.8
-    name: '@wouterlms/ui'
-    version: 1.1.8
-    peerDependencies:
-      vue: ^3.2.37
-      vue-router: ^4.1.5
-    dependencies:
-      vue: registry.npmjs.org/vue/3.2.45
-      vue-router: registry.npmjs.org/vue-router/4.1.6_vue@3.2.45
-    dev: false
 
   registry.npmjs.org/@xmldom/xmldom/0.8.5:
     resolution: {integrity: sha512-0dpjDLeCXYThL2YhqZcd/spuwoH+dmnFoND9ZxZkAYxp1IJUB2GP16ow2MJRsjVxy8j1Qv8BJRmN5GKnbDKCmQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@xmldom/xmldom/-/xmldom-0.8.5.tgz}
@@ -6704,6 +6709,27 @@ packages:
     name: flatted
     version: 3.2.7
     dev: true
+
+  registry.npmjs.org/focus-trap-vue/4.0.1_nn2zg2o47bujavotzgw5cgkzcu:
+    resolution: {integrity: sha512-2iqOeoSvgq7Um6aL+255a/wXPskj6waLq2oKCa4gOnMORPo15JX7wN6J5bl1SMhMlTlkHXGSrQ9uJPJLPZDl5w==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/focus-trap-vue/-/focus-trap-vue-4.0.1.tgz}
+    id: registry.npmjs.org/focus-trap-vue/4.0.1
+    name: focus-trap-vue
+    version: 4.0.1
+    peerDependencies:
+      focus-trap: ^7.0.0
+      vue: ^3.0.0
+    dependencies:
+      focus-trap: registry.npmjs.org/focus-trap/7.2.0
+      vue: registry.npmjs.org/vue/3.2.45
+    dev: false
+
+  registry.npmjs.org/focus-trap/7.2.0:
+    resolution: {integrity: sha512-v4wY6HDDYvzkBy4735kW5BUEuw6Yz9ABqMYLuTNbzAFPcBOGiGHwwcNVMvUz4G0kgSYh13wa/7TG3XwTeT4O/A==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/focus-trap/-/focus-trap-7.2.0.tgz}
+    name: focus-trap
+    version: 7.2.0
+    dependencies:
+      tabbable: registry.npmjs.org/tabbable/6.0.1
+    dev: false
 
   registry.npmjs.org/follow-redirects/1.15.2:
     resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.2.tgz}
@@ -8438,6 +8464,12 @@ packages:
     version: 1.0.0
     engines: {node: '>= 0.4'}
     dev: true
+
+  registry.npmjs.org/tabbable/6.0.1:
+    resolution: {integrity: sha512-SYJSIgeyXW7EuX1ytdneO5e8jip42oHWg9xl/o3oTYhmXusZVgiA+VlPvjIN+kHii9v90AmzTZEBcsEvuAY+TA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/tabbable/-/tabbable-6.0.1.tgz}
+    name: tabbable
+    version: 6.0.1
+    dev: false
 
   registry.npmjs.org/text-table/0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz}

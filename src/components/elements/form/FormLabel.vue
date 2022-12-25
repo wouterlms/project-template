@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { AppIcon, colors } from '@wouterlms/ui'
 import { PRIVACY_AND_SECURITY_EXCLAMATIONMARK_TRIANGLE_FILL } from '@wouterlms/icons'
+import { colors } from '@/theme'
 
 interface Props {
   label: string

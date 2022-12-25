@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { FormElement, useForm } from '@wouterlms/forms'
-import { FormInput } from '@wouterlms/ui'
 
 import { useForgotPasswordFormService, useForgotPasswordFormState } from '../composables'
 import { useForgotPasswordStore } from '@/stores'
@@ -56,7 +55,7 @@ const hasSentEmail = computed(() => forgotPasswordStore.hasSentEmail)
         >
           <FormInput
             v-model="state.email.value"
-            :error="!!state.email.error"
+            :has-error="!!state.email.error"
             type="email"
           />
         </FormLabel>

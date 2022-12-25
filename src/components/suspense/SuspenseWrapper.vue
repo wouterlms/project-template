@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { AppLoader } from '@wouterlms/ui'
-
 import { useSuspense } from '@/composables'
 
 const { t } = useI18n()

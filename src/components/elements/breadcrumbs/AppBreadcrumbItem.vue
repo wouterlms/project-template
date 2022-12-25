@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { RouteLocationRaw } from 'vue-router'
 
-import { AppIcon } from '@wouterlms/ui'
 import { ARROWS_CHEVRON_RIGHT } from '@wouterlms/icons'
 
 interface Props {

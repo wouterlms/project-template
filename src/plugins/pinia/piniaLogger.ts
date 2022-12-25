@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-import { useDarkMode } from '@wouterlms/ui'
 import type { PiniaPluginContext } from 'pinia'
+import { useDarkMode } from '@/composables/ui'
 
 interface Options {
   isEnabled: boolean

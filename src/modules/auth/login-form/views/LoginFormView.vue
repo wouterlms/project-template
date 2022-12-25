@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { FormElement, useForm } from '@wouterlms/forms'
-import { FormInput } from '@wouterlms/ui'
 
 import {
   useLoginFormService,
@@ -29,17 +28,6 @@ const form = useForm(formState, {
 })
 
 const { state } = formState
-
-const handleTestAccountLogin = (email: string, password: string): void => {
-  formState.setData({
-    email,
-    password,
-  })
-
-  setTimeout(() => {
-    form.submit()
-  }, 0)
-}
 </script>
 
 <template>
@@ -47,11 +35,6 @@ const handleTestAccountLogin = (email: string, password: string): void => {
     :title="title"
     :description="t('auth.login_form.sign_in_to_continue')"
   >
-    <LoginFormTestAccounts
-      :form="form"
-      @login="handleTestAccountLogin"
-    />
-
     <FormElement :form="form">
       <FormSpacer>
         <FormLabel
@@ -60,7 +43,7 @@ const handleTestAccountLogin = (email: string, password: string): void => {
         >
           <FormInput
             v-model="state.email.value"
-            :error="!!state.email.error"
+            :has-error="!!state.email.error"
             type="email"
           />
         </FormLabel>
@@ -71,7 +54,7 @@ const handleTestAccountLogin = (email: string, password: string): void => {
         >
           <FormInput
             v-model="state.password.value"
-            :error="!!state.password.error"
+            :has-error="!!state.password.error"
             type="password"
           />
         </FormLabel>

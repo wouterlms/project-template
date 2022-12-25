@@ -21,6 +21,10 @@ module.exports = {
         8: 8,
         9: 9,
       },
+      boxShadow: {
+        primary: '0 2px 12px 0 rgba(7, 6, 6, 0.1)',
+        light: '0 2px 12px 0 rgba(7, 6, 6, 0.05)',
+      },
     },
   },
   plugins: [
@@ -34,17 +38,17 @@ module.exports = {
             colors: {
               accent: {
                 primary: {
-                  50: '#000000',
-                  100: '#000000',
-                  200: '#000000',
-                  300: '#000000',
-                  400: '#000000',
-                  500: '#000000',
-                  600: '#000000',
-                  700: '#000000',
-                  800: '#000000',
-                  900: '#000000',
-                  DEFAULT: '#000000',
+                  50: '#6193ff',
+                  100: '#6193ff',
+                  200: '#6193ff',
+                  300: '#6193ff',
+                  400: '#6193ff',
+                  500: '#6193ff',
+                  600: '#6193ff',
+                  700: '#6193ff',
+                  800: '#6193ff',
+                  900: '#6193ff',
+                  DEFAULT: '#6193ff',
                 },
                 secondary: {
                   50: '#000000',
@@ -117,6 +121,7 @@ module.exports = {
               'tertiary': '#718096',
               'tertiary-inverted': '#969696',
               'input': '#606266',
+              'input-placeholder': '#c0c4cc',
             },
             backgroundColor: {
               'primary': '#ffffff',
@@ -219,6 +224,7 @@ module.exports = {
               'tertiary': '#969696',
               'tertiary-inverted': '#718096',
               'input': '#eeeeee',
+              'input-placeholder': '#585858',
             },
             backgroundColor: {
               'primary': '#171717',

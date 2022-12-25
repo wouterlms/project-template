@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { AppButton } from '@wouterlms/ui'
 import type { UseForm } from '@wouterlms/forms'
 
 interface Props {

@@ -1,14 +1,9 @@
 import axios, { AxiosError } from 'axios'
 
-import {
-  colors,
-  useNotifications,
-} from '@wouterlms/ui'
-
-import { INDICES_EXCLAMATIONMARK_CIRCLE } from '@wouterlms/icons'
+import { useToasts } from '@/composables/ui'
 
 export default (): void => {
-  const { createNotification } = useNotifications()
+  const { showToastMessage } = useToasts()
 
   axios.interceptors.response.use(
     (res) => res,
@@ -17,14 +12,8 @@ export default (): void => {
         const { response } = err
         const { status, data } = response ?? {}
 
-        if (status !== undefined && status >= 500) {
-          createNotification({
-            title: 'Server error',
-            message: data.message ?? 'Something went wrong',
-            accentColor: colors.value.accent.error,
-            icon: INDICES_EXCLAMATIONMARK_CIRCLE,
-          })
-        }
+        if (status !== undefined && status >= 500)
+          showToastMessage(data.message ?? 'Something went wrong')
       }
 
       return await Promise.reject(err)
