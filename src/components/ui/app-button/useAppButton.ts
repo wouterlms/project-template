@@ -65,7 +65,7 @@ export default () => {
 
     const buttonProps: Record<string, unknown> = {
       to,
-      type: to === undefined && href === undefined ? type : undefined,
+      type: to == null && href == null ? type : undefined,
       disabled: isLoading || isDisabled,
       class: [
         'inline-block',

@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 export default defineStore('forgotPassword', () => {
   const lastLoginAttemptEmail = ref<Nullable<string>>(null)
-  const hasSentEmail = ref(false)
+  const hasSentEmail = ref(true)
 
   const setLastLoginAttemptEmail = (email: Nullable<string>): void => {
     lastLoginAttemptEmail.value = email

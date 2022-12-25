@@ -11,7 +11,7 @@ export default (error: unknown): Record<string, string> => {
 
   const { response } = error
 
-  if (response === undefined)
+  if (response == null)
     return {}
 
   const { data } = response

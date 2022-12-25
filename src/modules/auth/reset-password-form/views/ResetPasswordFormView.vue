@@ -22,7 +22,7 @@ const form = useForm(formState, {
 
 const { state } = formState
 
-if (token === undefined || email === undefined)
+if (token == null || email == null)
   showToastMessage(t('auth.reset_password_form.this_is_not_a_valid'))
 </script>
 

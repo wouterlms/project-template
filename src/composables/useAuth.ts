@@ -15,9 +15,9 @@ const {
 } = import.meta.env
 
 if (
-  VITE_API_BASE_URL === undefined
-  || VITE_CLIENT_ID === undefined
-  || VITE_CLIENT_SECRET === undefined
+  VITE_API_BASE_URL == null
+  || VITE_CLIENT_ID == null
+  || VITE_CLIENT_SECRET == null
 )
   throw new Error('API Base URL, Client ID, or Client Secret is not defined. Make sure to define `VITE_API_BASE_URL`, `VITE_CLIENT_ID`, and `VITE_CLIENT_SECRET` in your .env file.')
 

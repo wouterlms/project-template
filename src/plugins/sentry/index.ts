@@ -7,7 +7,7 @@ import { BrowserTracing } from '@sentry/tracing'
 export default (app: App<Element>, router: Router): void => {
   const { VITE_SENTRY_DSN, VITE_SENTRY_TRACING_ORIGIN } = import.meta.env
 
-  if (VITE_SENTRY_DSN === undefined || VITE_SENTRY_TRACING_ORIGIN === undefined)
+  if (VITE_SENTRY_DSN == null || VITE_SENTRY_TRACING_ORIGIN == null)
     throw new Error('Sentry DSN or Tracing Origin is not defined. Make sure to define `VITE_SENTRY_DSN` and `VITE_SENTRY_TRACING_ORIGIN` in your .env file.')
 
   init({

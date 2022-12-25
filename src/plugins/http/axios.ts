@@ -32,14 +32,14 @@ export default (): void => {
   }
 
   const log = ({ request, response }: AxiosError): void => {
-    if (response === undefined)
+    if (response == null)
       return
 
     const { status, config: { url, method } } = response
 
     const timestamp = new Date().toLocaleTimeString('nl-BE')
 
-    if (method === undefined || url === undefined)
+    if (method == null || url == null)
       return
 
     /* eslint-disable no-console */
