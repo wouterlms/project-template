@@ -16,6 +16,7 @@
   "dependencies": {
     "@appwise/vue-oauth2": "file:/Users/wouter/Documents/projects/vue-oauth2/appwise-vue-oauth2-0.0.24.tgz",
     "@floating-ui/dom": "^1.0.12",
+    "@fontsource/dm-sans": "^4.5.9",
     "@sentry/tracing": "^7.17.4",
     "@sentry/vue": "^7.17.4",
     "@vue/runtime-core": "^3.2.39",

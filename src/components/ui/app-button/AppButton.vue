@@ -143,7 +143,7 @@ const computedPadding = computed<string>(() => {
   if (!slots.default)
     return '1em'
 
-  return '1.1em 1.2em'
+  return '1em 1.2em'
 })
 
 const hasExplicitWidth = computed<boolean>(

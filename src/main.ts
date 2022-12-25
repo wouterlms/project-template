@@ -9,6 +9,7 @@ import {
   pinia,
 } from '@/plugins'
 
+import '@fontsource/dm-sans'
 import '@/assets/styles/style.scss'
 
 const app = createApp(App)

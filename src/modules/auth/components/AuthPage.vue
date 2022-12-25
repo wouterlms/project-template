@@ -19,7 +19,7 @@ withDefaults(defineProps<Props>(), {})
     <AppText
       v-if="description"
       variant="body-2"
-      class="mt-1"
+      class="mt-2"
     >
       {{ description }}
     </AppText>

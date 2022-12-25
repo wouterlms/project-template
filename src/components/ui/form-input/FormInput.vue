@@ -224,4 +224,8 @@ export default {
     @apply text-input-placeholder;
   }
 }
+
+input[type=time]::-webkit-calendar-picker-indicator {
+  display: none;
+}
 </style>

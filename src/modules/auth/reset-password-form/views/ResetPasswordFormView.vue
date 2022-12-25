@@ -3,7 +3,7 @@ import { FormElement, useForm } from '@wouterlms/forms'
 
 import { useResetPasswordFormService, useResetPasswordFormState } from '../composables'
 
-import { useToasts } from '@/composables/ui'
+import { useToasts } from '@/composables'
 
 const { t } = useI18n()
 const { showToastMessage } = useToasts()

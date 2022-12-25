@@ -60,7 +60,7 @@ const paths = computed<string>(() => {
     .map((c) => c.innerHTML)
     .join('')
 
-  if (preserveOriginalColor)
+  if (preserveOriginalColor === true)
     return svgContent
 
   let pathWithoutHexColors = removeHexColors(svgContent)

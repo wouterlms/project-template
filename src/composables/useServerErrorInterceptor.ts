@@ -1,6 +1,6 @@
 import axios, { AxiosError } from 'axios'
 
-import { useToasts } from '@/composables/ui'
+import { useToasts } from '@/composables'
 
 export default (): void => {
   const { showToastMessage } = useToasts()

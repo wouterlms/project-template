@@ -34,15 +34,15 @@ const hasSentEmail = computed(() => forgotPasswordStore.hasSentEmail)
       ? t('auth.forgot_password_form.thank_you_within_a_few')
       : t('auth.forgot_password_form.dont_remember_your_password_enter')"
   >
-    <RouterLink
-      is="RouterLink"
+    <AppButton
       v-if="hasSentEmail"
       :to="{
         name: Route.LOGIN,
       }"
+      class="w-full"
     >
       {{ t('auth.forgot_password_form.return_to_login') }}
-    </RouterLink>
+    </AppButton>
 
     <FormElement
       v-else

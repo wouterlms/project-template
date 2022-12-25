@@ -38,7 +38,6 @@ const useLoginFormService: UseLoginFormService = (formState) => {
 
         if (response !== undefined && [400, 401].includes(response.status)) {
           formState.setErrors({
-            email: t('auth.login_form.invalid_email_or_password'),
             password: t('auth.login_form.invalid_email_or_password'),
           })
         }
