@@ -12,7 +12,7 @@ specifiers:
   '@vitejs/plugin-vue': ^3.1.0
   '@vue/runtime-core': ^3.2.39
   '@wouterlms/composables': ^1.0.0
-  '@wouterlms/create-route-map': 1.0.3
+  '@wouterlms/create-route-map': ^1.1.4
   '@wouterlms/forms': ^1.0.2
   '@wouterlms/icons': ^0.0.4
   '@wouterlms/svg-transformer': ^1.0.6
@@ -77,7 +77,7 @@ devDependencies:
   '@intlify/vite-plugin-vue-i18n': registry.npmjs.org/@intlify/vite-plugin-vue-i18n/6.0.2_vite@3.1.8+vue-i18n@9.2.2
   '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.1.8
   '@vitejs/plugin-vue': 3.1.0_vite@3.1.8+vue@3.2.45
-  '@wouterlms/create-route-map': registry.npmjs.org/@wouterlms/create-route-map/1.0.3
+  '@wouterlms/create-route-map': registry.npmjs.org/@wouterlms/create-route-map/1.1.4_vue-router@4.1.6
   '@wouterlms/icons': registry.npmjs.org/@wouterlms/icons/0.0.4
   '@wouterlms/svg-transformer': registry.npmjs.org/@wouterlms/svg-transformer/1.0.6
   autoprefixer: 10.4.10_postcss@8.4.16
@@ -5448,7 +5448,6 @@ packages:
     resolution: {integrity: sha512-JD5fcdIuFxU4fQyXUu3w2KpAJHzTVdN+p4iOX2lMWSHMOoQdMAcpFLZzm9Z/2nmsoZ1a96QEhZ26e50xLBsgOQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.4.5.tgz}
     name: '@vue/devtools-api'
     version: 6.4.5
-    dev: false
 
   registry.npmjs.org/@vue/reactivity-transform/3.2.45:
     resolution: {integrity: sha512-BHVmzYAvM7vcU5WmuYqXpwaBHjsS8T63jlKGWVtHxAHIoMIlmaMyurUSEs1Zcg46M4AYT5MtB1U274/2aNzjJQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@vue/reactivity-transform/-/reactivity-transform-3.2.45.tgz}
@@ -5521,10 +5520,15 @@ packages:
       vue: registry.npmjs.org/vue/3.2.45
     dev: false
 
-  registry.npmjs.org/@wouterlms/create-route-map/1.0.3:
-    resolution: {integrity: sha512-u0nVWG+or/n6ev917CX1iUyP4t+n8hd3gw9u6xypWLtXq2h8C8LhuZLYODA3ZsDOIP5vcwPmYA4n7m20Injv7Q==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@wouterlms/create-route-map/-/create-route-map-1.0.3.tgz}
+  registry.npmjs.org/@wouterlms/create-route-map/1.1.4_vue-router@4.1.6:
+    resolution: {integrity: sha512-ZI3stffkysIiydLfHjfYmRfvBu+O5hYNdDdewZe8y2pz1PC2SgR1oZ6CEVZyWDNXeNj8/9GUYl9i1uT0bxcdLg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@wouterlms/create-route-map/-/create-route-map-1.1.4.tgz}
+    id: registry.npmjs.org/@wouterlms/create-route-map/1.1.4
     name: '@wouterlms/create-route-map'
-    version: 1.0.3
+    version: 1.1.4
+    peerDependencies:
+      vue-router: ^4.1.6
+    dependencies:
+      vue-router: registry.npmjs.org/vue-router/4.1.6_vue@3.2.45
     dev: true
 
   registry.npmjs.org/@wouterlms/forms/1.0.2_vue-i18n@9.2.2+vue@3.2.45:
@@ -8707,7 +8711,6 @@ packages:
     dependencies:
       '@vue/devtools-api': registry.npmjs.org/@vue/devtools-api/6.4.5
       vue: registry.npmjs.org/vue/3.2.45
-    dev: false
 
   registry.npmjs.org/vue-template-compiler/2.7.10:
     resolution: {integrity: sha512-QO+8R9YRq1Gudm8ZMdo/lImZLJVUIAM8c07Vp84ojdDAf8HmPJc7XB556PcXV218k2AkKznsRz6xB5uOjAC4EQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/vue-template-compiler/-/vue-template-compiler-2.7.10.tgz}
